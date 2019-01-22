@@ -10,7 +10,7 @@ const Navbar = ({ currentUser }) => {
   const navbar = () => (
     <nav className="Navbar">
       <div className="navLogo">
-        <img src="../../../assets/images/logo.png"/>
+        <img src="" alt=""/>
       </div>
       <ul className="navLeft">
       
