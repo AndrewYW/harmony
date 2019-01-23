@@ -8,19 +8,22 @@ library.add(fab);
 
 const Splash = ({ currentUser }) => {
   const splash = () => (
-    <nav className="Navbar">
-      <div className="navLogo">
-        <img src="/assets/favicon.png" alt=""/>
-      </div>
-      <ul className="navLeft">
-      
-      </ul>
-      <ul className="navRight">
-        <a href="https://github.com/AndrewYW/harmony/" className="github">
-          <FontAwesomeIcon icon={['fab','github']} />
-        </a>
-      </ul>
-    </nav>
+    <div>
+      <nav className="Navbar">
+        <div className="navLogo">
+          <img src="/assets/favicon.png" alt=""/>
+        </div>
+        <ul className="navLeft">
+        
+        </ul>
+        <ul className="navRight">
+          <a href="https://github.com/AndrewYW/harmony/" className="github">
+            <FontAwesomeIcon icon={['fab','github']} />
+          </a>
+        </ul>
+      </nav>
+
+    </div>
   )
 
   return currentUser ? null : splash();
