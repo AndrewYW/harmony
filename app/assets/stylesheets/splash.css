@@ -3,12 +3,59 @@
   color: #FFFFFF;
 }
 
-.Navbar {}
+/* navbar */
+.Navbar {
 
-.navLogo {}
+}
 
-.navLeft {}
+.navLogo {
+  width: 145px;
+  margin-right: 12px;
+  margin-top: 4px;
+}
 
+.navLeft {
+
+}
+
+/* hero */
+.hero{
+  font-family: Whitney, Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+.discordLink {
+  background-color: #7289DA;
+  width: 250px;
+  height: 45px;
+  text-align: center;
+  display: block;
+  font-family: Whitney,
+  Helvetica Neue,
+  Helvetica,
+  Arial,
+  sans-serif;
+}
 .navRight {}
 
+/* splash images */
 .splashImages {}
+
+img {
+  position: absolute;
+}
+
+.monitor {
+  margin-left: 300px;
+  margin-top: 480px;
+  width: 580px;
+  height: 470px;
+  z-index: 1;
+}
+
+.laptop {
+  width: 608px;
+  height: 350px;
+  z-index: 2;
+
+}
+
+/* footer */

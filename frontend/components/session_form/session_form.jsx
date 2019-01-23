@@ -14,6 +14,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    console.log(user);
     this.props.processForm(user).then(() => this.props.history.push('/'));
   }
 
@@ -44,10 +45,10 @@ class SessionForm extends React.Component {
     }
   }
 
-  emailLabel() {
+  usernameLabel() {
     return (
-      <label>EMAIL
-        <input type="text" value={this.state.password} onChange={this.handleChange('email')} />
+      <label>USERNAME
+        <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
       </label>
     )
   }
@@ -55,10 +56,10 @@ class SessionForm extends React.Component {
     return (
       <div>
         <form className="formEl">
-          {this.formType() ? <></> : this.emailLabel() }
-          <label>USERNAME
-              <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
+          <label>EMAIL
+              <input type="text" value={this.state.email} onChange={this.handleChange('email')} />
           </label>
+          {this.formType() ? <></> : this.usernameLabel() }
           <label>PASSWORD
               <input type="text" value={this.state.password} onChange={this.handleChange('password')} />
           </label>
