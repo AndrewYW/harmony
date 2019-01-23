@@ -17,16 +17,21 @@ const Splash = ({ currentUser }) => {
         
         </ul>
         <ul className="navRight">
-          <a href="https://github.com/AndrewYW/harmony/" className="github">
+          <li><a href="https://github.com/AndrewYW/harmony/" className="github">
             <FontAwesomeIcon icon={['fab','github']} />
-          </a>
+            Github
+          </a></li>
+          <li><a href="#" className="github">
+            <FontAwesomeIcon icon={['fab', 'linkedin']} />
+            LinkedIn
+          </a></li>
         </ul>
       </nav>
-
     </div>
   )
 
   return currentUser ? null : splash();
+  //hacky test
 };
 
 export default Splash;

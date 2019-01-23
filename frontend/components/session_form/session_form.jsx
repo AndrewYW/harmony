@@ -87,11 +87,11 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <div className="sessionBlock">
+      <section className="sessionBlock">
         {this.formHeader()}
         {this.formContent()}
         {this.formFooter()}
-      </div>
+      </section>
     )
   }
 }
