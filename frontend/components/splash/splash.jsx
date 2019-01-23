@@ -44,7 +44,8 @@ class Splash extends React.Component {
           <p>All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
               Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.
           </p>
-          <a href="https://discordapp.com/">Visit actual Discord</a>
+          <a className="demoLogin" href="#">Login as Demo User</a>
+          <a className="discordLink" href="https://discordapp.com/">Visit actual Discord</a>
         </section>
       </>
     )
@@ -121,94 +122,5 @@ class Splash extends React.Component {
     )
   }
 }
-
-const Splashs = ({ currentUser }) => {
-  const splash = () => (
-    <div>
-      <nav className="Navbar">
-        <div className="navLogo">
-          <img src="/assets/favicon.png" />
-        </div>
-        <ul className="navLeft">
-        
-        </ul>
-        <ul className="navRight">
-          <li><a href="https://github.com/AndrewYW/harmony/" className="github">
-            <FontAwesomeIcon icon={['fab','github']} />
-            Github
-          </a></li>
-          <li><a href="#" className="github">
-            <FontAwesomeIcon icon={['fab', 'linkedin']} />
-            LinkedIn
-          </a></li>
-          <li><Link className="navLogin" to="/login">Login</Link></li>
-        </ul>
-      </nav>
-
-      <section className="hero">
-        <h2>It's time to ditch Skype and TeamSpeak.</h2>
-        <p>All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
-            Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.
-          </p>
-        <a className="demoLogin" href="#">Login as Demo User</a>
-        <a className="discordLink" href="https://discordapp.com/">Visit actual Discord</a>
-      </section>
-
-      <section style={{backgroundColor:"rgb(37,38,42)"}} className="splashImages">
-        <ul>
-          <img className="x0" src="/assets/splash/x.svg" />
-          <img className="x1" src="/assets/splash/x.svg" />
-          <img className="x2" src="/assets/splash/x.svg" />
-          
-          <img className="o0" src="/assets/splash/o.svg" />
-          <img className="o1" src="/assets/splash/o.svg" />
-          <img className="o2" src="/assets/splash/o.svg" />
-
-          <img className="dot0" src="/assets/splash/dot.svg" />
-          <img className="dot1" src="/assets/splash/dot.svg" />
-          <img className="dot2" src="/assets/splash/dot.svg" />
-          <img className="dot3" src="/assets/splash/dot.svg" />
-          <img className="dot4" src="/assets/splash/dot.svg" />
-
-          <img className="square0" src="/assets/splash/square.svg" />
-          <img className="square1" src="/assets/splash/square.svg" />
-          <img className="square2" src="/assets/splash/square.svg" />
-
-          <img className="tri0" src="/assets/splash/tri.svg" />
-          <img className="tri1" src="/assets/splash/tri.svg" />
-          <img className="tri2" src="/assets/splash/tri.svg" />
-
-          <img className="coin0" src="/assets/splash/coin.svg" />
-          <img className="coin1" src="/assets/splash/coin.svg" />
-          <img className="coin1" src="/assets/splash/coin.svg" />
-
-          <img className="android" src="/assets/splash/android.svg" alt="android" />
-          <img className="iphone" src="/assets/splash/iphone.svg" alt="iphone" />
-          <img className="controller" src="/assets/splash/controller.svg" alt="controller" />
-          <img className="shield" src="/assets/splash/disc.svg" alt="shield"/>
-          <img className="cartridge" src="/assets/splash/gba_cartridge.svg" alt="cartridge"/>
-          <img className="headphones" src="/assets/splash/headphones.svg" alt="headphones"/>
-          <img className="laptop" src="/assets/splash/laptop.svg" alt="laptop"/>
-          <img className="monitor" src="/assets/splash/monitor.svg" alt="monitor"/>
-          <img className="spawnerbox" src="/assets/splash/spawnerbox.svg" alt="spawnerbox"/>
-          <img className="vial" src="/assets/splash/vial.svg" alt="vial"/>
-          <img className="bomb" src="/assets/splash/bomb.svg" alt="bomb"/>
-        </ul>
-      </section>
-
-      <section className="footerLeft">
-        <h3>Ready to try Harmony? It's free!</h3>
-        <h4>JOIN OVER 150 MILLION PLAYERS TODAY</h4>
-      </section>
-      <section className="footerRight">
-        <Link className="footerRegister" to="/register" >Sign Up Now</Link>
-      </section>
-
-    </div>
-  )
-
-  return currentUser ? null : splash();
-  //hacky test
-};
 
 export default Splash;
