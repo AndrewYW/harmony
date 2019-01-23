@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const root = document.getElementById('root');
 
   //testing
-  window.signup = SessionAPIUtil.signup;
+  window.register = SessionAPIUtil.register;
   window.login = SessionAPIUtil.login;
   window.logout = SessionAPIUtil.logout;
   window.getState = store.getState;
