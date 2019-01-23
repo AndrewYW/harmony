@@ -30,14 +30,14 @@ class SessionForm extends React.Component {
   formHeader() {
     if (this.formType()) {
       return (
-        <div>
+        <div className="formHeader">
           <h1>Welcome back!</h1>
           <h2>We're so excited to see you again!</h2>
         </div>
       )
     } else {
       return (
-        <div>
+        <div className="formHeader">
           <h1>Create an account</h1>
         </div>
       )
@@ -54,7 +54,7 @@ class SessionForm extends React.Component {
   formContent() {
     return (
       <div>
-        <form>
+        <form className="formEl">
           {this.formType() ? <></> : this.emailLabel() }
           <label>USERNAME
               <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
@@ -62,7 +62,7 @@ class SessionForm extends React.Component {
           <label>PASSWORD
               <input type="text" value={this.state.password} onChange={this.handleChange('password')} />
           </label>
-          <input type="submit" value={this.props.formType} onClick={this.handleSubmit} />
+          <input type="submit" value={this.formType() ? "Login": "Continue"} onClick={this.handleSubmit} />
         </form>
       </div>
     )
@@ -71,13 +71,13 @@ class SessionForm extends React.Component {
   formFooter() {
     if (this.formType()){
       return (
-        <div>
+        <div className="formFooter">
           <p>Need an account? <Link to='/register'>Register</Link></p>
         </div>
       )
     } else {
       return (
-        <div>
+        <div className="formFooter">
           <Link to='/login'>Already have an account?</Link>
           <p>By registering, you agree to Harmony's Terms of Service and Privacy Policy.</p>
         </div>
@@ -87,10 +87,15 @@ class SessionForm extends React.Component {
 
   render() {
     return (
-      <section className="sessionBlock">
-        {this.formHeader()}
-        {this.formContent()}
-        {this.formFooter()}
+      <section className="session_form">
+        <section className="sessionLogo">
+          
+        </section>
+        <section className="sessionBlock">
+          {this.formHeader()}
+          {this.formContent()}
+          {this.formFooter()}
+        </section>
       </section>
     )
   }
