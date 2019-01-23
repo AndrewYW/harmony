@@ -15,4 +15,5 @@
 // NO TURBOLINKS https://stackoverflow.com/questions/38649550/how-to-disable-turbolinks-in-rails-5
 //= require jquery
 //= require jquery_ujs
+//= require rails_ujs
 //= require_tree .
