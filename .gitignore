@@ -30,3 +30,4 @@
 /bundle.js.map
 app/assets/javascripts/bundle.js
 app/assets/javascripts/bundle.js.map
+.DS_Store
