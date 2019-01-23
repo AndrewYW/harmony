@@ -38,7 +38,7 @@ class Splash extends React.Component {
 
   images() {
     return (
-      <section className="splashImages">
+      <section style="color:#2C2F33;" className="splashImages">
       
       </section>
     )
@@ -74,7 +74,7 @@ const Splashs = ({ currentUser }) => {
         </ul>
       </nav>
 
-      <section className="splashImages">
+      <section style={{backgroundColor:"rgb(37,38,42)"}} className="splashImages">
         <ul>
           <img className="x0" src="/assets/splash/x.svg" />
           <img className="x1" src="/assets/splash/x.svg" />
