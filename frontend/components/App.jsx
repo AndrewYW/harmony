@@ -8,7 +8,6 @@ import RegisterFormContainer from './session_form/register_form_container';
 
 const App = () => (
   <div>
-    <h1>Harmony App</h1>
     <AuthRoute path="/login" component={LoginFormContainer} />
     <AuthRoute path="/register" component={RegisterFormContainer} />
 

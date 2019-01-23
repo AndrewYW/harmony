@@ -15,44 +15,46 @@ class Splash extends React.Component {
   navbar() {
     return (
       <nav className="Navbar">
-        <div className="navLogo">
-          <img src="/assets/favicon.png" />
-        </div>
-        <ul className="navLeft">
+        <section className="navLeft">
+          <div className="navLogo">
+            <img src="/assets/full_logo_white.svg" />
+          </div>
+          <ul className="navLeft">
 
-        </ul>
-        <ul className="navRight">
-          
-          <li><a href="https://github.com/AndrewYW/harmony/" className="github">
-            <FontAwesomeIcon icon={['fab', 'github']} />
-            Github
+          </ul>
+        </section>
+        
+        <section className="navRight">
+          <ul>
+            <li><a href="https://github.com/AndrewYW/harmony/" className="fafaIcon">
+              <FontAwesomeIcon icon={['fab', 'github']} />
+              Github
           </a></li>
-          <li><a href="#" className="github">
-            <FontAwesomeIcon icon={['fab', 'linkedin']} />
-            LinkedIn
+            <li><a href="#" className="fafaIcon">
+              <FontAwesomeIcon icon={['fab', 'linkedin']} />
+              LinkedIn
           </a></li>
-        </ul>
+          </ul>
+        </section>     
       </nav>
     )
   }
 
   hero() {
     return (
-      <>
-        <section className="hero">
-          <h2>It's time to ditch Skype and TeamSpeak.</h2>
-          <p>All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
-              Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.
-          </p>
-          <a className="demoLogin" href="#">Login as Demo User</a>
-          <a className="discordLink" href="https://discordapp.com/">Visit actual Discord</a>
-        </section>
-      </>
+      <section className="hero">
+        <h2>It's time to ditch Skype and TeamSpeak.</h2>
+        <p>All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
+            Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.
+        </p>
+        <a className="demoLogin" href="#">Login as Demo User</a>
+        <a className="discordLink" href="https://discordapp.com/">Visit actual Discord</a>
+      </section>
     )
   }
   images() {
     return (
-      <section style={{ backgroundColor: "rgb(37,38,42)" }} className="splashImages">
+      <section className="splashImages">
         <ul>
           <img className="x0" src="/assets/splash/x.svg" />
           <img className="x1" src="/assets/splash/x.svg" />
@@ -111,14 +113,12 @@ class Splash extends React.Component {
   }
   render() {
     return (
-      <>
-        <section className="splash">
-          {this.navbar()}
-          {this.hero()}
-          {this.images()}
-          {this.footer()}
-        </section>
-      </>
+      <section className="splash">
+        {this.navbar()}
+        {this.hero()}
+        {this.images()}
+        {this.footer()}
+      </section>
     )
   }
 }
