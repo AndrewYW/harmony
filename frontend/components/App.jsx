@@ -1,8 +1,8 @@
 import React from 'react';
-import NavContainer from './navbar/navbar_container';
+import SplashContainer from './splash/splash_container';
 const App = () => (
   <div>
-    <NavContainer />
+    <SplashContainer />
     <h1>Harmony App component</h1>
   </div>
 );

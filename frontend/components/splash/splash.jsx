@@ -6,11 +6,11 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 
 library.add(fab);
 
-const Navbar = ({ currentUser }) => {
-  const navbar = () => (
+const Splash = ({ currentUser }) => {
+  const splash = () => (
     <nav className="Navbar">
       <div className="navLogo">
-        <img src="" alt=""/>
+        <img src="/assets/favicon.png" alt=""/>
       </div>
       <ul className="navLeft">
       
@@ -23,7 +23,7 @@ const Navbar = ({ currentUser }) => {
     </nav>
   )
 
-  return currentUser ? null : navbar();
+  return currentUser ? null : splash();
 };
 
-export default Navbar;
+export default Splash;
