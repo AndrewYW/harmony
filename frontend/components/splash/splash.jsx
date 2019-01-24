@@ -60,6 +60,7 @@ class Splash extends React.Component {
     )
   }
   images() {
+    // Order of the more unique images is important
     return (
       <div className="splashImages">
         <div className="splash-shadow"></div>
