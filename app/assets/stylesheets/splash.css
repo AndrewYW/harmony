@@ -1,44 +1,72 @@
 /* Splash Page */
 .splash {
-  color: rgb(226, 226, 226);
+  color: white;
   min-width: 1000px;
+  font-family: 'Whitney',
+    'Helvetica Neue',
+    Helvetica,
+    Arial,
+    sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
 }
 
 /* navbar */
-.Navbar {
+ul {
+  list-style-type: none;
+}
 
+.Navbar {
+  /* display:flex;
+  justify-content: space-between; */
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.navLeft li {
+  float: left;
+}
+
+.navRight li {
+  float: right;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li a {
+  margin-top: 13px;
+  padding: 5px;
+  padding-top: 0;
 }
 
 .navLogo {
   display: flex;
   align-items: center;
   position: relative;
-  width: 131px;
+  width: 135px;
   margin-right: 12px;
-  
 }
 
-.navLeft {
-
-}
+/* MAIN CONTENT */
 
 .mainContent {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center
+  text-align: center;
 }
 /* hero */
-.hero{
-  font-family: 'Whitney', Helvetica Neue, Helvetica, Arial, sans-serif;
-}
 
 .heroHeader {
   font-size: 36px;
   font-weight: 700;
   line-height: 44px;
-
 }
 
 .hero p {
@@ -59,13 +87,6 @@
   height: 45px;
   text-align: center;
   display: block; */
-  font-family: Whitney,
-  Helvetica Neue,
-  Helvetica,
-  Arial,
-  sans-serif;
-}
-.navRight {
 
 }
 
@@ -240,7 +261,7 @@ width: 100%;
 
 /* footer */
 
-footer p {
+footer {
   font-size: 12px;
   color: #99AAB5;
   text-align: center;

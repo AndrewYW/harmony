@@ -19,24 +19,26 @@ class Splash extends React.Component {
   navbar() {
     return (
       <nav className="Navbar">
-        <div className="navLeft">
-          <div className="navLogoWrapper">
-            <img className="navLogo" src={window.fullLogoURL} />
-          </div>
+        <div className="navL">
           <ul className="navLeft">
-
+            <li>
+              <div className="navLogoWrapper">
+                <img className="navLogo" src={window.fullLogoURL} />
+              </div>
+            </li>
+            <li><a href="#">WIKI</a></li>
+            <li><a href="#">TESTY</a></li>
+            <li><a href="#">THONKY</a></li>
           </ul>
         </div>
         
-        <div className="navRight">
-          <ul>
+        <div className="navR">
+          <ul className="navRight">
             <li><a href="https://github.com/AndrewYW/harmony/" className="fafaIcon">
               <FontAwesomeIcon icon={['fab', 'github']} />
-              Github
           </a></li>
             <li><a href="#" className="fafaIcon">
               <FontAwesomeIcon icon={['fab', 'linkedin']} />
-              LinkedIn
           </a></li>
           </ul>
         </div>     
@@ -107,7 +109,7 @@ class Splash extends React.Component {
     return (
       <>
         <div className="footerLeft">
-          <h3>Ready to try Harmony? It's free!</h3>
+          <h2>Ready to try Harmony? It's free!</h2>
           <h4>JOIN OVER 150 MILLION PLAYERS TODAY</h4>
         </div>
         <div className="footerRight">
