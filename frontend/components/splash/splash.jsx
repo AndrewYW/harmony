@@ -40,6 +40,9 @@ class Splash extends React.Component {
             <li><a href="#" className="fafaIcon">
               <FontAwesomeIcon icon={['fab', 'linkedin']} />
           </a></li>
+          <li>
+            <div><Link className="loginButton" to="/login">Login</Link></div>
+          </li>
           </ul>
         </div>     
       </nav>
