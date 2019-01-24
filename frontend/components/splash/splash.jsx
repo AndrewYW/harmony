@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-
+import { login } from '../../actions/session_actions';
 library.add(fab);
 
 class Splash extends React.Component {
@@ -12,115 +12,133 @@ class Splash extends React.Component {
 
   }
 
+  // demoLogin() {
+  //   const user = {email: "demoemail", password: "demopassword"};
+  //   window.dispatch(login(user));
+  // }
   navbar() {
     return (
       <nav className="Navbar">
-        <section className="navLeft">
-          <div className="navLogo">
-            <img src="/assets/full_logo_white.svg" />
-          </div>
+        <div className="navL">
           <ul className="navLeft">
-
+            <li>
+              <div className="navLogoWrapper">
+                <img className="navLogo" src={window.fullLogoURL} />
+              </div>
+            </li>
+            <li><a href="#">WIKI</a></li>
+            <li><a href="#">TESTY</a></li>
+            <li><a href="#">THONKY</a></li>
           </ul>
-        </section>
+        </div>
         
-        <section className="navRight">
-          <ul>
+        <div className="navR">
+          <ul className="navRight">
             <li><a href="https://github.com/AndrewYW/harmony/" className="fafaIcon">
               <FontAwesomeIcon icon={['fab', 'github']} />
-              Github
           </a></li>
             <li><a href="#" className="fafaIcon">
               <FontAwesomeIcon icon={['fab', 'linkedin']} />
-              LinkedIn
           </a></li>
+          <li>
+            <div><Link className="loginButton" to="/login">Login</Link></div>
+          </li>
           </ul>
-        </section>     
+        </div>     
       </nav>
     )
   }
 
   hero() {
     return (
-      <section className="hero">
-        <h2>It's time to ditch Skype and TeamSpeak.</h2>
-        <p>All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
+      <div className="hero">
+        <h1 className="heroHeader">It's time to ditch Skype and TeamSpeak.</h1>
+        <p className="heroText">All-in-one voice and text chat for gamers that's free, secure, and works on both your desktop and phone.
+            <br/>
             Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.
         </p>
-        <a className="demoLogin" href="#">Login as Demo User</a>
-        <a className="discordLink" href="https://discordapp.com/">Visit actual Discord</a>
-      </section>
+        <div className="heroButtons">
+          <Link className="demoLogin" to="/channels/@me" >Login as demo user</Link>
+          <a className="discordLink" href="https://discordapp.com/">Visit actual Discord</a>
+        </div>
+      </div>
     )
   }
   images() {
+    // Order of the more unique images is important
     return (
-      <section className="splashImages">
-        <ul>
-          <img className="x0" src="/assets/splash/x.svg" />
-          <img className="x1" src="/assets/splash/x.svg" />
-          <img className="x2" src="/assets/splash/x.svg" />
+      <div className="splashImages">
+        <div className="splash-shadow"></div>
+        <img className="x0 splashShape" src={window.xURL} />
+        <img className="x1 splashShape" src={window.xURL} />
 
-          <img className="o0" src="/assets/splash/o.svg" />
-          <img className="o1" src="/assets/splash/o.svg" />
-          <img className="o2" src="/assets/splash/o.svg" />
+        <img className="o0 splashShape" src={window.oURL} />
+        <img className="o1 splashShape" src={window.oURL} />
+        <img className="o2 splashShape" src={window.oURL} />
 
-          <img className="dot0" src="/assets/splash/dot.svg" />
-          <img className="dot1" src="/assets/splash/dot.svg" />
-          <img className="dot2" src="/assets/splash/dot.svg" />
-          <img className="dot3" src="/assets/splash/dot.svg" />
-          <img className="dot4" src="/assets/splash/dot.svg" />
+        <img className="dot0 splashShape" src={window.dotURL} />
+        <img className="dot1 splashShape" src={window.dotURL} />
+        <img className="dot2 splashShape" src={window.dotURL} />
+        <img className="dot3 splashShape" src={window.dotURL} />
+        <img className="dot4 splashShape" src={window.dotURL} />
 
-          <img className="square0" src="/assets/splash/square.svg" />
-          <img className="square1" src="/assets/splash/square.svg" />
-          <img className="square2" src="/assets/splash/square.svg" />
+        <img className="square0 splashShape" src={window.squareURL} />
+        <img className="square1 splashShape" src={window.squareURL} />
+        <img className="square2 splashShape" src={window.squareURL} />
 
-          <img className="tri0" src="/assets/splash/tri.svg" />
-          <img className="tri1" src="/assets/splash/tri.svg" />
-          <img className="tri2" src="/assets/splash/tri.svg" />
+        <img className="tri0 splashShape" src={window.triURL} />
+        <img className="tri1 splashShape" src={window.triURL} />
+        <img className="tri2 splashShape" src={window.triURL} />
 
-          <img className="coin0" src="/assets/splash/coin.svg" />
-          <img className="coin1" src="/assets/splash/coin.svg" />
-          <img className="coin1" src="/assets/splash/coin.svg" />
+        <img className="bomb" src={window.bombURL} alt="bomb" />
+        <img className="coin0" src={window.coinURL} />
+        <img className="coin1" src={window.coinURL} />
 
-          <img className="android" src="/assets/splash/android.svg" alt="android" />
-          <img className="iphone" src="/assets/splash/iphone.svg" alt="iphone" />
-          <img className="controller" src="/assets/splash/controller.svg" alt="controller" />
-          <img className="shield" src="/assets/splash/disc.svg" alt="shield" />
-          <img className="cartridge" src="/assets/splash/gba_cartridge.svg" alt="cartridge" />
-          <img className="headphones" src="/assets/splash/headphones.svg" alt="headphones" />
-          <img className="laptop" src="/assets/splash/laptop.svg" alt="laptop" />
-          <img className="monitor" src="/assets/splash/monitor.svg" alt="monitor" />
-          <img className="spawnerbox" src="/assets/splash/spawnerbox.svg" alt="spawnerbox" />
-          <img className="vial" src="/assets/splash/vial.svg" alt="vial" />
-          <img className="bomb" src="/assets/splash/bomb.svg" alt="bomb" />
-        </ul>
-      </section>
+        <img className="cartridge" src={window.cartridgeURL} alt="cartridge" />
+        <img className="spawnerbox" src={window.spawnerboxURL} alt="spawnerbox" />
+        <img className="monitor" src={window.monitorURL} alt="monitor" />
+        <img className="shield" src={window.discURL} alt="shield" />
+        <img className="laptop" src={window.laptopURL} alt="laptop" />
+        <img className="vial" src={window.vialURL} alt="vial" />
+        <img className="android" src={window.androidURL} alt="android" />
+        <img className="iphone" src={window.iphoneURL} alt="iphone" />
+        <img className="controller" src={window.controllerURL} alt="controller" />
+        <img className="headphones" src={window.headphonesURL} alt="headphones" />
+      </div>
     )
   }
 
   footer() {
     return (
       <>
-        <section className="footerLeft">
-          <h3>Ready to try Harmony? It's free!</h3>
+        <div className="footerLeft">
+          <h2>Ready to try Harmony? It's free!</h2>
           <h4>JOIN OVER 150 MILLION PLAYERS TODAY</h4>
-        </section>
-        <section className="footerRight">
+        </div>
+        <div className="footerRight">
           <Link className="footerRegister" to="/register" >Sign Up Now</Link>
-        </section>
+        </div>
       </>
     )
   }
   render() {
     return (
       <section className="splash">
-        {this.navbar()}
-        {this.hero()}
-        {this.images()}
-        {this.footer()}
+        <section className="header">
+          {this.navbar()}
+        </section>
+        <section className="mainContent">
+          {this.hero()}
+          {this.images()}
+        </section>
+        <section className="footer">
+          {this.footer()}
+        </section>
       </section>
     )
   }
+
+  
 }
 
 export default Splash;

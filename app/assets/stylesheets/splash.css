@@ -1,14 +1,317 @@
 /* Splash Page */
 .splash {
-  color: #FFFFFF;
+  color: white;
+  min-width: 1000px;
+  font-family: 'Whitney',
+    'Helvetica Neue',
+    Helvetica,
+    Arial,
+    sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
 }
 
-.Navbar {}
+/* navbar */
+ul, ol {
+  list-style-type: none;
+}
 
-.navLogo {}
+.Navbar {
+  /* display:flex;
+  justify-content: space-between; */
+  margin-left: 100px;
+  margin-right: 100px;
+}
+.navLeft li {
+  float: left;
+}
 
-.navLeft {}
+.navRight li {
+  float: right;
+}
 
-.navRight {}
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-.splashImages {}
+li a {
+  margin-top: 13px;
+  padding: 5px;
+  padding-top: 0;
+  text-decoration: none;
+  color: white;
+  opacity: .8;
+  margin-right: 8px;
+}
+
+li a:hover {
+  opacity: 1;
+}
+
+.navLogo {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 135px;
+  margin-right: 12px;
+}
+
+.loginButton {
+  border: 2px solid hsla(0, 0%, 100%, .8);
+  border-radius: 20px;
+  opacity: .3;
+  font-size: 100%;
+  padding: 5px 17px 7px;
+  line-height: 24px;
+  margin-right: 18px;
+  vertical-align: baseline;
+}
+
+.loginButton:visited, .loginButton:hover {
+  color: white;
+  opacity: .5;
+}
+
+/* MAIN CONTENT */
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/* hero */
+
+.heroHeader {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 44px;
+}
+
+.hero p {
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 12px;
+  line-height: 24px;
+  opacity: .5;
+}
+
+.heroButtons {
+  display: flex;
+  justify-content: center;
+}
+
+.demoLogin, .discordLink {
+  border: 2px ;
+  border-radius: 3px;
+  padding: 5px;
+  display: inline-flex;
+  line-height: 35px;
+  text-decoration: none;
+  width: 240px;
+  height: 35px;
+  text-align: center; 
+  display: block;
+  position: relative;
+  margin: 0 10px 0 10px;
+}
+
+.demoLogin, .demoLogin:visited {
+  background-color: #fff;
+  color: #000;
+}
+
+.demoLogin:hover, .discordLink:hover {
+  top: 1px;
+}
+.discordLink, discordLink:visited {
+  background-color: #7289DA;
+  color: #fff;
+}
+
+
+
+/* splash images */
+.splashImages {
+display: flex;
+position: relative;
+align-items: flex-end;
+justify-content: center;
+height: 638px;
+width: 100%;
+}
+
+.splashImages img {
+  position: absolute;
+}
+
+.splash-shadow {
+  background-color: rgba(0, 0, 0, .1);
+  border-radius: 50px;
+  height: 50px;
+  width: 1300px;
+}
+
+.splashShape {
+  opacity: .3;
+}
+
+.dot0 {
+  top: 0px;
+  left: 634px;
+}
+
+.dot1 {
+  top: 0px;
+  right: 383px;
+}
+
+.dot2{
+  top: 100px;
+  right: 733px;
+}
+
+.dot3{
+  bottom: 200px;
+  left: 354px;
+}
+
+.dot4 {
+  bottom: 140px;
+  right: 293px;
+}
+
+.x0 {
+  top: 90px;
+  left: 374px;
+}
+
+.x1 {
+  bottom: 220px;
+  right: 373px;
+}
+
+.o0 {
+  top: 70px;
+  left: 594px;
+}
+
+.o1 {
+  bottom: 88px;
+  left: 754px;
+}
+
+.o2 {
+  bottom: 280px;
+  right: 338px;
+}
+
+.tri0 {
+  top: 50px;
+  left: 984px;
+}
+
+.tri1 {
+  top: 152px;
+  left: 664px;
+}
+
+.tri2 {
+  bottom: 300px;
+  left: 374px;
+}
+
+.square0 {
+  top: 0px;
+  right: 583px;
+}
+
+.square1 {
+  top: 200px;
+  right: 483px;
+}
+
+.square2 {
+  bottom: 92px;
+  left: 970px;
+}
+
+.coin0 {
+  top: 24px;
+  right: 793px;
+}
+
+.coin1 {
+  top: 253px;
+  left: 525px;
+}
+
+.android {
+  bottom: 10px;
+  left: 405px;
+}
+.vial {
+  bottom: 10px;
+  left: 344px;  
+}
+
+.iphone {
+  bottom: 10px;
+  left: 550px;
+}
+
+.controller {
+  bottom: 10px;
+  left: 700px;
+}
+
+.monitor {
+  bottom: 10px;
+}
+
+.laptop {
+  bottom: 10px;
+  right: 348px;
+}
+
+.headphones {
+  bottom: 176px;
+  height: 200px;
+  right: 560px;
+}
+
+.bomb {
+  top: 217px;
+  left: 472px;
+}
+
+.shield {
+  bottom: 10px;
+  right: 305px;
+}
+
+.spawnerbox {
+  bottom: 462px;
+  left: 714px;
+}
+
+.cartridge {
+  top: 142px;
+  right: 611px;
+}
+
+/* footer */
+
+footer div{
+  font-size: 12px;
+  color: #99AAB5;
+  text-align: center;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  vertical-align: middle;
+} 
