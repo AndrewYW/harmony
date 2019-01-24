@@ -17,9 +17,13 @@
 
  html {
    background-color: #26262B;
+   height: 100%;
  }
 
  body {
-   margin-left: 142px;
-   margin-right: 165px;
+   line-height: 1.15;
+ }
+
+ #root{
+   height: 100%;
  }
