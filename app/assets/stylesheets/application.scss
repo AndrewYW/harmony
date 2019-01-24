@@ -15,15 +15,49 @@
  *= require_self
  */
 
- html {
-   background-color: #26262B;
+@font-face {
+  font-family: "Whitney";
+  src: font-url("whitney.ttf") format("ttf");
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Whitney";
+  src: font-url("Whitney-Medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Whitney";
+  src: font-url("Whitney-Bold.otf") format("otf");
+  font-weight: 700;
+}
+
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,form,label,article,aside,
+canvas,figure,footer,header,nav,section,ul,ol,li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+
+ html, body {
+   line-height: 1.15;
    height: 100%;
+   margin: 0;
  }
 
+
  body {
+   font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-weight: 400;
    line-height: 1.15;
  }
 
- #root{
+ #root {
    height: 100%;
  }

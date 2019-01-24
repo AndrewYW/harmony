@@ -1,0 +1,133 @@
+#root{
+  background-image: image_url('session/background.jpg');
+  background-position: center bottom;
+}
+
+.session-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  color: #FFFFFF;
+  height: 100%;
+  width: 100%;
+  overflow: hidden; 
+  line-height: 100%;
+}
+
+.session-logo{
+  height: 50px;
+  padding-top: 100px;
+}
+
+.session-form {
+  display: flex;
+  vertical-align: center;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+  width: 480px;
+  height: 420px;
+  background: #36393f;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .2);
+  box-sizing: border-box;
+  margin: 40px;
+  background-color: rgb(49, 51, 57);
+}
+
+.session-form h1{
+  font-size: 26px;
+  line-height: 32px;
+  margin-bottom: 8px;
+  font-weight: 300;
+  padding-top: 45px;
+}
+
+.session-form h3{
+  font-size: 18px;
+  color: #72767d;
+  line-height: 22px;
+  font-weight: 350;
+  border: 0;
+  margin-bottom: 8px;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+.session-form label{
+  color: #b9bbbe;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  flex: 1;
+  margin-bottom: 8px;
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 12px;
+  margin: 0;
+  padding: 6px 0 7px 0;
+  text-align: left;
+  display: block;
+}
+
+div input {
+  background-color: rgba(0, 0, 0, .1);
+  border: 1px solid rgba(0, 0, 0, .3);
+  color: #f6f6f7;
+  height: 40px;
+  padding: 10px;
+  border-radius: 3px;
+  box-sizing: border-box;
+  width: 400px;
+  font-size: 16px;
+  outline: none;
+  transition: border .15s ease;
+}
+
+div input:hover {
+  border-color: #040405;
+}
+
+div input:focus {
+  border-color: #7289da;
+}
+
+
+.formButton {
+  border: none;
+  border-radius: 3px;
+  background-color: #7289da;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 20px;
+  margin-bottom: 12px;
+  width: 400px;
+  height: 44px;
+}
+
+.formButton:hover {
+  background-color: #677bc4;
+}
+
+.lonk {
+  color: #7289da;
+  font-size: 14px;
+}
+
+.lonk:hover {
+  text-decoration: underline;
+}
+
+.session-form p {
+  color: #72767d;
+  margin-top: 20px;
+}
+
+.loginP {
+  font-size: 14px;
+}
+
+.registerP {
+  font-size: 12px;
+}

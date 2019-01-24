@@ -1,12 +1,11 @@
+#root {
+background-color: #26262B;
+}
 /* Splash Page */
 .splash {
+  background-color: #26262b;
   color: white;
   min-width: 1000px;
-  font-family: 'Whitney',
-    'Helvetica Neue',
-    Helvetica,
-    Arial,
-    sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,22 +13,22 @@
 }
 
 /* navbar */
+ul {
+  display: flex;
+  flex-direction: row;
+}
 ul, ol {
   list-style-type: none;
 }
 
 .Navbar {
-  /* display:flex;
-  justify-content: space-between; */
-  margin-left: 100px;
-  margin-right: 100px;
-}
-.navLeft li {
-  float: left;
+  display:flex;
+  justify-content: space-between;
+  margin: 0 150px 0 150px;
 }
 
-.navRight li {
-  float: right;
+.header{
+  margin-bottom: 90px;
 }
 
 li {
@@ -53,6 +52,7 @@ li a:hover {
 }
 
 .navLogo {
+  margin-top: 10px;
   display: flex;
   align-items: center;
   position: relative;
@@ -65,6 +65,7 @@ li a:hover {
   border-radius: 20px;
   opacity: .3;
   font-size: 100%;
+  margin-top: 10px;
   padding: 5px 17px 7px;
   line-height: 24px;
   margin-right: 18px;
@@ -102,6 +103,7 @@ li a:hover {
 }
 
 .heroButtons {
+  margin-top: 20px;
   display: flex;
   justify-content: center;
 }
@@ -307,11 +309,50 @@ width: 100%;
 
 /* footer */
 
-footer div{
+.splash-footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0 150px 0 150px;
+}
+.splash-footer div {
   font-size: 12px;
-  color: #99AAB5;
-  text-align: center;
   margin-top: 20px;
   padding-bottom: 20px;
   vertical-align: middle;
-} 
+  
+}  
+
+.footerRegister {
+  border: 0;
+  border-radius: 3px;
+  padding: 16px;
+  display: inline-flex;
+  line-height: 15px;
+  text-decoration: none;
+  width: 90px;
+  height: 15px;
+  text-align: center;
+  display: block;
+  position: relative;
+  margin: 0;
+  background-color: #7289DA;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 350;
+}
+.footerRegister:hover {
+  bottom: 1px;
+}
+
+.splash-footer div h2 {
+  font-size: 26px;
+  line-height: 34px;
+  color: #fff;
+}
+
+.splash-footer div h3 {
+  font-size: 14px;
+  margin-top: 4px;
+  color: #99aab5;
+}

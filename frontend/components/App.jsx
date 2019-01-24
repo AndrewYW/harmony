@@ -7,12 +7,12 @@ import RegisterFormContainer from './session_form/register_form_container';
 import test from './channels/me';
 
 const App = () => (
-  <div>
+  <Switch>
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/register" component={RegisterFormContainer} />
     <ProtectedRoute exact path="/channels/@me" component={test} />
     <Route exact path="/" component={SplashContainer}></Route>
-  </div>
+  </Switch>
 );
 
 export default App;
