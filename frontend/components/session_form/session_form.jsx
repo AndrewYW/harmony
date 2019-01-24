@@ -31,71 +31,65 @@ class SessionForm extends React.Component {
   formHeader() {
     if (this.formType()) {
       return (
-        <div className="formHeader">
+        <>
           <h1>Welcome back!</h1>
-          <h2>We're so excited to see you again!</h2>
-        </div>
+          <h3>We're so excited to see you again!</h3>
+        </>
       )
     } else {
       return (
-        <div className="formHeader">
           <h1>Create an account</h1>
-        </div>
       )
     }
   }
 
   usernameLabel() {
     return (
-      <label>USERNAME
-        <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
-      </label>
+      <>
+        <label>USERNAME</label>
+        <input className="formInput" type="text" value={this.state.username} onChange={this.handleChange('username')} />
+      </>
     )
   }
   formContent() {
     return (
-      <div>
-        <form className="formEl">
-          <label>EMAIL
-              <input type="text" value={this.state.email} onChange={this.handleChange('email')} />
-          </label>
-          {this.formType() ? <></> : this.usernameLabel() }
-          <label>PASSWORD
-              <input type="text" value={this.state.password} onChange={this.handleChange('password')} />
-          </label>
-          <input type="submit" value={this.formType() ? "Login": "Continue"} onClick={this.handleSubmit} />
+        <form className="session-form">
+          {this.formHeader()}
+          <label>EMAIL</label>
+          <input className="formInput" type="text" value={this.state.email} onChange={this.handleChange('email')} />
+
+          {this.formType() ? null : this.usernameLabel() }
+          <label>PASSWORD</label>
+          <input className="formInput" type="text" value={this.state.password} onChange={this.handleChange('password')} />
+          <input className="formButton" type="submit" value={this.formType() ? "Login": "Continue"} onClick={this.handleSubmit} />
+          {this.formFooter()}
         </form>
-      </div>
     )
   }
 
   formFooter() {
     if (this.formType()){
       return (
-        <div className="formFooter">
           <p>Need an account? <Link to='/register'>Register</Link></p>
-        </div>
       )
     } else {
       return (
-        <div className="formFooter">
+        <>
           <Link to='/login'>Already have an account?</Link>
           <p>By registering, you agree to Harmony's Terms of Service and Privacy Policy.</p>
-        </div>
+        </>
       )
     }
   }
 
   render() {
     return (
-      <section className="session_form">
-        <section className="sessionLogo">
-          
+      <section className="session-page">
+        <section className="header">
+          <img className="session-logo" src={window.fullLogoBlackURL} />
         </section>
-        <section className="sessionBlock">
-          {this.formHeader()}
+        <section className="main-content">
           {this.formContent()}
-          {this.formFooter()}
         </section>
       </section>
     )
