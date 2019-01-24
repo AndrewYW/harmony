@@ -113,7 +113,7 @@ class Splash extends React.Component {
       <>
         <div className="footerLeft">
           <h2>Ready to try Harmony? It's free!</h2>
-          <h4>JOIN OVER 150 MILLION PLAYERS TODAY</h4>
+          <h3>JOIN JUST ONE DEVELOPER TODAY</h3>
         </div>
         <div className="footerRight">
           <Link className="footerRegister" to="/register" >Sign Up Now</Link>
@@ -131,7 +131,7 @@ class Splash extends React.Component {
           {this.hero()}
           {this.images()}
         </section>
-        <section className="footer">
+        <section className="splash-footer">
           {this.footer()}
         </section>
       </section>

@@ -38,29 +38,36 @@ class SessionForm extends React.Component {
       )
     } else {
       return (
+        <>
           <h1>Create an account</h1>
+          <h3></h3>
+        </>
       )
     }
   }
 
   usernameLabel() {
     return (
-      <>
+      <div className="formInput">
         <label>USERNAME</label>
-        <input className="formInput" type="text" value={this.state.username} onChange={this.handleChange('username')} />
-      </>
+        <input type="text" value={this.state.username} onChange={this.handleChange('username')} />
+      </div>
     )
   }
   formContent() {
     return (
         <form className="session-form">
           {this.formHeader()}
-          <label>EMAIL</label>
-          <input className="formInput" type="text" value={this.state.email} onChange={this.handleChange('email')} />
+          <div className="formInput">
+            <label>EMAIL</label>
+            <input type="text" value={this.state.email} onChange={this.handleChange('email')} />
+          </div>
 
           {this.formType() ? null : this.usernameLabel() }
-          <label>PASSWORD</label>
-          <input className="formInput" type="text" value={this.state.password} onChange={this.handleChange('password')} />
+          <div className="formInput">
+            <label>PASSWORD</label>
+            <input type="text" value={this.state.password} onChange={this.handleChange('password')} />
+          </div>
           <input className="formButton" type="submit" value={this.formType() ? "Login": "Continue"} onClick={this.handleSubmit} />
           {this.formFooter()}
         </form>
@@ -70,13 +77,13 @@ class SessionForm extends React.Component {
   formFooter() {
     if (this.formType()){
       return (
-          <p>Need an account? <Link to='/register'>Register</Link></p>
+          <p className="loginP">Need an account? <Link className="lonk" to='/register'>Register</Link></p>
       )
     } else {
       return (
         <>
-          <Link to='/login'>Already have an account?</Link>
-          <p>By registering, you agree to Harmony's Terms of Service and Privacy Policy.</p>
+          <Link className="lonk" to='/login'>Already have an account?</Link>
+          <p className="registerP">By registering, you agree to Harmony's Terms of Service and Privacy Policy.</p>
         </>
       )
     }

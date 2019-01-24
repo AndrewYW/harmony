@@ -1,7 +1,6 @@
 #root{
   background-image: image_url('session/background.jpg');
-    background-position: center bottom;
-
+  background-position: center bottom;
 }
 .session-page {
   display: flex;
@@ -12,12 +11,13 @@
   height: 100%;
   width: 100%;
   min-height: 100%;
-  overflow:hidden; 
+  overflow: hidden; 
   line-height: 100%;
 }
 
 .session-logo{
   height: 50px;
+  padding-top: 50px;
 }
 
 .session-form {
@@ -40,10 +40,38 @@
   font-size: 26px;
   line-height: 32px;
   margin-bottom: 8px;
+  font-weight: 300;
+  padding-top: 45px;
+}
+
+.session-form h3{
+  font-size: 18px;
+  color: #72767d;
+  line-height: 22px;
+  font-weight: 400;
+  border: 0;
+  margin-bottom: 8px;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+.session-form label{
+  color: #b9bbbe;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  flex: 1;
+  // margin-bottom: 8px;
+  font-weight: 600;
+  line-height: 16px;
+  font-size: 12px;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  display: block;
 }
 
 
-.formInput {
+div input {
   background-color: rgba(0, 0, 0, .1);
   border: 1px solid rgba(0, 0, 0, .3);
   color: #f6f6f7;
@@ -57,11 +85,11 @@
   transition: border .15s ease;
 }
 
-.formInput:hover {
+div input:hover {
   border-color: #040405;
 }
 
-.formInput:focus {
+div input:focus {
   border-color: #7289da;
 }
 
@@ -81,4 +109,26 @@
 
 .formButton:hover {
   background-color: #677bc4;
+}
+
+.lonk {
+  color: #7289da;
+  font-size: 14px;
+}
+
+.lonk:hover {
+  text-decoration: underline;
+}
+
+.session-form p {
+  color: #72767d;
+  margin-top: 20px;
+}
+
+.loginP {
+  font-size: 14px;
+}
+
+.registerP {
+  font-size: 12px;
 }

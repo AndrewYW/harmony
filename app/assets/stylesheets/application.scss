@@ -33,15 +33,24 @@
   font-weight: 700;
 }
 
+html,body,div,span,h1,h2,h3,h4,h5,h6,p,a,form,label,article,aside,
+canvas,figure,footer,header,nav,section,ul,ol,li {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  text-decoration: none;
+  color: inherit;
+}
+
+
  html, body {
    line-height: 1.15;
    height: 100%;
    margin: 0;
  }
 
- html, body {
-   height: 100%;
- }
 
  body {
    font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
