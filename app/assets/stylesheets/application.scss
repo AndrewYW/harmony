@@ -15,7 +15,23 @@
  *= require_self
  */
 
+@font-face {
+  font-family: "Whitney";
+  src: font-url("whitney.ttf") format("ttf");
+  font-weight: 400;
+}
 
+@font-face {
+  font-family: "Whitney";
+  src: font-url("Whitney-Medium.otf");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "Whitney";
+  src: font-url("Whitney-Bold.otf") format("otf");
+  font-weight: 700;
+}
 
  html, body {
    line-height: 1.15;
@@ -23,6 +39,16 @@
    margin: 0;
  }
 
- #root{
+ html, body {
+   height: 100%;
+ }
+
+ body {
+   font-family: "Whitney", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   font-weight: 400;
+   line-height: 1.15;
+ }
+
+ #root {
    height: 100%;
  }
