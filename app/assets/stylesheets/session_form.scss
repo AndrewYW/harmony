@@ -2,22 +2,22 @@
   background-image: image_url('session/background.jpg');
   background-position: center bottom;
 }
+
 .session-page {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   color: #FFFFFF;
   height: 100%;
   width: 100%;
-  // min-height: 100%;
   overflow: hidden; 
   line-height: 100%;
 }
 
 .session-logo{
   height: 50px;
-  padding-top: 50px;
+  padding-top: 100px;
 }
 
 .session-form {
@@ -48,7 +48,7 @@
   font-size: 18px;
   color: #72767d;
   line-height: 22px;
-  font-weight: 400;
+  font-weight: 350;
   border: 0;
   margin-bottom: 8px;
   padding: 0;
@@ -60,16 +60,15 @@
   letter-spacing: .5px;
   text-transform: uppercase;
   flex: 1;
-  // margin-bottom: 8px;
-  font-weight: 600;
+  margin-bottom: 8px;
+  font-weight: 500;
   line-height: 16px;
   font-size: 12px;
   margin: 0;
-  padding: 0;
+  padding: 6px 0 7px 0;
   text-align: left;
   display: block;
 }
-
 
 div input {
   background-color: rgba(0, 0, 0, .1);
