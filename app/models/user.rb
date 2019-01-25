@@ -11,16 +11,17 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  discord_id      :string
 #
 
 class User < ApplicationRecord
-  validates :session_token, uniqueness: true
-  validates :username, :discriminator, :password_digest, :session_token, presence: true
+  validates :session_token, :discord_id, uniqueness: true
+  validates :username, :discriminator, :discord_id, :password_digest, :session_token, presence: true
   validates :password, length: {minimum: 6, allow_nil: true}
 
   attr_reader :password
 
-  after_initialize :ensure_session_token
+  after_initialize :ensure_session_token, :generate_discord_id
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)
@@ -59,5 +60,12 @@ class User < ApplicationRecord
       self.session_token = new_session_token
     end
     self.session_token
+  end
+
+  def generate_discord_id
+    begin
+      discord_id = "0" + 17.times.map{rand(10)}.join
+    end while User.where(discord_id: discord_id).exists?
+    self.discord_id ||= discord_id
   end
 end

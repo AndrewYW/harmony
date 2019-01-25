@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_170019) do
+ActiveRecord::Schema.define(version: 2019_01_25_155846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "server_members", force: :cascade do |t|
+    t.integer "member_id", null: false
+    t.integer "server_id", null: false
+    t.index ["member_id", "server_id"], name: "index_server_members_on_member_id_and_server_id", unique: true
+  end
+
+  create_table "servers", force: :cascade do |t|
+    t.integer "admin_id", null: false
+    t.string "name", null: false
+    t.string "image_url"
+    t.string "discord_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
@@ -24,6 +39,7 @@ ActiveRecord::Schema.define(version: 2019_01_22_170019) do
     t.string "session_token", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "discord_id", null: false
     t.index ["session_token"], name: "index_users_on_session_token", unique: true
     t.index ["username", "discriminator"], name: "index_users_on_username_and_discriminator", unique: true
   end
