@@ -6,7 +6,7 @@ class Api::ServersController < ApplicationController
   end
 
   def show
-    @server = current_user.find(params[:id])
+    @server = current_user.servers.find(params[:id])
     render 'api/servers/show'
   end
 
@@ -35,9 +35,12 @@ class Api::ServersController < ApplicationController
     end
   end
 
-
+  # leave for later implementation
   def destroy
-    @server =
+    @server = current_user.administrated_servers.find_by(discord_id: params[:discord_id])
+    @server.destroy
+
+    render 'api/servers/show'
   end
 
   private
