@@ -11,7 +11,7 @@
 #  session_token   :string           not null
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
-#  discord_id      :string
+#  discord_id      :string           not null
 #
 
 class User < ApplicationRecord
@@ -22,6 +22,20 @@ class User < ApplicationRecord
   attr_reader :password
 
   after_initialize :ensure_session_token, :generate_discord_id, :generate_discriminator
+
+  has_many :administrated_servers,
+    foreign_key: :admin_id,
+    class_name: :Server,
+    dependent: :destroy
+
+  has_many :server_memberships,
+    foreign_key: :member_id,
+    class_name: :ServerMember
+
+  has_many :servers,
+    through: :server_memberships,
+    source: :server
+
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

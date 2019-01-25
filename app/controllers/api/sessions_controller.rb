@@ -6,7 +6,6 @@ class Api::SessionsController < ApplicationController
     )
 
     if @user
-      puts "found user"
       login(@user)
       render "api/users/show"
     else

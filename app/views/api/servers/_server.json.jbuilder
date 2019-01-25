@@ -1,0 +1,1 @@
+json.extract! server, :name, :admin_id, :discord_id, :image_url
