@@ -1,1 +1,12 @@
-json.extract! user, :id, :username, :discriminator, :discord_id, :image_url
+json.user do 
+  json.extract! user, :id, :username, :discriminator, :discord_id
+  # json.image_url asset_path(user.image_url)
+end
+
+json.servers do 
+  user.servers.each do |server|
+    json.set! server.id do
+      json.partial! 'api/servers/server' server: server
+    end
+  end
+end
