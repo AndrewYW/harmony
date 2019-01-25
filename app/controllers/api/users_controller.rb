@@ -1,7 +1,7 @@
 class Api::UsersController < ApplicationController
   
   def create
-    @user = User.new(user_params.merge(random_discriminator))
+    @user = User.new(user_params)
 
     if @user.save
       login(@user)
@@ -18,9 +18,5 @@ class Api::UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:username, :password, :email)
-  end
-
-  def random_discriminator
-    {discriminator: 4.times.map{rand(10)}.join}
   end
 end
