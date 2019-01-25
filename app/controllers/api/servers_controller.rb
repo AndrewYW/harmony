@@ -17,7 +17,6 @@ class Api::ServersController < ApplicationController
     if @server.save
       current_user.servers << @server
       current_user.save
-      # add current server to user servers'
       # default channel later
       render 'api/servers/show'
     else

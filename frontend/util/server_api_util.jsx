@@ -5,6 +5,13 @@ export const fetchServers = () => (
   })
 )
 
+export const fetchServer = id => (
+  $.ajax({
+    method: "GET",
+    url: `/api/servers/${id}`
+  })
+)
+
 export const createServer = server => (
   $.ajax({
     method: "POST",

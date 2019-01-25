@@ -1,14 +1,14 @@
 import React from 'react';
 
-class test extends React.Component {
+class ServerIndex extends React.Component {
 
   render() {
     return (
       <div>
-        HELLO
+        HI THERE
       </div>
     )
   }
 }
 
-export default test;
+export default ServerIndex;

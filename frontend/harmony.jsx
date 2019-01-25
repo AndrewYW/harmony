@@ -1,8 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as SessionAPIUtil from './util/session_api_util';
+import * as ServerAPIUtil from './util/server_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
+import { fetchServer, fetchServers } from './actions/server_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -24,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
   window.register = SessionAPIUtil.register;
   window.login = SessionAPIUtil.login;
   window.logout = SessionAPIUtil.logout;
+  window.fetchServers = fetchServers;
+  window.fetchServer = fetchServer;
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   
