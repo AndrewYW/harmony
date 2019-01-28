@@ -1,0 +1,22 @@
+.server-index {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.server-sidebar {
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #202225;
+  width: 70px;
+  padding: 10px;
+}
+
+.channel-list {
+  background-color: rgb(46,49,54);
+  width: 240px;
+}
+
+.message-block {
+  width: 100%;
+  background-color: rgb(54,57,63);
+}

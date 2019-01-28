@@ -27,19 +27,29 @@ class ServerIndex extends React.Component {
     { console.log(Object.values(this.props.servers).map(server => server.discord_id))}
     
     return (
-      <div className="server-sidebar">
-        <Link to="/channels/@me">
-        asdfasdf
-        </Link>
-        <div className="server-split" />
-        <ul className="server-ul">
-          { servers }
-        </ul>
-        <button className="server-add-button"></button>
-        <div className="logout-button" onClick={this.props.logout}>
-          +
+      <div className="server-index">
+        <div className="server-sidebar">
+          <Link to="/channels/@me">
+            <div className="home-server">
+              <div className="server-name">Home</div>
+            </div>
+          </Link>
+          <div className="server-split" />
+          <ul className="server-ul">
+            { servers }
+          </ul>
+          <button className="server-add-button"></button>
+          <div className="logout-button" onClick={this.props.logout}>
+            +
+          </div>
+          {/* Modal here */}
         </div>
-        {/* Modal here */}
+        <div className="channel-list">
+        
+        </div>
+        <div className="message-block">
+        
+        </div>
       </div>
     )
   }
