@@ -19,11 +19,13 @@ class ServerIndex extends React.Component {
   }
 
   render() {
-    const servers = Object.values(this.props.servers).map(server => {
-      <Link key={server.id} to={`/channels/${server.discord_id}/}`} >
-        <ServerIndexItem server={server} />
+    const servers = Object.values(this.props.servers).map(server => (
+      <Link key={server.id} to={`/channels/${server.discord_id}/`} >
+        <ServerIndexItem server={server}>{server.name}</ServerIndexItem>
       </Link>
-    })
+    ));
+    { console.log(Object.values(this.props.servers).map(server => server.discord_id))}
+    
     return (
       <div className="server-sidebar">
         <Link to="/channels/@me">

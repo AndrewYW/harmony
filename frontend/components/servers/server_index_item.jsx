@@ -5,8 +5,8 @@ const ServerIndexItem = ({ server }) => {
   return (
     <li>
       {server.name[0]}
-      <div className="server-notifications">asdfasdf</div>
-      <div className="server-name">{servername}</div>
+      <div className="server-notifications">dddfdfd</div>
+      <div className="server-name">{server.name}</div>
     </li>
   )
 }
