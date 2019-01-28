@@ -3,7 +3,7 @@ import ServerIndex from './server_index';
 import { logout } from '../../actions/session_actions';
 import { fetchServers, fetchServer } from '../../actions/server_actions';
 
-const mstp = ({session, entitites}) => ({
+const mstp = ({session, entities}) => ({
   userId: session.id,
   servers: entities.servers,
 })

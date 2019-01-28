@@ -19,7 +19,7 @@ class ServerIndex extends React.Component {
     return (
       <div className="server-sidebar">
         <Link to="/channels/@me">
-
+        asdfasdf
         </Link>
         <div className="server-split" />
         <ul className="server-ul">
