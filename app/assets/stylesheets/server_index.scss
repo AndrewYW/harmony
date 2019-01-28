@@ -12,11 +12,77 @@
 }
 
 .channel-list {
+  box-sizing: border-box;
   background-color: rgb(46,49,54);
-  width: 240px;
+  width: 270px;
+  padding: 10px;
 }
 
 .message-block {
   width: 100%;
   background-color: rgb(54,57,63);
+}
+.home-link {
+  display: block;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  outline: none;
+  background-color: #2f3136;
+  background-image: image_url("users/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 33px,
+  33px;
+  transition: .25s cubic-bezier(0.64, 0.57, 0.67, 1.53);
+  position: relative;
+}
+
+.server-name {
+  visibility: hidden;
+  position: absolute;
+  top: 9px;
+  left: 58px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  padding: 8px 11px;
+  background-color: #000;
+  color: hsla(0, 0%, 100%, .9)
+}
+
+
+.server-add-button, .logout-button {
+  margin-top: 8px;
+  background: #202225;
+  border-color: #535559;
+  cursor: pointer;
+  border-radius: 50%;
+  border-style: dashed;
+  border-width: 1px;
+  font-size: 40px;
+  font-weight: 300;
+  height: 50px;
+  line-height: 100%;
+  text-align: center;
+  transition: border-color .25s ease, color .25s ease, opacity .25s ease;
+  width: 50px;
+  color: #535559;
+  outline: none;
+}
+
+.server-add-button:hover, .logout-button:hover {
+  opacity: .7;
+  border-color: #fff;
+  color: #fff;
+}
+
+
+.server-split {
+  background: #2f3136;
+  height: 2px;
+  width: 30px;
+  margin: 11px auto;
+  margin-bottom: 10px;
 }

@@ -24,7 +24,6 @@ class ServerIndex extends React.Component {
         <ServerIndexItem server={server}>{server.name}</ServerIndexItem>
       </Link>
     ));
-    { console.log(Object.values(this.props.servers).map(server => server.discord_id))}
     
     return (
       <div className="server-index">
@@ -38,18 +37,27 @@ class ServerIndex extends React.Component {
           <ul className="server-ul">
             { servers }
           </ul>
-          <button className="server-add-button"></button>
-          <div className="logout-button" onClick={this.props.logout}>
-            +
-          </div>
+          <button className="server-add-button">+</button>
+          <div className="server-split" />
+          <button className="logout-button" onClick={this.props.logout}>
+            L
+          </button>
           {/* Modal here */}
         </div>
         <div className="channel-list">
         
         </div>
         <div className="message-block">
-        
+          <div className="message-header">
+          
+          </div>
+          <div className="message-content">
+          
+          </div>
+          <div className="message-input">
+          </div>
         </div>
+
       </div>
     )
   }
