@@ -19,8 +19,19 @@
 }
 
 .message-block {
+  display: flex;
+  flex-direction: column;
+
   width: 100%;
   background-color: rgb(54,57,63);
+}
+
+.server-content {
+  width: 100%;
+}
+.server-members {
+  width: 80px;
+  background-color: rgb(46,49,54);
 }
 .home-link {
   display: block;

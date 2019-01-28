@@ -18,6 +18,16 @@ class ServerIndex extends React.Component {
     
   }
 
+  serverMembers() {
+    //render members of server if not in friends list
+
+    return (
+      <div className="server-members">
+
+      </div>
+    )
+  }
+
   render() {
     const servers = Object.values(this.props.servers).map(server => (
       <Link key={server.id} to={`/channels/${server.discord_id}/`} >
@@ -49,13 +59,18 @@ class ServerIndex extends React.Component {
         </div>
         <div className="message-block">
           <div className="message-header">
+            <div className="server-content">
+              <div className="message-content">
+
+              </div>
+              <div className="message-input">
+              </div>
+            </div>
+            {this.serverMembers()}
+          </div>
           
-          </div>
-          <div className="message-content">
+
           
-          </div>
-          <div className="message-input">
-          </div>
         </div>
 
       </div>
