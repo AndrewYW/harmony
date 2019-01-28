@@ -57,22 +57,18 @@ class ServerIndex extends React.Component {
         <div className="channel-list">
         
         </div>
-        <div className="message-block">
-          <div className="message-header">
-            <div className="server-content">
-              <div className="message-content">
-
-              </div>
-              <div className="message-input">
-              </div>
+        <div className="content-block">
+          <div className="content-header">
+            
+          </div>
+          <div className="content">
+            <div className="message-block">
+              <div className="message-feed"></div>
+              <div className="message-input"></div>
             </div>
             {this.serverMembers()}
           </div>
-          
-
-          
         </div>
-
       </div>
     )
   }
