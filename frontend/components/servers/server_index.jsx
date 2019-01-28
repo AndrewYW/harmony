@@ -20,10 +20,17 @@ class ServerIndex extends React.Component {
 
   serverMembers() {
     //render members of server if not in friends list
-
+    console.log("asddlkjasdf")
     return (
       <div className="server-members">
-
+        <ul>
+          <li className="server-member">donk</li>
+          <li className="server-member">donk</li>
+          <li className="server-member">donk</li>
+          <li className="server-member">donk</li>
+          <li className="server-member">donk</li>
+          <li className="server-member">donk</li>
+        </ul>
       </div>
     )
   }
@@ -54,8 +61,8 @@ class ServerIndex extends React.Component {
           </button>
           {/* Modal here */}
         </div>
-        <div className="channel-list">
-        
+        <div className="channel-block">
+          <div className="channel-header"></div>
         </div>
         <div className="content-block">
           <div className="content-header">
