@@ -1,6 +1,18 @@
 #root {
 background-color: #26262B;
 }
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translate(0px, -5px);
+  }
+
+  50% {
+    transform: translate(0px, 5px)
+  }
+}
+
 /* Splash Page */
 .splash {
   background-color: #26262b;
@@ -246,11 +258,13 @@ width: 100%;
 .coin0 {
   top: 24px;
   right: 793px;
+  animation: bounce 3s infinite;
 }
 
 .coin1 {
   top: 253px;
   left: 525px;
+  animation: bounce 3s infinite;
 }
 
 .android {
@@ -290,6 +304,8 @@ width: 100%;
 .bomb {
   top: 217px;
   left: 472px;
+  animation: bounce 3s infinite;
+  animation-delay: .4s;
 }
 
 .shield {
@@ -305,6 +321,7 @@ width: 100%;
 .cartridge {
   top: 142px;
   right: 611px;
+  animation: bounce 3s infinite;
 }
 
 /* footer */

@@ -1,4 +1,4 @@
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 import ServerIndex from './server_index';
 import { logout } from '../../actions/session_actions';
 import { fetchServers, fetchServer } from '../../actions/server_actions';
