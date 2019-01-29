@@ -32,15 +32,22 @@ server1 = Server.new({
   owner: demouser
 })
 
+server2 = Server.new({
+  name: "server 2",
+  admin_id: demouser.id,
+  owner: demouser
+})
+
 home.save!
 server1.save!
+server2.save!
 
-admin.servers += [home, server1]
-tester.servers += [home]
-demouser.servers += [home, server1]
+admin.servers += [server1]
+demouser.servers += [server1, server2]
 
 admin.save!
 tester.save!
 demouser.save!
 home.save!
 server1.save!
+server2.save!

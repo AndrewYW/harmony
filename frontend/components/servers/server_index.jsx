@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import ServerIndexItem from './server_index_item';
+import ServerDetail from './server_detail_container';
 class ServerIndex extends React.Component {
 
   constructor(props) {
@@ -20,7 +21,7 @@ class ServerIndex extends React.Component {
   }
 
   openServerModal() {
-    
+
   }
   serverMembers() {
     //render members of server if not in friends list
@@ -52,7 +53,7 @@ class ServerIndex extends React.Component {
       <div className="server-index">
         <div className="server-sidebar">
           <ul className="server-ul">
-            <Link to="/channels/@me">
+            <Link to="/channels/@me" className="home-link">
               <li>
                 H
                 <div className="server-name">Home</div>
@@ -73,23 +74,11 @@ class ServerIndex extends React.Component {
           </button>
           {/* Modal here */}
         </div>
-        <div className="channel-block">
-          <div className="channel-header"></div>
-        </div>
-        <div className="content-block">
-          <div className="content-header">
-            
-          </div>
-          <div className="content">
-            <div className="message-block">
-              <div className="message-feed"></div>
-              <div className="message-split" />
 
-              <div className="message-input"></div>
-            </div>
-            {this.serverMembers()}
-          </div>
-        </div>
+
+        <ServerDetail />
+
+
       </div>
     )
   }

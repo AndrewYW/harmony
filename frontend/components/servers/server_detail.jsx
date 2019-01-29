@@ -40,6 +40,7 @@ class ServerDetail extends React.Component {
           <div className="content">
             <div className="message-block">
               <div className="message-feed"></div>
+              <div className="message-split"></div>
               <div className="message-input"></div>
             </div>
             {this.serverMembers()}
@@ -50,4 +51,4 @@ class ServerDetail extends React.Component {
   }
 }
 
-export default ServerDetail;
+export default withRouter(ServerDetail);

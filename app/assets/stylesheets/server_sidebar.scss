@@ -13,6 +13,10 @@
   color: hsla(0, 0%, 100%, .9)
 }
 
+.server-ul {
+  display: block;
+}
+
 .server-ul a {
   margin-top: 8px;
   background: #0d0e0f;
@@ -36,7 +40,29 @@
   border-radius: 15px;
   border-color: white;
 }
-
+.server-ul .home-link {
+  border-radius: 15px;
+}
 a:hover .server-name, button:hover .server-name {
   visibility: visible;
+}
+
+.server-add-button,
+.logout-button {
+  margin-top: 8px;
+  background: #202225;
+  border-color: #535559;
+  cursor: pointer;
+  border-radius: 50%;
+  border-style: dashed;
+  border-width: 1px;
+  font-size: 40px;
+  font-weight: 300;
+  height: 50px;
+  line-height: 100%;
+  text-align: center;
+  transition: border-color .25s ease, color .25s ease, opacity .25s ease;
+  width: 50px;
+  color: #535559;
+  outline: none;
 }
