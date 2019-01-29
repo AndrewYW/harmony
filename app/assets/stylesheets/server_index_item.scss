@@ -1,0 +1,42 @@
+.server-name {
+  visibility: hidden;
+  position: absolute;
+  // display: float;
+  top: 9px;
+  left: 58px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 14px;
+  padding: 8px 11px;
+  background-color: #000;
+  color: hsla(0, 0%, 100%, .9)
+}
+
+.server-ul a {
+  margin-top: 8px;
+  background: #0d0e0f;
+  background-color: #7289DA;
+  border-color: #535559;
+  cursor: pointer;
+  border-radius: 50%;
+  border-width: 1px;
+  font-size: 40px;
+  font-weight: 300;
+  height: 50px;
+  line-height: 100%;
+  text-align: center;
+  transition:  border-radius .25s ease;
+  width: 50px;
+  color: #535559;
+  outline: none;
+}
+
+.server-ul a:hover {
+  border-radius: 15px;
+  border-color: white;
+}
+
+a:hover .server-name, button:hover .server-name {
+  visibility: visible;
+}

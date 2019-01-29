@@ -6,21 +6,24 @@ class ServerIndex extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      servers: props.servers,
+      servers: {},
+      currentServer: {},
     }
+
+    this.openServerModal = this.openServerModal.bind(this);
   }
   componentDidMount() {
     this.props.fetchServers();
-
+    this.setState({
+      currentServer: this.state.servers['1'],
+    })
   }
 
-  componentDidUpdate() {
+  openServerModal() {
     
   }
-
   serverMembers() {
     //render members of server if not in friends list
-    console.log("asddlkjasdf")
     return (
       <div className="server-members">
         <ul>
@@ -36,28 +39,37 @@ class ServerIndex extends React.Component {
   }
 
   render() {
-    const servers = Object.values(this.props.servers).map(server => (
-      <Link key={server.id} to={`/channels/${server.discord_id}/`} >
-        <ServerIndexItem server={server}>{server.name}</ServerIndexItem>
-      </Link>
-    ));
+    const servers = Object.values(this.props.servers).map(server => {
+      if (server.id != 1) { return (
+        <Link key={server.id} to={`/channels/${server.discord_id}/`} >
+          <ServerIndexItem server={server}>{server.name}</ServerIndexItem>
+        </Link>
+      )}
+      
+    });
     
     return (
       <div className="server-index">
         <div className="server-sidebar">
-          <Link to="/channels/@me">
-            <div className="home-server">
-              <div className="server-name">Home</div>
-            </div>
-          </Link>
+          <ul className="server-ul">
+            <Link to="/channels/@me">
+              <li>
+                H
+                <div className="server-name">Home</div>
+              </li>
+            </Link>
+          </ul>
           <div className="server-split" />
           <ul className="server-ul">
             { servers }
           </ul>
-          <button className="server-add-button">+</button>
+          <button className="server-add-button" onClick={this.openServerModal}>
+            +
+          </button>
           <div className="server-split" />
           <button className="logout-button" onClick={this.props.logout}>
             L
+            <div className="server-name">Logout</div>
           </button>
           {/* Modal here */}
         </div>
@@ -71,6 +83,8 @@ class ServerIndex extends React.Component {
           <div className="content">
             <div className="message-block">
               <div className="message-feed"></div>
+              <div className="message-split" />
+
               <div className="message-input"></div>
             </div>
             {this.serverMembers()}

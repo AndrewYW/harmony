@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   height: 100%;
-  background-color: black;
+  background-color: rgb(54,57,63);
 
 }
 .server-sidebar {
@@ -48,7 +48,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: black;
+  background-color: rgb(54,57,63);
 }
 
 .message-feed {
@@ -82,20 +82,6 @@
   position: relative;
 }
 
-.server-name {
-  visibility: hidden;
-  position: absolute;
-  top: 9px;
-  left: 58px;
-  border-radius: 5px;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 14px;
-  padding: 8px 11px;
-  background-color: #000;
-  color: hsla(0, 0%, 100%, .9)
-}
-
 
 .server-add-button, .logout-button {
   margin-top: 8px;
@@ -127,6 +113,14 @@
   background: #2f3136;
   height: 2px;
   width: 30px;
+  margin: 11px auto;
+  margin-bottom: 10px;
+}
+
+.message-split {
+  background-color: #2f3136;
+  height: 2px;
+  width: 90%;
   margin: 11px auto;
   margin-bottom: 10px;
 }
