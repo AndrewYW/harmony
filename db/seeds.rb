@@ -12,6 +12,7 @@ admin = User.new({ username: "admin", password: "admin1", email: "admin", discri
 tester = User.new({username: "123456", password: "123456", email: "123456", discriminator: "1234"})
 demouser = User.new({username: "demouser", password: "demopassword", email: "demoemail", discriminator: "1111"})
 
+admin.save!
 tester.save!
 demouser.save!
 
