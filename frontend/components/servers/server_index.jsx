@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import ServerIndexItem from './server_index_item';
+import ReactModal from 'react-modal';
 import ServerDetail from './server_detail_container';
 import HomeDetail from './server_detail_container';
 class ServerIndex extends React.Component {
@@ -16,6 +17,7 @@ class ServerIndex extends React.Component {
     this.openServerModal = this.openServerModal.bind(this);
   }
   componentDidMount() {
+    ReactModal.setAppElement(".server-index");
     this.props.fetchServers();
     this.setState({
       currentServer: this.props.servers[1],
@@ -31,12 +33,12 @@ class ServerIndex extends React.Component {
 
   openServerModal() {
     this.setState({
-      showServerModal = true,
+      showServerModal: true,
     })
   }
   closeServerModal() {
     this.setState({
-      showServerModal = false,
+      showServerModal: false,
     })
   }
   serverMembers() {
@@ -89,7 +91,28 @@ class ServerIndex extends React.Component {
             L
             <div className="server-name">Logout</div>
           </button>
-          {/* Modal here */}
+          
+          <ReactModal 
+            isOpen={this.state.showServerModal} 
+            contentLabel="Create a new Server!"
+            onRequestClose={this.closeServerModal}
+            className="create-server-modal"
+          >
+            <p>OH, ANOTHER SERVER HUH?</p>
+            <form action="submit">
+              <h4>CREATE YOUR SERVER</h4>
+              <p>By creating a server, you will have access to <strong>free</strong> voice
+              and text chat to use amongst your friends.</p>
+              <p>Create a server</p>
+
+              <label>SERVER NAME
+                <input type="text" name="" placeholder="Enter a server name"/>
+              </label>
+              <button type="submit">Create</button>
+            </form>
+            <button onClick={this.closeServerModal}>Close Modal</button>
+
+          </ReactModal>
         </div>
 
 
