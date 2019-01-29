@@ -8,7 +8,7 @@
 User.delete_all
 Server.delete_all
 ServerMember.delete_all
-admin = User.new({id: 1, username: "admin", password: "admin1", email: "admin", discriminator: "1234"})
+admin = User.new({ username: "admin", password: "admin1", email: "admin", discriminator: "1234"})
 tester = User.new({username: "123456", password: "123456", email: "123456", discriminator: "1234"})
 demouser = User.new({username: "demouser", password: "demopassword", email: "demoemail", discriminator: "1111"})
 
@@ -16,7 +16,6 @@ tester.save!
 demouser.save!
 
 home = Server.new({
-  id: 1,
   name: "Home",
   admin_id: admin.id,
   owner: admin
