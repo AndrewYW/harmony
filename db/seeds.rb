@@ -7,15 +7,36 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.delete_all
 Server.delete_all
-User.create!({username: "admin", password: "admin1", email: "admin", discriminator: "1234"})
-User.create!({username: "123456", password: "123456", email: "123456", discriminator: "1234"})
-User.create!({username: "demouser", password: "demopassword", email: "demoemail", discriminator: "1111"})
+ServerMember.delete_all
+admin = User.new({id: 1, username: "admin", password: "admin1", email: "admin", discriminator: "1234"})
+tester = User.new({username: "123456", password: "123456", email: "123456", discriminator: "1234"})
+demouser = User.new({username: "demouser", password: "demopassword", email: "demoemail", discriminator: "1111"})
 
+tester.save!
+demouser.save!
 
-dms = Server.create!({
-  name: "dm_server",
-  admin_id: User.where(username: "admin").first.id
+home = Server.new({
+  id: 1,
+  name: "Home",
+  admin_id: admin.id,
+  owner: admin
 })
 
-# dms.members << User.first
-# dms.save!
+server1 = Server.new({
+  name: "server 1",
+  admin_id: demouser.id,
+  owner: demouser
+})
+
+home.save!
+server1.save!
+
+admin.servers += [home, server1]
+tester.servers += [home]
+demouser.servers += [home, server1]
+
+admin.save!
+tester.save!
+demouser.save!
+home.save!
+server1.save!
