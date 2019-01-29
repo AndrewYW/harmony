@@ -8,6 +8,10 @@
 User.delete_all
 Server.delete_all
 ServerMember.delete_all
+
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('servers')
+ActiveRecord::Base.connection.reset_pk_sequence!('server_members')
 admin = User.new({ username: "admin", password: "admin1", email: "admin", discriminator: "1234"})
 tester = User.new({username: "123456", password: "123456", email: "123456", discriminator: "1234"})
 demouser = User.new({username: "demouser", password: "demopassword", email: "demoemail", discriminator: "1111"})
