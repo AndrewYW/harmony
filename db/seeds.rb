@@ -41,7 +41,10 @@ server2 = Server.new({
 home.save!
 server1.save!
 server2.save!
-
+User.all.each do |user|
+  user.servers << home
+  user.save!
+end
 admin.servers += [server1]
 demouser.servers += [server1, server2]
 

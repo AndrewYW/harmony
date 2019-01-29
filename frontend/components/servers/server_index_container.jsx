@@ -10,7 +10,6 @@ const mstp = ({session, entities}) => ({
 
 const mdtp = dispatch => ({
   fetchServers: () => dispatch(fetchServers()),
-  fetchServer: id => dispatch(fetchServer(id)),
   logout: () => dispatch(logout()),
 })
 

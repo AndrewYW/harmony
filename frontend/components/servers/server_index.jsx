@@ -15,9 +15,6 @@ class ServerIndex extends React.Component {
   }
   componentDidMount() {
     this.props.fetchServers();
-    this.setState({
-      currentServer: this.state.servers['1'],
-    })
   }
 
   openServerModal() {
