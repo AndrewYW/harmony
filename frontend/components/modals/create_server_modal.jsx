@@ -21,23 +21,29 @@ class CreateModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createServer(this.state)
-      .then(this.props.closeModal())
-      .fail(res => console.log(res.responseJSON));
+    this.props.createServer(this.state).then(this.props.closeModal())
+      // .fail(res => console.log(res.responseJSON));
   }
 
   render() {
-    const { backToDefault } = this.props;
+    const { defaultModal } = this.props;
     return (
       <div>
         <h5>CREATE YOUR SERVER</h5>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.update} value={this.state.server_name} />
+          <p>By creating a server, you will have access to free voice and text chat to use amongst your friends.</p>
+          <label className="create-label">SERVER NAME
+            <input type="text" 
+            onChange={this.update} 
+            value={this.state.server_name} 
+            placeholder="Enter a server name" />
+          </label>
+          <button onClick={defaultModal}>
+            Back
+        </button>
           <input type="submit" value="Create" />
         </form>
-        <button onClick={backToDefault}>
-          Back
-        </button>
+        
       </div>
     )
   }
