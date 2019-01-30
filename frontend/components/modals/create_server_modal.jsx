@@ -35,15 +35,15 @@ class CreateModal extends React.Component {
           <label className="create-label">SERVER NAME
             <input type="text" 
             onChange={this.update} 
-            value={this.state.server_name} 
+            value={this.state.name} 
             placeholder="Enter a server name" />
           </label>
-          <button onClick={defaultModal}>
-            Back
-        </button>
+          
           <input type="submit" value="Create" />
         </form>
-        
+        <button onClick={defaultModal}>
+          Back
+          </button>
       </div>
     )
   }

@@ -13,6 +13,8 @@ class ServerModal extends React.Component{
     this.defaultModal = this.defaultModal.bind(this);
     this.joinServer = this.joinServer.bind(this);
     this.createServer = this.createServer.bind(this);
+    this.setWrapperRef = this.setWrapperRef.bind(this);
+    this.handleClose = this.handleClose.bind(this);
   }
 
   componentDidMount(){
@@ -23,9 +25,16 @@ class ServerModal extends React.Component{
   }
   handleOutsideClick(e) {
     if(this.wrapperRef && this.wrapperRef.contains(e.target)){
+      debugger
       this.setState({type: "",});
       this.props.closeServerModal();
     }
+  }
+
+  handleClose(e){
+    e.preventDefault();
+    this.setState({type: ""});
+    this.props.closeServerModal();
   }
   setWrapperRef(node) {
     this.wrapperRef = node;
@@ -52,12 +61,13 @@ class ServerModal extends React.Component{
     }
   }
   render() {
-    debugger;
     return (
       <ReactModal
         isOpen={this.props.showServerModal}
-        onRequestClose={this.props.closeServerModal}
+        shouldCloseOnOverlayClick={true}
+        onRequestClose={this.handleClose}
         className="nested-react-modal"
+        ref={this.setWrapperRef}
       >
         {this.renderModal()}
       </ReactModal>
@@ -66,11 +76,3 @@ class ServerModal extends React.Component{
 }
 
 export default ServerModal;
-{/* <ReactModal
-  isOpen={this.props.showServerModal}
-  contentLabel="Create a new Server!"
-  onRequestClose={this.props.closeServerModal}
-  className="create-server-modal"
->
-
-</ReactModal> */}

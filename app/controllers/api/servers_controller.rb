@@ -12,11 +12,12 @@ class Api::ServersController < ApplicationController
 
   def create
     @server = Server.new(server_params)
-    @server.owner = current_user
-    @server.members << current_user
+    user = current_user
+    @server.owner = user
+    # @server.members << user
     if @server.save
-      current_user.servers << @server
-      current_user.save
+      user.servers << @server
+      user.save
       # default channel later
       render 'api/servers/show'
     else
