@@ -15,6 +15,7 @@ const receiveServer = server => ({
   server
 });
 
+
 export const fetchServers = () => dispatch => (
   ServerAPIUtil.fetchServers().then(servers => (
     dispatch(receiveAllServers(servers))
@@ -26,3 +27,9 @@ export const fetchServer = id => dispatch (
     dispatch(receiveServer(server))
   ))
 );
+
+export const createServer = server => dispatch (
+  ServerAPIUtil.createServer(server).then(server => (
+    dispatch(receiveServer(server))
+  ))
+)

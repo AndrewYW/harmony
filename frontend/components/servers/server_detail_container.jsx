@@ -3,13 +3,13 @@ import ServerDetail from './server_detail';
 import { fetchServer } from '../../actions/server_actions';
 
 const mstp = (state = {}, ownProps) => {
-  // const serverId = (ownProps.match.params.serverId === '@me') ? 1 : ownProps.match.params.serverId;
   debugger;
   const serverId = ownProps.match.params.serverId;
+  const channelId = ownProps.match.params.channelId;
   const server = state.entities.servers[serverId] || {};
   
   return {
-    server, 
+    server, serverId, channelId
   };
 };
 
