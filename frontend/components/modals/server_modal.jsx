@@ -13,31 +13,13 @@ class ServerModal extends React.Component{
     this.defaultModal = this.defaultModal.bind(this);
     this.joinServer = this.joinServer.bind(this);
     this.createServer = this.createServer.bind(this);
-    this.setWrapperRef = this.setWrapperRef.bind(this);
     this.handleClose = this.handleClose.bind(this);
-  }
-
-  componentDidMount(){
-    document.addEventListener("mousedown", this.handleOutsideClick);
-  }
-  componentWillUnmount() {
-    document.removeEventListener("mousedown", this.handleOutsideClick);
-  }
-  handleOutsideClick(e) {
-    if(this.wrapperRef && this.wrapperRef.contains(e.target)){
-      debugger
-      this.setState({type: "",});
-      this.props.closeServerModal();
-    }
   }
 
   handleClose(e){
     e.preventDefault();
     this.setState({type: ""});
     this.props.closeServerModal();
-  }
-  setWrapperRef(node) {
-    this.wrapperRef = node;
   }
 
   defaultModal() {
