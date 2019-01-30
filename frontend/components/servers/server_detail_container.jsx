@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import ServerDetail from './server_detail';
 import { fetchServer } from '../../actions/server_actions';
 

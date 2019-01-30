@@ -2,8 +2,6 @@ import React from 'react';
 import { Route, Link, Switch, withRouter } from 'react-router-dom';
 import ServerIndexItem from './server_index_item';
 import ReactModal from 'react-modal';
-import ServerDetail from './server_detail_container';
-import DMServerDetail from './dm_server_container';
 class ServerIndex extends React.Component {
 
   constructor(props) {
@@ -36,21 +34,6 @@ class ServerIndex extends React.Component {
     this.setState({
       showServerModal: false,
     })
-  }
-  serverMembers() {
-    //render members of server if not in friends list
-    return (
-      <div className="server-members">
-        <ul>
-          <li className="server-member">donk</li>
-          <li className="server-member">donk</li>
-          <li className="server-member">donk</li>
-          <li className="server-member">donk</li>
-          <li className="server-member">donk</li>
-          <li className="server-member">donk</li>
-        </ul>
-      </div>
-    )
   }
 
   render() {
@@ -109,8 +92,6 @@ class ServerIndex extends React.Component {
 
           </ReactModal>
         </div>
-          <Route exact path="/channels/@me" component={DMServerDetail} />
-          <Route path="/channels/:serverId/:channelId" component={ServerDetail} />
       </div>
     )
   }

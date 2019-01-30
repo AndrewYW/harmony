@@ -1,9 +1,10 @@
 #root{
-  background-image: image_url('session/background.jpg');
+  
   background-position: center bottom;
 }
 
 .session-page {
+  background-image: image_url('session/background.jpg');
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
