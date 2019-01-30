@@ -48,7 +48,8 @@ class ServerModal extends React.Component{
         isOpen={this.props.showServerModal}
         shouldCloseOnOverlayClick={true}
         onRequestClose={this.handleClose}
-        className="nested-react-modal"
+        className="react-modal"
+        overlayClassName="react-modal-overlay"
         ref={this.setWrapperRef}
       >
         {this.renderModal()}

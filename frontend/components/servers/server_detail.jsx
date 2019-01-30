@@ -2,26 +2,29 @@ import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
 
 class ServerDetail extends React.Component {
+
   componentDidMount() {
     // this.props.fetchServer(this.props.match.params.serverId);
+    this.props.fetchServers();
+    debugger;
   }
 
-  componentDidUpdate(prevProps) {
-    // if (prevProps.match.params.serverId != this.props.match.params.serverId){
-    //   this.props.fetchServer(this.props.match.params.serverId);
-    // }
-  }
+  // componentDidUpdate(prevProps) {
+  //   if (prevProps.match.params.serverId != this.props.match.params.serverId){
+  //     this.props.fetchServer(this.props.match.params.serverId);
+  //   }
+  // }
 
   serverMembers() {
+    const members = this.props.server.members.map(member => {
+      return (
+        <li key={member.id} className="server-member">{member.username}</li>
+      )
+    }) || [];
     return (
       <div className="server-members">
         <ul>
-          <li className="server-member">donk</li>
-          <li className="server-member">donk</li>
-          <li className="server-member">donk</li>
-          <li className="server-member">donk</li>
-          <li className="server-member">donk</li>
-          <li className="server-member">donk</li>
+          {members}
         </ul>
       </div>
     )
@@ -32,7 +35,7 @@ class ServerDetail extends React.Component {
       <section className="server-detail">
         <div className="channel-block">
           <div className="channel-header">
-            CHANNEL HEADER
+            {this.props.server.name}
           </div>
         </div>
         <div className="content-block">

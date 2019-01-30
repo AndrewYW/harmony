@@ -3,7 +3,7 @@ import { Route, withRouter } from 'react-router-dom';
 
 class DMServerDetail extends React.Component {
   componentDidMount() {
-
+    // this.props.fetchServer(1);
   }
 
   componentDidUpdate() {

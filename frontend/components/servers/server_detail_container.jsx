@@ -1,20 +1,22 @@
 import { connect } from 'react-redux';
 import ServerDetail from './server_detail';
-import { fetchServer } from '../../actions/server_actions';
+import { fetchServer, fetchServers } from '../../actions/server_actions';
 
 const mstp = (state = {}, ownProps) => {
-  // debugger;
-  const serverId = ownProps.match.params.serverId;
+  const serverDiscordId = ownProps.match.params.serverId;
   const channelId = ownProps.match.params.channelId;
-  const server = state.entities.servers[serverId] || {};
+  const servers = Object.values(state.entities.servers);
   
+  const server = servers.find(server => server.discord_id === serverDiscordId) || {};
+  const members = server.members;
   return {
-    server, serverId, channelId
+    server, serverDiscordId, channelId, members
   };
 };
 
 const mdtp = dispatch => ({
-  fetchServer: id => dispatch(fetchServer(id)),
+  fetchServer: discord_id => dispatch(fetchServer(discord_id)),
+  fetchServers: () => dispatch(fetchServers()),
 });
 
 export default connect(mstp, mdtp)(ServerDetail);

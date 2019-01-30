@@ -13,7 +13,7 @@ class View extends React.Component {
   render() {
     return (
       <div className="app-view">
-        <Route path="/channels/*" component={ServerIndex} />
+        <Route path="/channels/" component={ServerIndex} />
         <Switch>
           <Route exact path="/channels/@me" component={DMServerDetail} />
           <Route path="/channels/:serverId/:channelId" component={ServerDetail} />

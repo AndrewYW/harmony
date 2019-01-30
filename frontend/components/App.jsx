@@ -9,7 +9,7 @@ const App = () => (
   <Switch>
     <AuthRoute exact path="/login" component={LoginFormContainer} />
     <AuthRoute exact path="/register" component={RegisterFormContainer} />
-    <ProtectedRoute path="/channels/*" component={View} />
+    <ProtectedRoute path="/channels/" component={View} />
     <Route exact path="/" component={SplashContainer} />
   </Switch>
 );
