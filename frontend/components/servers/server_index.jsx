@@ -1,9 +1,9 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route, Link, Switch, withRouter } from 'react-router-dom';
 import ServerIndexItem from './server_index_item';
 import ReactModal from 'react-modal';
 import ServerDetail from './server_detail_container';
-import HomeDetail from './server_detail_container';
+import DMServerDetail from './dm_server_container';
 class ServerIndex extends React.Component {
 
   constructor(props) {
@@ -19,10 +19,6 @@ class ServerIndex extends React.Component {
   componentDidMount() {
     ReactModal.setAppElement(".server-index");
     this.props.fetchServers();
-    this.setState({
-      currentServer: this.props.servers[1],
-      servers: this.props.servers
-    })
 
     console.log(this.state);
   }
@@ -60,7 +56,7 @@ class ServerIndex extends React.Component {
   render() {
     const servers = Object.values(this.props.servers).map(server => {
       if (server.id != 1) { return (
-        <Link key={server.id} to={`/channels/${server.discord_id}/`} >
+        <Link key={server.id} to={`/channels/${server.discord_id}/23452345`} >
           <ServerIndexItem server={server}>{server.name}</ServerIndexItem>
         </Link>
       )}
@@ -69,7 +65,6 @@ class ServerIndex extends React.Component {
     
     return (
       <div className="server-index">
-        <Route path="/channels/:serverId/:channelId" component={HomeDetail} />
         <div className="server-sidebar">
           <ul className="server-ul">
             <Link to="/channels/@me" className="home-link">
@@ -114,14 +109,11 @@ class ServerIndex extends React.Component {
 
           </ReactModal>
         </div>
-
-
-        <ServerDetail />
-
-
+          <Route exact path="/channels/@me" component={DMServerDetail} />
+          <Route path="/channels/:serverId/:channelId" component={ServerDetail} />
       </div>
     )
   }
 }
 
-export default ServerIndex;
+export default withRouter(ServerIndex);

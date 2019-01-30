@@ -31,11 +31,13 @@ class ServerDetail extends React.Component {
     return (
       <section className="server-detail">
         <div className="channel-block">
-          <div className="channel-header"></div>
+          <div className="channel-header">
+            CHANNEL HEADER
+          </div>
         </div>
         <div className="content-block">
           <div className="content-header">
-
+            CONTENT HEADER
           </div>
           <div className="content">
             <div className="message-block">
