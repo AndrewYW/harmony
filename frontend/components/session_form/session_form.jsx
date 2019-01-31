@@ -65,7 +65,7 @@ class SessionForm extends React.Component {
           {this.formType() ? null : this.usernameLabel() }
           <div className="formInput">
             <label>PASSWORD</label>
-            <input type="text" value={this.state.password} onChange={this.handleChange('password')} />
+            <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
           </div>
           <input className="formButton" type="submit" value={this.formType() ? "Login": "Continue"} onClick={this.handleSubmit} />
           {this.formFooter()}

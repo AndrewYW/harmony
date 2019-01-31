@@ -3,7 +3,8 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if (@user.servers << Server.find(1)) && @user.save
+    if @user.save
+      @user.servers << Server.find(1)
       login(@user)
       render "api/users/show"
     else
