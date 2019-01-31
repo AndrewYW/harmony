@@ -57,7 +57,7 @@ class Splash extends React.Component {
         </p>
         <div className="heroButtons">
           <Link className="demoLogin" to="/channels/@me" onClick={this.demoLogin} >Login as demo user</Link>
-          <a className="discordLink" href="https://discordapp.com/">Visit actual Discord</a>
+          <Link className="discordLink" to="/register" >Register an account</Link>
         </div>
       </div>
     )

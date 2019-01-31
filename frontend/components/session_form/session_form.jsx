@@ -9,12 +9,18 @@ class SessionForm extends React.Component {
       email: '' 
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user).then(() => this.props.history.push('/channels/@me'));
+  }
+  handleDemoLogin(e) {
+    e.preventDefault();
+    const user = {email: 'demoemail', password: 'demopassword'};
+    this.props.login(user).then(() => this.props.history.push('/channels/@me'));
   }
 
   handleChange(type) {
@@ -88,13 +94,19 @@ class SessionForm extends React.Component {
   formFooter() {
     if (this.formType()){
       return (
+        <>
+          <Link className="lonk" to='/channels/@me' onClick={this.handleDemoLogin}>Log in as demo user</Link>
+
           <p className="loginP">Need an account? <Link className="lonk" to='/register'>Register</Link></p>
+        </>
       )
     } else {
       return (
         <>
           <Link className="lonk" to='/login'>Already have an account?</Link>
+          <Link className="lonk" to='/channels/@me' onClick={this.handleDemoLogin}>Log in as demo user</Link>
           <p className="registerP">By registering, you agree to Harmony's Terms of Service and Privacy Policy.</p>
+
         </>
       )
     }
