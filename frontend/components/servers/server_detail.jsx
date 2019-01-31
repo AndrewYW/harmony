@@ -6,7 +6,7 @@ class ServerDetail extends React.Component {
   componentDidMount() {
     // this.props.fetchServer(this.props.match.params.serverId);
     this.props.fetchServers();
-    debugger;
+    // debugger;
   }
 
   // componentDidUpdate(prevProps) {
