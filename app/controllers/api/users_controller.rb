@@ -5,6 +5,7 @@ class Api::UsersController < ApplicationController
 
     if @user.save
       @user.servers << Server.find(1)
+      @user.save
       login(@user)
       render "api/users/show"
     else
