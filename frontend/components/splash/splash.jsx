@@ -12,10 +12,10 @@ class Splash extends React.Component {
 
   }
 
-  // demoLogin() {
-  //   const user = {email: "demoemail", password: "demopassword"};
-  //   window.dispatch(login(user));
-  // }
+  demoLogin() {
+    const user = {email: "demoemail", password: "demopassword"};
+    window.dispatch(login(user));
+  }
   navbar() {
     return (
       <nav className="Navbar">
@@ -26,9 +26,7 @@ class Splash extends React.Component {
                 <img className="navLogo" src={window.fullLogoURL} />
               </div>
             </li>
-            <li><a href="#">WIKI</a></li>
-            <li><a href="#">TESTY</a></li>
-            <li><a href="#">THONKY</a></li>
+            <li><a href="https://github.com/AndrewYW/harmony/wiki">WIKI</a></li>
           </ul>
         </div>
         
@@ -58,7 +56,7 @@ class Splash extends React.Component {
             Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.
         </p>
         <div className="heroButtons">
-          <Link className="demoLogin" to="/channels/@me" >Login as demo user</Link>
+          <Link className="demoLogin" to="/channels/@me" onClick={this.demoLogin} >Login as demo user</Link>
           <a className="discordLink" href="https://discordapp.com/">Visit actual Discord</a>
         </div>
       </div>

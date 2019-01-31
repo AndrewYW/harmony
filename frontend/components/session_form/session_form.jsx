@@ -23,6 +23,17 @@ class SessionForm extends React.Component {
     };
   }
 
+  renderErrors() {
+    const errors = this.props.errors.map((e, i) => (
+      <li key={i}>{e}</li>
+    ));
+    return (
+      <ul className="session-errors">
+        {errors}
+      </ul>
+    )
+  }
+
   formType() {
     return (this.props.formType === 'login');
   }
@@ -57,6 +68,7 @@ class SessionForm extends React.Component {
     return (
         <form className="session-form">
           {this.formHeader()}
+          {this.renderErrors()}
           <div className="formInput">
             <label>EMAIL</label>
             <input type="text" value={this.state.email} onChange={this.handleChange('email')} />

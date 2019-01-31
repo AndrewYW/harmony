@@ -43,7 +43,7 @@ ul, ol {
   margin-bottom: 90px;
 }
 
-li {
+.navLeft li, .navRight li {
   display: flex;
   align-items: center;
   justify-content: center;

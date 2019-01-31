@@ -3,7 +3,7 @@ import { register } from '../../actions/session_actions';
 import SessionForm from './session_form';
 
 const mstp = (state, ownProps) => ({
-  errors: state.errors,
+  errors: state.errors.session,
   formType: 'register'
 });
 

@@ -132,3 +132,15 @@ div input:focus {
 .registerP {
   font-size: 12px;
 }
+
+.session-errors {
+
+  font-size: 14px;
+  margin-top: 10px;
+  color: red;
+}
+
+.session-errors li {
+  display: block;
+  transition: all 0.5s ease;
+}
