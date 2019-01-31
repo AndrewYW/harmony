@@ -4,10 +4,10 @@ json.user do
 end
 
 
-json.servers do 
-  user.servers.each do |server|
-    json.set! server.id do
-      json.partial! 'api/servers/server.json', server: server
-    end
-  end
-end
+# json.servers do 
+#   user.servers.each do |server|
+#     json.set! server.id do
+#       json.partial! 'api/servers/server.json', server: server
+#     end
+#   end
+# end
