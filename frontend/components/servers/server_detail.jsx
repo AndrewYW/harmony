@@ -16,6 +16,7 @@ class ServerDetail extends React.Component {
   // }
 
   serverMembers() {
+    debugger;
     const members = this.props.server.members.map(member => {
       return (
         <li key={member.id} className="server-member">{member.username}</li>
