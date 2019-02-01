@@ -15,9 +15,10 @@
 
 class Server < ApplicationRecord
   validates :name, :discord_id, :instant_invite, :admin_id, presence: true
-  validates :discord_id, :instant_invite, :default_channel_id, uniqueness: true
+  validates :discord_id, :instant_invite, uniqueness: true
 
-  after_initialize :generate_discord_id, :generate_instant_invite, :generate_default_channel
+
+  after_initialize :generate_discord_id, :generate_instant_invite
 
   belongs_to :owner, 
     foreign_key: :admin_id,
@@ -25,19 +26,18 @@ class Server < ApplicationRecord
 
   has_many :memberships,
     foreign_key: :server_id,
-    class_name: :ServerMember
+    class_name: :ServerMember,
+    dependent: :destroy
 
   has_many :members,
     through: :memberships,
-    source: :member
-
-  has_many :channelships,
-    foreign_key: :server_id,
-    class_name: :ServerChannel
+    source: :member,
+    dependent: :destroy
 
   has_many :channels,
-    through: :channelships,
-    source: :channel
+    foreign_key: :server_id,
+    class_name: :Channel,
+    dependent: :destroy
 
   private
   def generate_discord_id
@@ -55,15 +55,11 @@ class Server < ApplicationRecord
     self.instant_invite ||= instant_invite
   end
 
-  def generate_default_channel
-    if self.id != 1
-      channel = Channel.new(name: "General", server_id: self.id)
-      if channel.save
-        self.channels << channel
-        self.default_channel_id = channel.discord_id
-        self.save
-      end
-    end
-  end
+  # def generate_default_channel
+  #   if self.id != 1
+  #     channel = Channel.create!(name: "General", server_id: self.id)
+  #     self.default_channel_id = channel.id
+  #   end
+  # end
 
 end

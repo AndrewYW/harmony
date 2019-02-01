@@ -15,8 +15,10 @@ class Api::ServersController < ApplicationController
     @server = Server.new(server_params)
     user = current_user
     @server.owner = user
-    # @server.members << user
     if @server.save
+      channel = Channel.create!(name: "General", server_id: @server.id)
+      @server.default_channel_id = channel.discord_id
+      @server.save
       user.servers << @server
       user.save
       # default channel later

@@ -40,7 +40,7 @@ class ServerIndex extends React.Component {
   render() {
     const servers = Object.values(this.props.servers).map(server => {
       if (server.id != 1) { return (
-        <Link key={server.id} to={`/channels/${server.discord_id}/23452345`} >
+        <Link key={server.id} to={`/channels/${server.discord_id}/${server.default_channel_id}`} >
           <ServerIndexItem server={server}>{server.name}</ServerIndexItem>
         </Link>
       )}

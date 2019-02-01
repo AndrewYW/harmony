@@ -33,3 +33,9 @@ export const createServer = server => dispatch (
     dispatch(receiveServer(server))
   ))
 )
+
+export const joinServer = invite => dispatch => (
+  ServerAPIUtil.joinServer(invite).then(server => (
+    dispatch(receiveServer(server))
+  ))
+)

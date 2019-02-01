@@ -50,7 +50,6 @@ class ServerModal extends React.Component{
         onRequestClose={this.handleClose}
         className="react-modal"
         overlayClassName="react-modal-overlay"
-        ref={this.setWrapperRef}
       >
         {this.renderModal()}
       </ReactModal>

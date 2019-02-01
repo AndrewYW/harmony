@@ -8,10 +8,14 @@
 User.delete_all
 Server.delete_all
 ServerMember.delete_all
+Channel.delete_all
+ChannelMember.delete_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('servers')
 ActiveRecord::Base.connection.reset_pk_sequence!('server_members')
+ActiveRecord::Base.connection.reset_pk_sequence!('channels')
+ActiveRecord::Base.connection.reset_pk_sequence!('channel_members')
 admin = User.new({ username: "admin", password: "admin1", email: "admin", discriminator: "1234"})
 tester = User.new({username: "123456", password: "123456", email: "123456", discriminator: "1234"})
 demouser = User.new({username: "demouser", password: "demopassword", email: "demoemail", discriminator: "1111"})
@@ -44,6 +48,14 @@ server2 = Server.new({
 home.save!
 server1.save!
 server2.save!
+
+Server.all.each do |server|
+  if server.id != 1
+    channel = Channel.create!(name: "General", server_id: server.id)
+    server.default_channel_id = channel.discord_id
+    server.save
+  end
+end
 User.all.each do |user|
   user.servers << home
   user.save!
