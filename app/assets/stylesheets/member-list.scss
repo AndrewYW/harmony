@@ -1,11 +1,11 @@
 .server-members {
-  width: 240px;
+  width: 100%;
   flex-shrink: 0;
   height: 100%;
 
 }
 .member-ul {
-  width: 240px;
+  width: 100%;
   display: flex;
   background-color: #2f3136;
   flex-direction: column;
@@ -32,6 +32,7 @@
   font-weight: 500;
   color: rgb(130, 131, 134);
   padding: 20px 8px 5px 16px;
+  width: 100%;
 }
 
 .server-member:hover {

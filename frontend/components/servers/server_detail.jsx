@@ -44,7 +44,7 @@ class ServerDetail extends React.Component {
     if (this.props.server.channels != undefined){ 
       const channels = this.props.server.channels.map(channel => {
         return (
-          <li key={channel.id} className="server-channel" onClick={this.updateCurrentChannel}>{channel.name}</li>
+          <li key={channel.id} className="server-channel" onClick={this.updateCurrentChannel}># {channel.name}</li>
         )
       });
 

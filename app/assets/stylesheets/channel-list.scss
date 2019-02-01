@@ -24,3 +24,8 @@
 .server-channel:hover {
   background-color: rgb(54, 57, 63);
 }
+
+.channel-ul {
+  display: flex;
+  flex-direction: column;
+}

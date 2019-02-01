@@ -12,7 +12,7 @@
 
 class Channel < ApplicationRecord
   validates :name, :discord_id, :server_id, presence: true
-  validates :discord_id, :server_id, uniqueness: true
+  validates :discord_id, uniqueness: true
 
   after_initialize :generate_discord_id
 
