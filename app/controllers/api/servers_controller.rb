@@ -7,7 +7,6 @@ class Api::ServersController < ApplicationController
 
   def show
     @server = current_user.servers.find_by(discord_id: params[:id])
-    # debugger
     render 'api/servers/show'
   end
 

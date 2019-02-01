@@ -40,8 +40,16 @@
   border-radius: 15px;
   border-color: white;
 }
+
 .server-ul .home-link {
   border-radius: 15px;
+  background-color: rgb(53,57,63);
+  color: #fff;
+  transition: background-color .25s ease;
+}
+
+.server-ul .home-link:hover {
+  background-color: #7289da;
 }
 a:hover .server-name, button:hover .server-name {
   visibility: visible;

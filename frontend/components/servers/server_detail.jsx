@@ -3,10 +3,17 @@ import { Route, withRouter } from 'react-router-dom';
 import UserBlurb from './user_blurb';
 class ServerDetail extends React.Component {
 
+  constructor(props){
+    super(props);
+
+    this.updateCurrentChannel = this.updateCurrentChannel.bind(this);
+    this.state = ({
+      currentChannel: "General"
+    })
+  }
   componentDidMount() {
     // this.props.fetchServer(this.props.match.params.serverId);
     // this.props.fetchServers();
-    // debugger;
   }
 
   // componentDidUpdate(prevProps) {
@@ -37,7 +44,7 @@ class ServerDetail extends React.Component {
     if (this.props.server.channels != undefined){ 
       const channels = this.props.server.channels.map(channel => {
         return (
-          <li key={channel.id} className="server-channel">{channel.name}</li>
+          <li key={channel.id} className="server-channel" onClick={this.updateCurrentChannel}>{channel.name}</li>
         )
       });
 
@@ -50,6 +57,12 @@ class ServerDetail extends React.Component {
         </div>
       )
     }
+  }
+  updateCurrentChannel(e) {
+    e.preventDefault();
+    this.setState({
+      currentChannel: e.target.innerText
+    })
   }
 
   render() {
@@ -66,7 +79,7 @@ class ServerDetail extends React.Component {
         </div>
         <div className="content-block">
           <div className="content-header">
-            <h1>Channel</h1>
+            <h1>{this.state.currentChannel}</h1>
           </div>
           <div className="content">
             <div className="message-block">
