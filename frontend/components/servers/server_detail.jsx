@@ -33,6 +33,25 @@ class ServerDetail extends React.Component {
     }
   }
 
+  serverChannels() {
+    if (this.props.server.channels != undefined){ 
+      const channels = this.props.server.channels.map(channel => {
+        return (
+          <li key={channel.id} className="server-channel">{channel.name}</li>
+        )
+      });
+
+      return (
+        <div className="server-channels">
+          <div className="channel-category">CHANNELS</div>
+          <ul className="channel-ul">
+            {channels} 
+          </ul>
+        </div>
+      )
+    }
+  }
+
   render() {
     return (
       <section className="server-detail">
@@ -41,13 +60,13 @@ class ServerDetail extends React.Component {
             {this.props.server.name}
           </div>
           <div className="channel-list">
-
+            {this.serverChannels()}
           </div>
           <UserBlurb />
         </div>
         <div className="content-block">
           <div className="content-header">
-            <h1>CONTENT HEADER</h1>
+            <h1>Channel</h1>
           </div>
           <div className="content">
             <div className="message-block">
