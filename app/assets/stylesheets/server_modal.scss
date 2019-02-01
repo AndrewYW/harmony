@@ -1,25 +1,3 @@
-form.slide-left {
-  width: 100%;
-  overflow: hidden;
-}
-
-@keyframes slide-form-left {
-  from {
-    margin-left: 100%;
-    width: 300%;
-  } to {
-    margin-left: 0;
-    width: 100%;
-  }
-}
-
-@keyframes slide-button-left {
-  from {
-    
-  } to {
-    
-  }
-}
 
 .react-modal{
   width: 540px;
@@ -31,7 +9,7 @@ form.slide-left {
   margin: 100px auto;
   text-align: center;
   vertical-align: baseline;
-
+  border-radius: 5px;
   background-color: white;
   color: #99aab5;
   line-height: 16px;
@@ -55,6 +33,8 @@ form.slide-left {
 }
 
 .default-modal {
+  height: 540px;
+  width: 420px;
   display: flex;
   flex-direction: column;
   font-size: 16px;
@@ -69,7 +49,16 @@ form.slide-left {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.buttons button {
+  border-radius: 3px;
+  width: 220px;
+  height: 290px;
+  cursor: pointer;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .buttons .or {
@@ -79,28 +68,46 @@ form.slide-left {
   z-index: 200;
 }
 
-.create-server-button, .join-server-button {
-  width: 220px;
-  height: 290px;
-  cursor: pointer;
-}
 
 .create-server-button:hover .fake-button,
 .join-server-button:hover .fake-button {
   opacity: 1;
 }
-// .join-server-button:hover .fake-button {
-  // opacity: 1;
-// }
 
-.fake-button {
-  border-radius: 2px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  color: white;
-  opacity: .7;
+.buttons button h2 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 20px;
+  text-align: center;
 }
 
+.create-server-button h2 {
+  color: #7289da;
+}
+
+.join-server-button h2 {
+  color: #3ca374;
+}
+.fake-button {
+  border-radius: 2px;
+  padding: 14px 20px;
+  color: white;
+  opacity: .7;
+  outline: 0;
+  font-weight: 400;
+  border: none;
+  
+}
+
+.buttons button p {
+  text-align: center;
+  color: 99aab5;
+  font-size: 14px;
+  line-height: 20px;
+  margin-top: 16px;
+  padding: 0 15px;
+
+}
 
 .create-server-button .fake-button {
   background-color: rgb(103,123,196);
