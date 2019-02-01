@@ -1,5 +1,5 @@
 import {
-  RECEIVE_CURRENT_USER
+  RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER
 } from "../actions/session_actions";
 import {
   RECEIVE_USER 
@@ -21,6 +21,8 @@ const usersReducer = (state = {}, action) => {
       return merge({}, state, {
         [action.user.id]: action.user
       });
+    case LOGOUT_CURRENT_USER:
+      return [];
     default:
       return state;
   }

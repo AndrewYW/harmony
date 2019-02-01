@@ -1,39 +1,26 @@
-.server-members {
-  width: 240px;
-  flex-shrink: 0;
-  height: 100%;
-
-}
-.member-ul {
-  width: 240px;
-  display: flex;
-  background-color: #2f3136;
-  flex-direction: column;
-}
-
-.member-category{
+.channel-category {
   height: 40px;
   box-sizing: border-box;
-  color: rgb(130,131,134);
+  color: rgb(130, 131, 134);
   padding: 20px 8px 0 16px;
   font-size: 12px;
   font-weight: 500;
   line-height: 20px;
   letter-spacing: .08em;
-
 }
 
-// need to refactor into item components
-.server-member {
+.server-channel {
   display: flex;
   align-items: center;
+  vertical-align: center;
   list-style-type: none;
   font-size: 16px;
   font-weight: 500;
   color: rgb(130, 131, 134);
-  padding: 20px 8px 5px 16px;
+  padding: 20px 8px 10px 16px;
+  width: 100%;
 }
 
-.server-member:hover {
+.server-channel:hover {
   background-color: rgb(54, 57, 63);
 }

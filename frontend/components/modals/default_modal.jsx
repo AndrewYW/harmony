@@ -4,8 +4,6 @@ import React from 'react';
 class DefaultModal extends React.Component {
   constructor(props){
     super(props);
-
-  
   }
   
 

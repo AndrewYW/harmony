@@ -34,9 +34,9 @@ class ServerModal extends React.Component{
   renderModal() {
     switch (this.state.type) {
       case 'join':
-        return <JoinModalForm defaultModal={this.defaultModal}/>
+        return <JoinModalForm defaultModal={this.defaultModal} closeModal={this.handleClose}/>
       case 'create':
-        return <CreateModalForm defaultModal={this.defaultModal}/>
+        return <CreateModalForm defaultModal={this.defaultModal} closeModal={this.handleClose}/>
       case '':
       default:
         return <DefaultModalPage createServer={this.createServer} joinServer={this.joinServer}/>

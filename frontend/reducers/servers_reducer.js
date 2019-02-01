@@ -2,6 +2,11 @@ import {
   RECEIVE_ALL_SERVERS,
   RECEIVE_SERVER 
 } from '../actions/server_actions';
+
+import { 
+  LOGOUT_CURRENT_USER,
+} from '../actions/session_actions';
+
 import { 
   merge 
 } from 'lodash';
@@ -20,6 +25,8 @@ const serversReducer = (state = {}, action) => {
       return merge({}, state, {
         [action.server.id]: action.server
       });
+    case LOGOUT_CURRENT_USER:
+      return [];
     default:
       return state;
   }
