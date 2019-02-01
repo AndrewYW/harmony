@@ -23,19 +23,22 @@ demouser.save!
 home = Server.new({
   name: "Home",
   admin_id: admin.id,
-  owner: admin
+  owner: admin,
+  instant_invite: "9NMvjd"
 })
 
 server1 = Server.new({
   name: "server 1",
   admin_id: demouser.id,
-  owner: demouser
+  owner: demouser,
+  instant_invite: "vfRy5u"
 })
 
 server2 = Server.new({
   name: "server 2",
   admin_id: demouser.id,
-  owner: demouser
+  owner: demouser,
+  instant_invite: "FNW2wn"
 })
 
 home.save!

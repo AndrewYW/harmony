@@ -32,9 +32,17 @@ class User < ApplicationRecord
     foreign_key: :member_id,
     class_name: :ServerMember
 
+  has_many :channel_memberships,
+    foreign_key: :member_id,
+    class_name: :ChannelMember
+
   has_many :servers,
     through: :server_memberships,
     source: :server
+  
+  has_many :channels,
+    through: :channel_memberships,
+    source: :channel
 
 
   def self.find_by_credentials(email, password)

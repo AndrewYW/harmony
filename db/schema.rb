@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_25_155846) do
+ActiveRecord::Schema.define(version: 2019_02_01_044724) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "channels", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "discord_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["discord_id"], name: "index_channels_on_discord_id", unique: true
+  end
 
   create_table "server_members", force: :cascade do |t|
     t.integer "member_id", null: false
@@ -28,6 +36,7 @@ ActiveRecord::Schema.define(version: 2019_01_25_155846) do
     t.string "discord_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "instant_invite", null: false
   end
 
   create_table "users", force: :cascade do |t|

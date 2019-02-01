@@ -20,3 +20,18 @@ export const createServer = server => (
   })
 )
 
+export const updateServer = server => (
+  $.ajax({
+    method: "PATCH",
+    url: `api/servers/${server.id}`,
+    data: { server }
+  })
+)
+
+export const joinServer = instant_invite => (
+  $.ajax({
+    method: "POST",
+    url: `api/server_members/`,
+    data: { instant_invite }
+  })
+)
