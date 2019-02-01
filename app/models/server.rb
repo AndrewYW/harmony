@@ -2,14 +2,15 @@
 #
 # Table name: servers
 #
-#  id             :bigint(8)        not null, primary key
-#  admin_id       :integer          not null
-#  name           :string           not null
-#  image_url      :string
-#  discord_id     :string           not null
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  instant_invite :string           not null
+#  id                 :bigint(8)        not null, primary key
+#  admin_id           :integer          not null
+#  name               :string           not null
+#  image_url          :string
+#  discord_id         :string           not null
+#  created_at         :datetime         not null
+#  updated_at         :datetime         not null
+#  instant_invite     :string           not null
+#  default_channel_id :integer
 #
 
 class Server < ApplicationRecord

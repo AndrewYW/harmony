@@ -7,6 +7,7 @@
 #  discord_id :string           not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
+#  server_id  :integer          not null
 #
 
 class Channel < ApplicationRecord
@@ -18,7 +19,6 @@ class Channel < ApplicationRecord
   belongs_to :server,
     foreign_key: :server_id,
     class_name: :Server
-
 
   has_many :memberships,
     foreign_key: :member_id,
