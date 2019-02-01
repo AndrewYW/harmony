@@ -1,10 +1,51 @@
+.server-detail {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+//Channel block
+
 .channel-block {
+  display: flex;
+  flex-direction: column;
+
   box-sizing: border-box;
-  background-color: rgb(46, 49, 54);
-  width: 270px;
+  background-color: #2f3136;
+  width: 240px;
   padding: 10px;
 }
 
+.channel-header{
+  display: flex;
+  box-sizing: border-box;
+  padding: 0 16px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 48px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #fff;
+  border-bottom: 1px solid #232428;
+  height: 55px;
+  width: 240px;
+  
+}
+
+.channel-header:hover {
+  background-color: rgba(0,0,0,.1);
+}
+
+.channel-list {
+  color: #72767d;
+  padding-right: 8px;
+  height: 100%;
+  margin-top: -1px;
+  padding-top: 28px;
+}
+
+// Content block
 .content-block {
   display: flex;
   flex-direction: column;
@@ -16,10 +57,19 @@
 .content-header {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #292c30;
   width: 100%;
   height: 50px;
-  background-color: white;
+  background-color: #36393f;
   justify-content: left;
+  padding: 0 8px 0 12px;
+
+  h1 {
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+  }
 }
 
 .content {
@@ -40,13 +90,12 @@
 .message-feed {
   width: 100%;
   height: 100%;
-  background-color: purple;
+  background-color: #36393f;
 }
 
 .message-input {
-  background-color: red;
-  width: 100%;
-  height: 50px;
+  background-color: #36393f;
+  padding: 0 20px;
 }
 
 .server-members {
@@ -55,33 +104,10 @@
   height: 100%;
 }
 
-.message-split {
-  background-color: #2f3136;
-  height: 2px;
-  width: 90%;
-  margin: 11px auto;
-  margin-bottom: 10px;
-}
-
-
-.server-detail {
-  width: 100%;
-  height: 100%;
+.message-form {
   display: flex;
-  flex-direction: row;
+  border-top: 1px solid #42454a;
+  padding: 20px 0 30px;
+
 }
 
-.content ul {
-  display: flex;
-  flex-direction: column;
-}
-
-.content ul li {
-  display: block;
-  list-style-type: none;
-  padding: 5px;
-}
-
-.content ul li:hover {
-  background-color: rgb(54, 57, 63);
-}

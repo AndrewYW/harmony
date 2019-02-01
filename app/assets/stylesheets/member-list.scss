@@ -1,0 +1,40 @@
+.server-members {
+  width: 240px;
+  flex-shrink: 0;
+  height: 100%;
+
+}
+.member-ul {
+  width: 240px;
+  display: flex;
+  background-color: #2f3136;
+  flex-direction: column;
+}
+
+.member-category{
+  height: 40px;
+  box-sizing: border-box;
+  color: rgb(130,131,134);
+  padding: 20px 8px 0 16px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: .08em;
+
+}
+
+// need to refactor into item components
+.server-member {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(130, 131, 134);
+  padding: 20px 8px 0 16px;
+}
+
+.server-member:hover {
+  background-color: rgb(54, 57, 63);
+}

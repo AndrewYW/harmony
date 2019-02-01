@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
-
+import UserBlurb from './user_blurb';
 class DMServerDetail extends React.Component {
   componentDidMount() {
     // this.props.fetchServer(1);
@@ -15,10 +15,12 @@ class DMServerDetail extends React.Component {
       <section className="server-detail">
         <div className="channel-block">
           <div className="channel-header">FRIENDS</div>
+          <div className="channel-list"></div>
+          <UserBlurb />
         </div>
         <div className="content-block">
           <div className="content-header">
-            MESSAGES
+            <h1>MESSAGES</h1>
           </div>
           <div className="content">
             <div className="message-block">

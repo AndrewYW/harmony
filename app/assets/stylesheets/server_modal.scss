@@ -117,3 +117,111 @@
   background-color: rgb(54,147,104);
 }
 
+
+
+// Create Server modal form
+
+.create-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  background: white;
+  width: 540px;
+  height: 420px;
+  border-radius: 5px;
+}
+
+.create-div {
+  padding: 34px 40px 0;
+}
+
+.create-div h5{
+  color: #7289da;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.3;
+  text-align: center;
+}
+
+.create-div p {
+  color: #99aab5;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 18px;
+  padding: 10px 0;
+}
+
+.create-inputs {
+  // width: 240px;
+}
+
+.create-inputs input {
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  border-bottom-color: #f0f0f0;
+  border-width: 0 0 2px 0;
+  background: transparent;
+  padding: 10px 4px;
+  width: 100%;
+  color: #2f3136;
+}
+
+.create-inputs input:hover {
+  border-color: #b9bbbe;
+}
+.create-inputs input:focus {
+  border-color: #7289da;
+}
+
+.create-inputs input::placeholder {
+  color: #c5c5c5;
+}
+
+.create-inputs label {
+  color: #87909c;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.create-buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 18px 40px;
+  border-radius: 0 0 5px 5px;
+  background-color: #f6f6f6;
+}
+
+.create-buttons button {
+  display: flex;
+  align-items: center;
+  background: transparent;
+  color: #99aab5;
+  font-size: 14px;
+  font-weight: 400;
+  border: 2px solid transparent;
+}
+
+.create-buttons button:hover {
+  border-bottom: 2px solid #b9bbbe;
+}
+
+.create-buttons input {
+  height: 38px;
+  width: 96px;
+  background-color: #7289da;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 2px;
+  border: none;
+}
+
+.create-buttons input:hover {
+  background-color: #677bc4;
+}
+
+
+// Join server Modal

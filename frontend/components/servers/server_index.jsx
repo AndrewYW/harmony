@@ -16,7 +16,7 @@ class ServerIndex extends React.Component {
     this.openServerModal = this.openServerModal.bind(this);
   }
   componentDidMount() {
-    this.props.fetchServers();
+    // this.props.fetchServers();
     ReactModal.setAppElement(".server-index");
 
     // console.log(this.state);
@@ -75,7 +75,7 @@ class ServerIndex extends React.Component {
         <ServerModal 
           showServerModal={this.state.showServerModal} 
           closeServerModal={this.closeServerModal}
-          className="server-modal">asdf</ServerModal>
+          className="server-modal"></ServerModal>
       </div>
     )
   }
