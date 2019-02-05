@@ -1,62 +1,67 @@
 #root {
-background-color: #26262B;
+  background-color: #26262B;
 }
 
 @keyframes bounce {
+
   0%,
   100% {
     transform: translate(0px, -5px);
   }
 
   50% {
-    transform: translate(0px, 5px)
+    transform: translate(0px, 5px);
   }
 }
+
 
 /* Splash Page */
 .splash {
   background-color: #26262b;
   color: white;
-  min-width: 1000px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  min-width: 1000px;
 }
+
 
 /* navbar */
 ul {
   display: flex;
   flex-direction: row;
 }
-ul, ol {
+
+ul,
+ol {
   list-style-type: none;
 }
 
 .Navbar {
-  display:flex;
+  display: flex;
   justify-content: space-between;
   margin: 0 150px 0 150px;
 }
 
-.header{
+.header {
   margin-bottom: 90px;
 }
 
-.navLeft li, .navRight li {
-  display: flex;
+.navLeft li,
+.navRight li {
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 
 li a {
+  color: white;
+  margin-right: 8px;
   margin-top: 13px;
+  opacity: .8;
   padding: 5px;
   padding-top: 0;
   text-decoration: none;
-  color: white;
-  opacity: .8;
-  margin-right: 8px;
 }
 
 li a:hover {
@@ -64,42 +69,43 @@ li a:hover {
 }
 
 .navLogo {
-  margin-top: 10px;
-  display: flex;
   align-items: center;
+  display: flex;
+  margin-right: 12px;
+  margin-top: 10px;
   position: relative;
   width: 135px;
-  margin-right: 12px;
 }
 
 .loginButton {
   border: 2px solid hsla(0, 0%, 100%, .8);
   border-radius: 20px;
-  opacity: .3;
   font-size: 100%;
-  margin-top: 10px;
-  padding: 5px 17px 7px;
   line-height: 24px;
   margin-right: 18px;
+  margin-top: 10px;
+  opacity: .3;
+  padding: 5px 17px 7px;
   vertical-align: baseline;
 }
 
-.loginButton:visited, .loginButton:hover {
+.loginButton:visited,
+.loginButton:hover {
   color: white;
   opacity: .5;
 }
 
-/* MAIN CONTENT */
 
+/* MAIN CONTENT */
 .mainContent {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   text-align: center;
 }
-/* hero */
 
+/* hero */
 .heroHeader {
   font-size: 36px;
   font-weight: 700;
@@ -109,55 +115,61 @@ li a:hover {
 .hero p {
   font-size: 16px;
   font-weight: 400;
-  margin-top: 12px;
   line-height: 24px;
+  margin-top: 12px;
   opacity: .5;
 }
 
 .heroButtons {
-  margin-top: 20px;
   display: flex;
   justify-content: center;
+  margin-top: 20px;
 }
 
-.demoLogin, .discordLink {
-  border: 2px ;
+.demoLogin,
+.discordLink {
+  border: 2px;
   border-radius: 3px;
-  padding: 5px;
   display: inline-flex;
+  display: block;
+  height: 35px;
   line-height: 35px;
+  margin: 0 10px 0 10px;
+  padding: 5px;
+  position: relative;
+  text-align: center;
   text-decoration: none;
   width: 240px;
-  height: 35px;
-  text-align: center; 
-  display: block;
-  position: relative;
-  margin: 0 10px 0 10px;
 }
 
-.demoLogin, .demoLogin:visited {
+.demoLogin,
+.demoLogin:visited {
   background-color: #fff;
   color: #000;
 }
 
-.demoLogin:hover, .discordLink:hover {
+.demoLogin:hover,
+.discordLink:hover {
   top: 1px;
 }
-.discordLink, discordLink:visited {
+
+.discordLink,
+discordLink:visited {
   background-color: #7289DA;
   color: #fff;
 }
 
 
 
+
 /* splash images */
 .splashImages {
-display: flex;
-position: relative;
-align-items: flex-end;
-justify-content: center;
-height: 638px;
-width: 100%;
+  align-items: flex-end;
+  display: flex;
+  height: 638px;
+  justify-content: center;
+  position: relative;
+  width: 100%;
 }
 
 .splashImages img {
@@ -176,21 +188,21 @@ width: 100%;
 }
 
 .dot0 {
-  top: 0px;
   left: 634px;
+  top: 0px;
 }
 
 .dot1 {
-  top: 0px;
   right: 383px;
+  top: 0px;
 }
 
-.dot2{
-  top: 100px;
+.dot2 {
   right: 733px;
+  top: 100px;
 }
 
-.dot3{
+.dot3 {
   bottom: 200px;
   left: 354px;
 }
@@ -201,8 +213,8 @@ width: 100%;
 }
 
 .x0 {
-  top: 90px;
   left: 374px;
+  top: 90px;
 }
 
 .x1 {
@@ -211,8 +223,8 @@ width: 100%;
 }
 
 .o0 {
-  top: 70px;
   left: 594px;
+  top: 70px;
 }
 
 .o1 {
@@ -226,13 +238,13 @@ width: 100%;
 }
 
 .tri0 {
-  top: 50px;
   left: 984px;
+  top: 50px;
 }
 
 .tri1 {
-  top: 152px;
   left: 664px;
+  top: 152px;
 }
 
 .tri2 {
@@ -241,13 +253,13 @@ width: 100%;
 }
 
 .square0 {
-  top: 0px;
   right: 583px;
+  top: 0px;
 }
 
 .square1 {
-  top: 200px;
   right: 483px;
+  top: 200px;
 }
 
 .square2 {
@@ -256,24 +268,25 @@ width: 100%;
 }
 
 .coin0 {
-  top: 24px;
-  right: 793px;
   animation: bounce 3s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  right: 793px;
+  top: 24px;
 }
 
 .coin1 {
-  top: 253px;
-  left: 525px;
   animation: bounce 3s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  left: 525px;
+  top: 253px;
 }
 
 .android {
   bottom: 10px;
   left: 405px;
 }
+
 .vial {
   bottom: 10px;
-  left: 344px;  
+  left: 344px;
 }
 
 .iphone {
@@ -302,10 +315,10 @@ width: 100%;
 }
 
 .bomb {
-  top: 217px;
-  left: 472px;
   animation: bounce 3s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
   animation-delay: .4s;
+  left: 472px;
+  top: 217px;
 }
 
 .shield {
@@ -319,57 +332,58 @@ width: 100%;
 }
 
 .cartridge {
-  top: 142px;
-  right: 611px;
   animation: bounce 3s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  right: 611px;
+  top: 142px;
 }
 
-/* footer */
 
-.splash-footer{
+/* footer */
+.splash-footer {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 0 150px 0 150px;
 }
+
 .splash-footer div {
   font-size: 12px;
   margin-top: 20px;
   padding-bottom: 20px;
   vertical-align: middle;
-  
-}  
+}
 
 .footerRegister {
+  background-color: #7289DA;
   border: 0;
   border-radius: 3px;
-  padding: 16px;
-  display: inline-flex;
-  line-height: 15px;
-  text-decoration: none;
-  width: 90px;
-  height: 15px;
-  text-align: center;
-  display: block;
-  position: relative;
-  margin: 0;
-  background-color: #7289DA;
   color: #fff;
+  display: inline-flex;
+  display: block;
   font-size: 14px;
   font-weight: 350;
+  height: 15px;
+  line-height: 15px;
+  margin: 0;
+  padding: 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  width: 90px;
 }
+
 .footerRegister:hover {
   bottom: 1px;
 }
 
 .splash-footer div h2 {
+  color: #fff;
   font-size: 26px;
   line-height: 34px;
-  color: #fff;
 }
 
 .splash-footer div h3 {
+  color: #99aab5;
   font-size: 14px;
   margin-top: 4px;
-  color: #99aab5;
 }
