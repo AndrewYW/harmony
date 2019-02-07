@@ -42,6 +42,7 @@ ol {
   justify-content: space-between;
   align-items: center;
   margin: 0 150px 0 150px;
+  padding-top: 8px;
 }
 
 .header {
@@ -73,9 +74,9 @@ li a:hover {
   align-items: center;
   display: flex;
   margin-right: 12px;
-  margin-top: 10px;
+  margin-top: 8px;
   position: relative;
-  width: 130px;
+  width: 142px;
 }
 
 .loginButton {
@@ -84,7 +85,6 @@ li a:hover {
   border-radius: 20px;
   font-size: 13px;
   padding: 5px;
-  // padding-top: 10px;
   line-height: 24px;
   margin-right: 18px;
   margin-top: 13px;
@@ -95,7 +95,6 @@ li a:hover {
 
 .loginButton:visited,
 .loginButton:hover {
-  // color: white;
   opacity: 1;
 }
 
@@ -133,7 +132,7 @@ li a:hover {
 
 }
 
-.demoLogin,
+.repo-link,
 .discordLink {
   border: 2px;
   border-radius: 3px;
@@ -151,13 +150,13 @@ li a:hover {
 
 }
 
-.demoLogin,
-.demoLogin:visited {
+.repo-link,
+.repo-link:visited {
   background-color: #fff;
   color: #000;
 }
 
-.demoLogin:hover,
+.repo-link:hover,
 .discordLink:hover {
   top: 1px;
 }

@@ -9,21 +9,10 @@ class Splash extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.demoLogin = this.demoLogin.bind(this);
   }
 
   componentDidMount() {
 
-  }
-
-  demoLogin(e) {
-    e.preventDefault();
-    const user = {email: "demoemail", password: "demopassword"};
-    // debugger;
-
-    this.props.login(user).then(this.props.history.push("/channels/@me"))
-    
   }
 
   navbar() {
@@ -66,7 +55,7 @@ class Splash extends React.Component {
             Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.
         </p>
         <div className="heroButtons">
-          <a className="demoLogin" href="https://github.com/AndrewYW/harmony" >View the code</a>
+          <a className="repo-link" href="https://github.com/AndrewYW/harmony" >View the code</a>
           <Link className="discordLink" to="/register" >Register an account</Link>
         </div>
       </div>
