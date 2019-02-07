@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import * as SessionAPIUtil from './util/session_api_util';
 import * as ServerAPIUtil from './util/server_api_util';
+import * as ChannelAPIUtil from './util/channel_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
 import { fetchServer, fetchServers } from './actions/server_actions';
