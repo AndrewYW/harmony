@@ -52,23 +52,30 @@ class ServerIndex extends React.Component {
           <ul className="server-ul">
             <Link to="/channels/@me" className="home-link">
               <li>
-                H
+                <img className="minilogo" src={window.minilogo}/>
                 <div className="server-name">Home</div>
               </li>
             </Link>
-          </ul>
-          <div className="server-split" />
-          <ul className="server-ul">
+
+            <div className="server-split" />
+
             { servers }
+
+            <button className="server-add-button" onClick={this.openServerModal}>
+              <p>{'\uFF0B'}</p>
+              <div className="server-name">Add a server</div>
+            </button>
+
+            <div className="server-split" />
+
+            <button className="logout-button" onClick={this.props.logout}>
+              <p>L</p>
+              <div className="server-name">Logout</div>
+            </button>
           </ul>
-          <button className="server-add-button" onClick={this.openServerModal}> 
-            {'\uFF0B'}    
-          </button>
-          <div className="server-split" />
-          <button className="logout-button" onClick={this.props.logout}>
-            L
-            <div className="server-name">Logout</div>
-          </button>
+          
+          
+          
           
         </div>
         <ServerModal 

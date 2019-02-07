@@ -1,22 +1,29 @@
 .server-name {
   background-color: #000;
   border-radius: 5px;
+  box-sizing: content-box;
   color: hsla(0, 0%, 100%, .9);
   font-size: 14px;
   font-weight: 500;
   left: 58px;
   line-height: 14px;
+  margin-right: 5px;
+  min-width: max-content;
   padding: 8px 11px;
-  position: absolute;
-  top: 9px;
+  position: relative;
+  top: -35px;
   visibility: hidden;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .server-ul {
   display: block;
 }
 
-.server-ul a {
+.server-ul a,
+.server-add-button,
+.logout-button {
   background: #0d0e0f;
   background-color: rgb(53, 57, 63);
   border-color: #535559;
@@ -36,6 +43,21 @@
   width: 50px;
 }
 
+.server-add-button,
+.logout-button {
+  background-color: transparent;
+  border-color: #535559;
+  border-radius: 50%;
+  border-width: 1px;
+  box-sizing: border-box;
+  color: #535559;
+  transition: border-color .5s ease, color .5s ease, opacity .5s ease;
+}
+
+.server-add-button {
+  border-style: dashed;
+}
+
 .server-ul a:hover {
   background-color: #7289da;
   border-color: white;
@@ -45,28 +67,16 @@
 a:hover .server-name,
 button:hover .server-name {
   visibility: visible;
+  width: 100%;
 }
 
-.server-add-button,
-.logout-button {
-  background: #202225;
-  border-color: #535559;
-  border-radius: 50%;
-  border-style: dashed;
-  border-width: 1px;
+.minilogo {
   color: #535559;
-  cursor: pointer;
-  display: table-cell;
-  font-size: 40px;
-  font-weight: 300;
-  height: 50px;
-  line-height: 100%;
-  margin-top: 8px;
-  outline: none;
-  text-align: center;
-  transition: border-color .5s ease, color .5s ease, opacity .5s ease;
-  vertical-align: middle;
-  width: 50px;
+  opacity: .3;
+}
+
+.minilogo:hover {
+  color: white;
 }
 
 .logout-button {
