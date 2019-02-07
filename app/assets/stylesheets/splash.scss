@@ -106,6 +106,7 @@ li a:hover {
 }
 
 /* hero */
+
 .heroHeader {
   font-size: 36px;
   font-weight: 700;
@@ -124,6 +125,8 @@ li a:hover {
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  margin-bottom: 20px;
+
 }
 
 .demoLogin,
@@ -140,6 +143,8 @@ li a:hover {
   text-align: center;
   text-decoration: none;
   width: 240px;
+  box-sizing: content-box;
+
 }
 
 .demoLogin,
@@ -154,7 +159,7 @@ li a:hover {
 }
 
 .discordLink,
-discordLink:visited {
+.discordLink:visited {
   background-color: #7289DA;
   color: #fff;
 }
@@ -370,6 +375,8 @@ discordLink:visited {
   text-align: center;
   text-decoration: none;
   width: 90px;
+  box-sizing: content-box;
+
 }
 
 .footerRegister:hover {
