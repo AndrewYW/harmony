@@ -15,6 +15,7 @@
 }
 
 
+
 /* Splash Page */
 .splash {
   background-color: #26262b;
@@ -24,6 +25,7 @@
   justify-content: center;
   min-width: 1000px;
 }
+
 
 
 /* navbar */
@@ -38,9 +40,9 @@ ol {
 }
 
 .Navbar {
+  align-items: center;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   margin: 0 150px 0 150px;
   padding-top: 8px;
 }
@@ -81,14 +83,14 @@ li a:hover {
 
 .loginButton {
   border: 2px solid hsla(0, 0%, 100%, .8);
-  color: white;
   border-radius: 20px;
+  color: white;
   font-size: 13px;
-  padding: 5px;
   line-height: 24px;
   margin-right: 18px;
   margin-top: 13px;
   opacity: .8;
+  padding: 5px;
   padding: 5px 17px 7px;
   vertical-align: baseline;
 }
@@ -97,6 +99,7 @@ li a:hover {
 .loginButton:hover {
   opacity: 1;
 }
+
 
 
 /* MAIN CONTENT */
@@ -108,8 +111,8 @@ li a:hover {
   text-align: center;
 }
 
-/* hero */
 
+/* hero */
 .heroHeader {
   font-size: 36px;
   font-weight: 700;
@@ -127,15 +130,15 @@ li a:hover {
 .heroButtons {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
   margin-bottom: 20px;
-
+  margin-top: 20px;
 }
 
 .repo-link,
 .discordLink {
   border: 2px;
   border-radius: 3px;
+  box-sizing: content-box;
   display: inline-flex;
   display: block;
   height: 35px;
@@ -146,8 +149,6 @@ li a:hover {
   text-align: center;
   text-decoration: none;
   width: 240px;
-  box-sizing: content-box;
-
 }
 
 .repo-link,
@@ -166,6 +167,7 @@ li a:hover {
   background-color: #7289DA;
   color: #fff;
 }
+
 
 
 
@@ -346,6 +348,7 @@ li a:hover {
 }
 
 
+
 /* footer */
 .splash-footer {
   display: flex;
@@ -365,6 +368,7 @@ li a:hover {
   background-color: #7289DA;
   border: 0;
   border-radius: 3px;
+  box-sizing: content-box;
   color: #fff;
   display: inline-flex;
   display: block;
@@ -378,8 +382,6 @@ li a:hover {
   text-align: center;
   text-decoration: none;
   width: 90px;
-  box-sizing: content-box;
-
 }
 
 .footerRegister:hover {
