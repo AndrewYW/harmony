@@ -1,21 +1,31 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { login } from '../../actions/session_actions';
 library.add(fab);
 
 class Splash extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.demoLogin = this.demoLogin.bind(this);
+  }
 
   componentDidMount() {
 
   }
 
-  demoLogin() {
+  demoLogin(e) {
+    e.preventDefault();
     const user = {email: "demoemail", password: "demopassword"};
-    window.dispatch(login(user));
+    // debugger;
+
+    this.props.login(user).then(this.props.history.push("/channels/@me"))
+    
   }
+
   navbar() {
     return (
       <nav className="Navbar">
@@ -56,7 +66,7 @@ class Splash extends React.Component {
             Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.
         </p>
         <div className="heroButtons">
-          <Link className="demoLogin" to="/channels/@me" onClick={this.demoLogin} >Login as demo user</Link>
+          <a className="demoLogin" href="https://github.com/AndrewYW/harmony" >View the code</a>
           <Link className="discordLink" to="/register" >Register an account</Link>
         </div>
       </div>
@@ -139,4 +149,4 @@ class Splash extends React.Component {
   
 }
 
-export default Splash;
+export default withRouter(Splash);

@@ -40,6 +40,7 @@ ol {
 .Navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin: 0 150px 0 150px;
 }
 
@@ -57,10 +58,10 @@ ol {
 li a {
   color: white;
   margin-right: 8px;
-  margin-top: 13px;
+  margin-top: 8px;
   opacity: .8;
   padding: 5px;
-  padding-top: 0;
+  padding-top: 0px;
   text-decoration: none;
 }
 
@@ -74,25 +75,28 @@ li a:hover {
   margin-right: 12px;
   margin-top: 10px;
   position: relative;
-  width: 135px;
+  width: 130px;
 }
 
 .loginButton {
   border: 2px solid hsla(0, 0%, 100%, .8);
+  color: white;
   border-radius: 20px;
-  font-size: 100%;
+  font-size: 13px;
+  padding: 5px;
+  // padding-top: 10px;
   line-height: 24px;
   margin-right: 18px;
-  margin-top: 10px;
-  opacity: .3;
+  margin-top: 13px;
+  opacity: .8;
   padding: 5px 17px 7px;
   vertical-align: baseline;
 }
 
 .loginButton:visited,
 .loginButton:hover {
-  color: white;
-  opacity: .5;
+  // color: white;
+  opacity: 1;
 }
 
 
