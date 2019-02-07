@@ -1,16 +1,15 @@
 .server-name {
-  visibility: hidden;
-  position: absolute;
-  // display: float;
-  top: 9px;
-  left: 58px;
+  background-color: #000;
   border-radius: 5px;
+  color: hsla(0, 0%, 100%, .9);
   font-size: 14px;
   font-weight: 500;
+  left: 58px;
   line-height: 14px;
   padding: 8px 11px;
-  background-color: #000;
-  color: hsla(0, 0%, 100%, .9)
+  position: absolute;
+  top: 9px;
+  visibility: hidden;
 }
 
 .server-ul {
@@ -18,61 +17,56 @@
 }
 
 .server-ul a {
-  margin-top: 8px;
   background: #0d0e0f;
-  background-color: #7289DA;
+  background-color: rgb(53, 57, 63);
   border-color: #535559;
-  cursor: pointer;
   border-radius: 50%;
   border-width: 1px;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
   font-size: 40px;
   font-weight: 300;
   height: 50px;
   line-height: 100%;
-  text-align: center;
-  transition:  border-radius .25s ease;
-  width: 50px;
-  color: #535559;
+  margin-top: 8px;
   outline: none;
+  text-align: center;
+  transition: border-radius .5s ease;
+  width: 50px;
 }
 
 .server-ul a:hover {
-  border-radius: 15px;
-  border-color: white;
-}
-
-.server-ul .home-link {
-  border-radius: 15px;
-  background-color: rgb(53,57,63);
-  color: #fff;
-  transition: background-color .25s ease;
-}
-
-.server-ul .home-link:hover {
   background-color: #7289da;
+  border-color: white;
+  border-radius: 15px;
 }
-a:hover .server-name, button:hover .server-name {
+
+a:hover .server-name,
+button:hover .server-name {
   visibility: visible;
 }
 
 .server-add-button,
 .logout-button {
-  margin-top: 8px;
   background: #202225;
   border-color: #535559;
-  cursor: pointer;
   border-radius: 50%;
   border-style: dashed;
   border-width: 1px;
+  color: #535559;
+  cursor: pointer;
+  display: table-cell;
   font-size: 40px;
   font-weight: 300;
   height: 50px;
   line-height: 100%;
-  text-align: center;
-  transition: border-color .25s ease, color .25s ease, opacity .25s ease;
-  width: 50px;
-  color: #535559;
+  margin-top: 8px;
   outline: none;
+  text-align: center;
+  transition: border-color .5s ease, color .5s ease, opacity .5s ease;
+  vertical-align: middle;
+  width: 50px;
 }
 
 .logout-button {

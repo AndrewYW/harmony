@@ -61,8 +61,8 @@ class ServerIndex extends React.Component {
           <ul className="server-ul">
             { servers }
           </ul>
-          <button className="server-add-button" onClick={this.openServerModal}>
-            +
+          <button className="server-add-button" onClick={this.openServerModal}> 
+            {'\uFF0B'}    
           </button>
           <div className="server-split" />
           <button className="logout-button" onClick={this.props.logout}>
