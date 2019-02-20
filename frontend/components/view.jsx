@@ -9,7 +9,7 @@ import { fetchServers } from '../actions/server_actions';
 class View extends React.Component {
   componentWillMount() {
     this.props.fetchServers();
-    debugger
+    // debugger
   }
 
   render() {

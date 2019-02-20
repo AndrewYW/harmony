@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Redirect} from 'react-router-dom';
+import Typed from 'typed.js';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);

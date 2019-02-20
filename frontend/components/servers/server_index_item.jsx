@@ -4,7 +4,7 @@ import { withRouter } from 'react-router';
 const ServerIndexItem = ({ server }) => {
   return (
     <li>
-      {server.name[0]}
+      <img className="server-logo" src={window.minilogo} />
       <div className="server-name">{server.name}</div>
     </li>
   )

@@ -72,11 +72,17 @@ button:hover .server-name {
 
 .minilogo {
   color: #535559;
-  opacity: .3;
+  // opacity: .3;
+  width: 80%;
 }
 
 .minilogo:hover {
   color: white;
+}
+
+.server-logo {
+  color: white;
+  width: 75%;
 }
 
 .logout-button {
