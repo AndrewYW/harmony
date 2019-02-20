@@ -83,7 +83,7 @@ class ServerDetail extends React.Component {
             {this.props.server.name}
           </div>
           <div className="channel-list">
-            {/* {this.serverChannels()} */}
+            {this.serverChannels()}
           </div>
           <UserBlurb />
         </div>

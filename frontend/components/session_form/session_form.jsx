@@ -25,8 +25,32 @@ class SessionForm extends React.Component {
   
   handleDemoLogin(e) {
     e.preventDefault();
-    const user = {email: 'demoemail', password: 'demopassword'};
-    this.props.login(user).then(() => this.props.history.push('/channels/@me'));
+    const email = {
+      strings: ["demouser"],
+      typeSpeed: 50
+    };
+
+    const password = {
+      strings: ["demopassword"],
+      typeSpeed: 50
+    }
+
+    this.setState({
+      email: '',
+      password: ''
+    });
+
+    new Typed(".email", email);
+
+    setTimeout(() => {
+      new Typed(".password", password);
+    }, 1200);
+
+    setTimeout(() => {
+      this.props.processForm({ email: "demoemail", password: "demopassword" }).then(() => this.props.history.push('/channels/@me'));
+    }, 2500);
+
+    ;
   }
 
   handleChange(type) {
@@ -83,13 +107,13 @@ class SessionForm extends React.Component {
           {this.renderErrors()}
           <div className="formInput">
             <label>EMAIL</label>
-            <input type="text" value={this.state.email} onChange={this.handleChange('email')} />
+            <input type="text" value={this.state.email} onChange={this.handleChange('email')} className="email" />
           </div>
 
           {this.formType() ? null : this.usernameLabel() }
           <div className="formInput">
             <label>PASSWORD</label>
-            <input type="password" value={this.state.password} onChange={this.handleChange('password')} />
+            <input type="password" value={this.state.password} onChange={this.handleChange('password')} className="password" />
           </div>
           <input className="formButton" type="submit" value={this.formType() ? "Login": "Continue"} onClick={this.handleSubmit} />
           {this.formFooter()}
