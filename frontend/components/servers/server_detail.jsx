@@ -11,15 +11,26 @@ class ServerDetail extends React.Component {
       currentChannel: "General"
     })
   }
+
+  // componentWillMount() {
+  //   debugger;
+  //   this.props.fetchServers().then(this.props.requestChannels(this.props.serverId));
+
+  // }
   componentDidMount() {
-    // debugger;
+    // this.props.fetchServers();
+    debugger  
+    // this.props.fetchServer(this.props.match.params.serverId);
+    // this.props.fetchServers();
   }
 
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.match.params.serverId != this.props.match.params.serverId){
-  //     this.props.fetchServer(this.props.match.params.serverId);
-  //   }
-  // }
+  componentDidUpdate(prevProps) {
+    if (prevProps.match.params.serverId != this.props.match.params.serverId){
+      // this.props.fetchServer(this.props.match.params.serverId);
+      // this.props.requestChannels(this.props.match.params.serverId);
+      // this.props.requestChannels(this.props.serverId);
+    }
+  }
 
   serverMembers() {
     if (this.props.members != undefined) {
@@ -72,7 +83,7 @@ class ServerDetail extends React.Component {
             {this.props.server.name}
           </div>
           <div className="channel-list">
-            {this.serverChannels()}
+            {/* {this.serverChannels()} */}
           </div>
           <UserBlurb />
         </div>

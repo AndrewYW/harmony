@@ -6,8 +6,8 @@ class Api::ChannelsController < ApplicationController
     @channels = @server.channels
   end
 
-  def show
-
+  def show  
+    @channel = Channel.find(params[:id])
   end
 
   def update

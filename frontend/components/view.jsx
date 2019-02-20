@@ -7,8 +7,9 @@ import ServerDetail from './servers/server_detail_container';
 import { fetchServers } from '../actions/server_actions';
 
 class View extends React.Component {
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchServers();
+    debugger
   }
 
   render() {
