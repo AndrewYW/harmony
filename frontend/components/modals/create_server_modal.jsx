@@ -21,7 +21,6 @@ class CreateModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    debugger;
     this.props.createServer(this.state)
   }
 
