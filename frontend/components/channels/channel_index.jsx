@@ -23,7 +23,7 @@ class ChannelIndex extends React.Component {
   render() {
     const channels = Object.values(this.props.channels).map(channel => {
       return(
-      <NavLink key={channel.id} to={`${channel.discord_id}`}>
+      <NavLink activeClassName="selected-channel" key={channel.id} to={`${channel.discord_id}`}>
         <ChannelIndexItem channel={channel} />
       </NavLink>
       )

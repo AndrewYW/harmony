@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import ChannelIndex from '../channels/channel_index_container';
 import UserBlurb from './user_blurb';
+
 class ServerDetail extends React.Component {
 
   constructor(props){
@@ -13,14 +14,22 @@ class ServerDetail extends React.Component {
     })
   }
 
+  componentDidMount() {
+    // this.props.requestChannel(this.props.match.params.channelId);
+    
+  }
+
+  componentDidUpdate(oldProps) {
+    
+  }
 
   serverMembers() {
     if (this.props.members != undefined) {
       const members = this.props.members.map(member => {
         return (
           <li key={member.id} className="server-member">
-          <img src={window.miniLogo} className="user-image"/>
-          {member.username}
+            <img src={window.minilogo} className="user-image"/>
+            <p>{member.username}</p>
           </li>
         )
       });
@@ -35,24 +44,6 @@ class ServerDetail extends React.Component {
     }
   }
 
-  // serverChannels() {
-  //   if (this.props.server.channels != undefined){ 
-  //     const channels = this.props.server.channels.map(channel => {
-  //       return (
-  //         <li key={channel.id} className="server-channel" onClick={this.updateCurrentChannel}># {channel.name}</li>
-  //       )
-  //     });
-
-  //     return (
-  //       <div className="server-channels">
-  //         <div className="channel-category">CHANNELS</div>
-  //         <ul className="channel-ul">
-  //           <ChannelIndex />
-  //         </ul>
-  //       </div>
-  //     )
-  //   }
-  // }
   updateCurrentChannel(e) {
     e.preventDefault();
     this.setState({

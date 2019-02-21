@@ -26,14 +26,31 @@
 // need to refactor into item components
 .server-member {
   display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
   align-items: center;
   list-style-type: none;
   font-size: 16px;
   font-weight: 500;
   color: rgb(130, 131, 134);
-  padding: 20px 8px 5px 16px;
+  padding: 8px 8px 8px 16px;
   width: 100%;
+
+  .user-image {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    color: white;
+    background-color: purple;
+  }
+
+  p {
+    // width: 100%;
+    margin-left: 10px;
+  }
 }
+
+
 
 .server-member:hover {
   background-color: rgb(54, 57, 63);

@@ -1,13 +1,11 @@
 class Api::ChannelsController < ApplicationController
 
   def index
-    # debugger
     @server = current_user.servers.find_by(discord_id: params[:server_id])
     @channels = @server.channels
   end
 
   def show  
-    debugger
     @channel = Channel.where(discord_id: params[:id]).first
   end
 
