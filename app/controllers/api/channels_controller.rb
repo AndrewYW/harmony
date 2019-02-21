@@ -7,7 +7,8 @@ class Api::ChannelsController < ApplicationController
   end
 
   def show  
-    @channel = Channel.find(params[:id])
+    debugger
+    @channel = Channel.where(discord_id: params[:id]).first
   end
 
   def update

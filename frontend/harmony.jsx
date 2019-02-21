@@ -6,7 +6,7 @@ import * as ChannelAPIUtil from './util/channel_api_util';
 import configureStore from './store/store';
 import Root from './components/root';
 import { fetchServer, fetchServers } from './actions/server_actions';
-import { requestChannels } from './actions/channel_actions';
+import { requestChannels, requestChannel } from './actions/channel_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;
@@ -33,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.requestChannels = requestChannels;
+  window.requestChannel = requestChannel;
   
   ReactDOM.render(<Root store={ store } />, root);
 });

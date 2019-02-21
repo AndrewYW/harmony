@@ -28,7 +28,6 @@ class ChannelIndex extends React.Component {
       </NavLink>
       )
     });
-    debugger;
 
 
     return (

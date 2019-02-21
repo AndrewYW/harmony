@@ -20,7 +20,7 @@ export const requestChannels = serverId => dispatch => (
 );
 
 export const requestChannel = id => dispatch (
-  ChannelApiUtil.fetchChannel(id)>then(channel => (
+  ChannelApiUtil.fetchChannel(id).then(channel => (
     dispatch(receiveChannel(channel))
   ))
 );

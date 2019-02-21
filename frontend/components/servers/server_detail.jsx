@@ -13,31 +13,15 @@ class ServerDetail extends React.Component {
     })
   }
 
-  // componentWillMount() {
-  //   debugger;
-  //   this.props.fetchServers().then(this.props.requestChannels(this.props.serverId));
-
-  // }
-  componentDidMount() {
-    // this.props.fetchServers();
-    // debugger  
-    // this.props.fetchServer(this.props.match.params.serverId);
-    // this.props.fetchServers();
-  }
-
-  componentDidUpdate(prevProps) {
-    if (prevProps.match.params.serverId != this.props.match.params.serverId){
-      // this.props.fetchServer(this.props.match.params.serverId);
-      // this.props.requestChannels(this.props.match.params.serverId);
-      // this.props.requestChannels(this.props.serverId);
-    }
-  }
 
   serverMembers() {
     if (this.props.members != undefined) {
       const members = this.props.members.map(member => {
         return (
-          <li key={member.id} className="server-member">{member.username}</li>
+          <li key={member.id} className="server-member">
+          <img src={window.miniLogo} className="user-image"/>
+          {member.username}
+          </li>
         )
       });
       return (
