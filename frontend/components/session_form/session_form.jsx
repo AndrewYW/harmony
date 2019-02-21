@@ -134,9 +134,7 @@ class SessionForm extends React.Component {
       return (
         <>
           <Link className="lonk" to='/login'>Already have an account?</Link>
-          <Link className="lonk" to='/channels/@me' onClick={this.handleDemoLogin}>Log in as demo user</Link>
           <p className="registerP">By registering, you agree to Harmony's Terms of Service and Privacy Policy.</p>
-
         </>
       )
     }
