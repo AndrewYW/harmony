@@ -15,12 +15,14 @@ class ServerDetail extends React.Component {
   }
 
   componentDidMount() {
-    // this.props.requestChannel(this.props.match.params.channelId);
+    this.props.requestChannel(this.props.match.params.channelId);
     
   }
 
   componentDidUpdate(oldProps) {
-    
+    if(this.props.match.params.serverId !== oldProps.match.params.serverId){
+      this.props.requestChannels(this.props.match.params.serverId);
+    }
   }
 
   serverMembers() {

@@ -11,6 +11,7 @@ const mstp = ({session, entities}) => ({
 
 const mdtp = dispatch => ({
   requestChannels: (serverId) => dispatch(requestChannels(serverId)),
+  requestChannel: (channelId) => dispatch(requestChannel(channelId)),
 });
 
 export default connect(mstp, mdtp)(ChannelIndex);

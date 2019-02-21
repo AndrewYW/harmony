@@ -9,7 +9,6 @@ import ServerDetail from './servers/server_detail_container';
 
 class View extends React.Component {
   componentWillMount() {
-    // debugger
     this.props.startLoading();
   }
 

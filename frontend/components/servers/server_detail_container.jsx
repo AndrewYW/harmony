@@ -10,7 +10,6 @@ const mstp = (state = {}, ownProps) => {
   
   const server = servers.find(server => server.discord_id === serverId) || {};
   const members = server.members;
-  // debugger
   return {
     server, serverId, channelId, members
   };

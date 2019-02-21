@@ -19,13 +19,13 @@ export const requestChannels = serverId => dispatch => (
   ))
 );
 
-export const requestChannel = id => dispatch (
+export const requestChannel = id => dispatch => (
   ChannelApiUtil.fetchChannel(id).then(channel => (
     dispatch(receiveChannel(channel))
   ))
 );
 
-export const createChannel = channel => dispatch (
+export const createChannel = channel => dispatch => (
   ChannelApiUtil.createChannel(channel).then(channel => (
     dispatch(receiveChannel(channel))
   ))

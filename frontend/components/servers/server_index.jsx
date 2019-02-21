@@ -16,7 +16,6 @@ class ServerIndex extends React.Component {
     this.openServerModal = this.openServerModal.bind(this);
   }
   componentDidMount() {
-    // this.props.fetchServers();
     ReactModal.setAppElement(".server-index");
     this.props.fetchServers();
   }
