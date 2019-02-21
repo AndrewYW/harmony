@@ -12,7 +12,7 @@
 #
 
 class Message < ApplicationRecord
-  validates :body, :discord_id, :author_id, :channel_id, presence: true,
+  validates :body, :discord_id, :author_id, :channel_id, presence: true
   validates :discord_id, uniqueness: true
 
   after_initialize :generate_discord_id
