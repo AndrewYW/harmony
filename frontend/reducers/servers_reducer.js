@@ -26,7 +26,7 @@ const serversReducer = (state = {}, action) => {
         [action.server.id]: action.server
       });
     case LOGOUT_CURRENT_USER:
-      return [];
+      return {};
     default:
       return state;
   }
