@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
+import ChannelIndex from '../channels/channel_index_container';
 import UserBlurb from './user_blurb';
 class ServerDetail extends React.Component {
 
@@ -8,7 +9,7 @@ class ServerDetail extends React.Component {
 
     this.updateCurrentChannel = this.updateCurrentChannel.bind(this);
     this.state = ({
-      currentChannel: "General"
+      currentChannel: "# General"
     })
   }
 
@@ -50,24 +51,24 @@ class ServerDetail extends React.Component {
     }
   }
 
-  serverChannels() {
-    if (this.props.server.channels != undefined){ 
-      const channels = this.props.server.channels.map(channel => {
-        return (
-          <li key={channel.id} className="server-channel" onClick={this.updateCurrentChannel}># {channel.name}</li>
-        )
-      });
+  // serverChannels() {
+  //   if (this.props.server.channels != undefined){ 
+  //     const channels = this.props.server.channels.map(channel => {
+  //       return (
+  //         <li key={channel.id} className="server-channel" onClick={this.updateCurrentChannel}># {channel.name}</li>
+  //       )
+  //     });
 
-      return (
-        <div className="server-channels">
-          <div className="channel-category">CHANNELS</div>
-          <ul className="channel-ul">
-            {channels} 
-          </ul>
-        </div>
-      )
-    }
-  }
+  //     return (
+  //       <div className="server-channels">
+  //         <div className="channel-category">CHANNELS</div>
+  //         <ul className="channel-ul">
+  //           <ChannelIndex />
+  //         </ul>
+  //       </div>
+  //     )
+  //   }
+  // }
   updateCurrentChannel(e) {
     e.preventDefault();
     this.setState({
@@ -83,7 +84,7 @@ class ServerDetail extends React.Component {
             {this.props.server.name}
           </div>
           <div className="channel-list">
-            {this.serverChannels()}
+            <ChannelIndex />
           </div>
           <UserBlurb />
         </div>

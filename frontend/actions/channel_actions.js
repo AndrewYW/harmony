@@ -13,7 +13,7 @@ const receiveChannel = channel => ({
   channel
 });
 
-export const requestChannels = serverId => dispatch(
+export const requestChannels = serverId => dispatch => (
   ChannelApiUtil.fetchChannels(serverId).then(channels => (
     dispatch(receiveAllChannels(channels))
   ))
