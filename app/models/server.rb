@@ -10,7 +10,7 @@
 #  created_at         :datetime         not null
 #  updated_at         :datetime         not null
 #  instant_invite     :string           not null
-#  default_channel_id :integer
+#  default_channel_id :string
 #
 
 class Server < ApplicationRecord

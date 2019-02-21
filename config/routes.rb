@@ -11,4 +11,6 @@ Rails.application.routes.draw do
     resources :server_members, only: [:index, :create, :destroy]
     resources :channel_members, only: [:index, :create, :destroy]
   end
+
+  mount ActionCable.server, at: '/cable'
 end
