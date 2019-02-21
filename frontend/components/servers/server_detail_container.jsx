@@ -7,11 +7,12 @@ const mstp = (state = {}, ownProps) => {
   const serverId = ownProps.match.params.serverId;
   const channelId = ownProps.match.params.channelId;
   const servers = Object.values(state.entities.servers);
-  
+  const channels = Object.values(state.entities.channels);
+  const channel = channels.find(channel => channel.discord_id === channelId) || {};
   const server = servers.find(server => server.discord_id === serverId) || {};
   const members = server.members;
   return {
-    server, serverId, channelId, members
+    server, serverId, channelId, members, channel
   };
 };
 

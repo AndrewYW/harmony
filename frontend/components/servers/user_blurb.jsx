@@ -6,7 +6,7 @@ const UserBlurb = ({ user }) => {
     <div className="user-blurb">
       <div className="user-info">
         <h1>{user.username}</h1>
-        <h2>{user.discriminator}</h2>
+        <h2>#{user.discriminator}</h2>
       </div>
     </div>
   )

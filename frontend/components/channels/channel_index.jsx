@@ -29,7 +29,6 @@ class ChannelIndex extends React.Component {
       </NavLink>
       )
     });
-    console.log(this.props.match.params);
 
     return (
       <div className="server-channels">

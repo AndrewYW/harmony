@@ -7,16 +7,11 @@ class ServerDetail extends React.Component {
 
   constructor(props){
     super(props);
-
-    this.updateCurrentChannel = this.updateCurrentChannel.bind(this);
-    this.state = ({
-      currentChannel: "# General"
-    })
+    
   }
 
   componentDidMount() {
     this.props.requestChannel(this.props.match.params.channelId);
-    
   }
 
   componentDidUpdate(oldProps) {
@@ -46,13 +41,6 @@ class ServerDetail extends React.Component {
     }
   }
 
-  updateCurrentChannel(e) {
-    e.preventDefault();
-    this.setState({
-      currentChannel: e.target.innerText
-    })
-  }
-
   render() {
     return (
       <section className="server-detail">
@@ -67,7 +55,7 @@ class ServerDetail extends React.Component {
         </div>
         <div className="content-block">
           <div className="content-header">
-            <h1>{this.state.currentChannel}</h1>
+            <h1># {this.props.channel.name}</h1>
           </div>
           <div className="content">
             <div className="message-block">
