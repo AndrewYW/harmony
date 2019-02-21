@@ -1,5 +1,8 @@
 import { combineReducers } from 'redux';
+import loading from './loading_reducer';
 
-const uiReducer = {};
+const uiReducer = combineReducers({
+  loading,
+});
 
 export default uiReducer;

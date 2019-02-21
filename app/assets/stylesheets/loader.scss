@@ -1,0 +1,35 @@
+.loader {
+  align-items: center;
+  background-color: #2a2b30;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  position: fixed;
+  transition: opacity 500ms ease;
+  width: 100%;
+  z-index: 50;
+
+  .loading-video {
+    height: 200px;
+    width: 200px;
+  }
+
+  .loading-line {
+    color: white;
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  .loading-progress {
+    color: white;
+    font-size: 12px;
+    opacity: .3;
+    text-transform: uppercase;
+  }
+
+  .stop-loading {
+    opacity: 0;
+  }
+}
