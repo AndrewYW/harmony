@@ -46,7 +46,7 @@ class ServerDetail extends React.Component {
       <section className="server-detail">
         <div className="channel-block">
           <div className="channel-header">
-            {this.props.server.name}
+            {this.props.server.name}, {this.props.server.instant_invite}
           </div>
           <div className="channel-list">
             <ChannelIndex />
