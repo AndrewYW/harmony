@@ -28,13 +28,9 @@ class Channel < ApplicationRecord
     through: :memberships,
     source: :member
 
-  has_many :messageships,
-    foreign_key: :message_id,
-    class_name: :ChannelMessage
-
   has_many :messages,
-    through: :messageships,
-    source: :message
+    foreign_key: :channel_id,
+    class_name: :Message
 
   private
   def generate_discord_id
