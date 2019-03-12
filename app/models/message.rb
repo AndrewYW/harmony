@@ -17,7 +17,6 @@ class Message < ApplicationRecord
 
   after_initialize :generate_discord_id
 
-
   belongs_to :author,
     foreign_key: author_id,
     class_name: :User
@@ -25,6 +24,7 @@ class Message < ApplicationRecord
   belongs_to :channel,
     foreign_key: :channel_id,
     class_name: :Channel
+
   private
   def generate_discord_id
     begin

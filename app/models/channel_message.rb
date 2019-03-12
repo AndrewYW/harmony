@@ -16,7 +16,7 @@ class ChannelMessage < ApplicationRecord
     foreign_key: :channel_id,
     class_name: :Channel
   
-    belongs_to :message,
-      foreign_key: :message_id,
-      class_name: :Message
+  belongs_to :message,
+    foreign_key: :message_id,
+    class_name: :Message
 end

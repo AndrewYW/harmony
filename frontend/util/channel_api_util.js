@@ -25,7 +25,7 @@ export const createChannel = channel => (
 export const updateChannel = channel => (
   $.ajax({
     method: "POST",
-    url: `/api/channels/${channel.id}`,
+    url: `/api/channels/${channel.discord_id}`,
     data: { channel }
   })
 )

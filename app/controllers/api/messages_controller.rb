@@ -1,7 +1,8 @@
 class Api::MessagesController < ApplicationController
 
   def index
-    @channel = Channel.find_by(discord_id: params[:channel_id])
+    debugger
+    @channel = Channel.find_by(discord_id: params[:discord_id])
 
     if @channel
       @messages = @channel.messages.order("created_at DESC")
@@ -22,8 +23,17 @@ class Api::MessagesController < ApplicationController
     end
   end
 
-  def delete
+  def show
+    @message = Message.find_by(discord_id: params[:id])
+  end
 
+  def destroy
+    @message = Message.find_by(discord_id: params[:id])
+
+    if @message.delete
+    else
+      render json: @message.errors.full_messages, status: 422
+    end
   end
 
   private
