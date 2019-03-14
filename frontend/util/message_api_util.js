@@ -13,6 +13,14 @@ export const fetchMessage = discord_id => (
   })
 )
 
+export const createMessage = message => (
+  $.ajax({
+    method: "POST",
+    url: `/api/messages/`,
+    data: { message }
+  })
+)
+
 export const updateMessage = message => (
   $.ajax({
     method: "POST",

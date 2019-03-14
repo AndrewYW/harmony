@@ -1,11 +1,11 @@
 class Api::MessagesController < ApplicationController
 
   def index
+    @channel = Channel.includes(:messages).find_by(discord_id: params[:discord_id])
     debugger
-    @channel = Channel.find_by(discord_id: params[:discord_id])
 
     if @channel
-      @messages = @channel.messages.order("created_at DESC")
+      @messages = @channel.messages.includes(:author).order("created_at DESC")
       render :index
     else
       render json: ["Channel doesn't exist"], status: 404
