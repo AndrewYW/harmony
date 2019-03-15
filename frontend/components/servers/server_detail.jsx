@@ -2,16 +2,12 @@ import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import ChannelIndex from '../channels/channel_index_container';
 import UserBlurb from './user_blurb';
+import MessageIndex from '../messages/message_index';
 
 class ServerDetail extends React.Component {
 
   constructor(props){
     super(props);
-
-    this.updateCurrentChannel = this.updateCurrentChannel.bind(this);
-    this.state = ({
-      currentChannel: "# General"
-    })
   }
 
   componentDidMount() {
@@ -22,6 +18,9 @@ class ServerDetail extends React.Component {
   componentDidUpdate(oldProps) {
     if(this.props.match.params.serverId !== oldProps.match.params.serverId){
       this.props.requestChannels(this.props.match.params.serverId);
+    }
+    if(this.props.match.params.channelId !== oldProps.match.params.channelId) {
+      this.props.requestChannel(this.props.match.params.channelId);
     }
   }
 
@@ -46,13 +45,6 @@ class ServerDetail extends React.Component {
     }
   }
 
-  updateCurrentChannel(e) {
-    e.preventDefault();
-    this.setState({
-      currentChannel: e.target.innerText
-    })
-  }
-
   render() {
     return (
       <section className="server-detail">
@@ -67,15 +59,11 @@ class ServerDetail extends React.Component {
         </div>
         <div className="content-block">
           <div className="content-header">
-            <h1>{this.state.currentChannel}</h1>
+            <h1># {this.props.currentChannel.name}</h1>
           </div>
           <div className="content">
             <div className="message-block">
-              <div className="message-feed"></div>
-              <div className="message-input">
-                <form action="submit" className="message-form">
-                </form>
-              </div>
+              <MessageIndex />
             </div>
             {this.serverMembers()}
           </div>

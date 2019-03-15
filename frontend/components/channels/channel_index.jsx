@@ -13,12 +13,15 @@ class ChannelIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestChannels(this.props.match.params.serverId);
-    this.props.requestChannel(this.props.match.params.channelId);
+    // this.props.requestChannel(this.props.match.params.channelId);
   }
 
   componentDidUpdate(oldProps) {
     if (this.props.match.params.serverId !== oldProps.match.params.serverId) {
-      this.props.requestChannels(this.props.match.params.serverId)
+      this.props.requestChannels(this.props.match.params.serverId);
+    }
+    if (this.props.match.params.channelId !== oldProps.match.params.channelId) {
+      // this.props.requestChannel(this.props.match.params.channelId);
     }
   }
   render() {
@@ -29,7 +32,7 @@ class ChannelIndex extends React.Component {
       </NavLink>
       )
     });
-    console.log(this.props.match.params);
+    // console.log(this.props.match.params);
 
     return (
       <div className="server-channels">

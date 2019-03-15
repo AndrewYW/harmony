@@ -5,13 +5,12 @@ import { requestChannels, requestChannel } from '../../actions/channel_actions';
 
 const mstp = (state = {}, ownProps) => {
   const serverId = ownProps.match.params.serverId;
-  const channelId = ownProps.match.params.channelId;
   const servers = Object.values(state.entities.servers);
-  
+  const currentChannel = state.ui.channel;
   const server = servers.find(server => server.discord_id === serverId) || {};
   const members = server.members;
   return {
-    server, serverId, channelId, members
+    server, members, currentChannel
   };
 };
 

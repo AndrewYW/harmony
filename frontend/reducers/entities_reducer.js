@@ -11,5 +11,5 @@ export default combineReducers({
   users,
   servers,
   channels,
-  messages
+  messages,
 });

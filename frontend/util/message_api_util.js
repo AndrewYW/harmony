@@ -1,7 +1,7 @@
 export const fetchMessages = channelId =>  (
   $.ajax({
     method: 'GET',
-    url: '/api/channels',
+    url: '/api/messages',
     data: { discord_id: channelId }
   })
 )

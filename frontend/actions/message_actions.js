@@ -25,7 +25,7 @@ export const requestMessage = id => dispatch => (
   ))
 );
 
-export const createMessage = message => (
+export const createMessage = message => dispatch => (
   MessageAPIUtil.createMessage(message).then(message => (
     dispatch(receiveMessage(message))
   ))

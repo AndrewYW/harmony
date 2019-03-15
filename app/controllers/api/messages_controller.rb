@@ -2,7 +2,7 @@ class Api::MessagesController < ApplicationController
 
   def index
     @channel = Channel.includes(:messages).find_by(discord_id: params[:discord_id])
-    debugger
+    # debugger
 
     if @channel
       @messages = @channel.messages.includes(:author).order("created_at DESC")
