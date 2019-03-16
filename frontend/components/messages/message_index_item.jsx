@@ -1,14 +1,7 @@
 import React from 'react';
 
-class MessageIndexItem extends React.Component {
-  constructor(props) {
-    super(props)
+const MessageItem = ({ message }) => {
 
-  }
-
-  render() {
-    return null
-  }
 }
 
-export default MessageIndexItem;
+export default MessageItem;

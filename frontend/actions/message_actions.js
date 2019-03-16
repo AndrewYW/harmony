@@ -8,7 +8,7 @@ const receiveAllMessages = messages => ({
   messages
 });
 
-const receiveMessage = message => ({
+export const receiveMessage = message => ({
   type: RECEIVE_MESSAGE,
   message
 });
