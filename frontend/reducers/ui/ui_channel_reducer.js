@@ -1,4 +1,4 @@
-import { RECEIVE_CHANNEL, RECEIVE_ALL_CHANNELS } from '../../actions/channel_actions';
+import { RECEIVE_CHANNEL } from '../../actions/channel_actions';
 
 import { merge } from 'lodash';
 

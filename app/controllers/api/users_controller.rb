@@ -1,7 +1,8 @@
 class Api::UsersController < ApplicationController
   
   def index
-    @server = Server.include(:members).find_by(discord_id: params[:discord_id])
+    # debugger
+    @server = Server.includes(:members).find_by(discord_id: params[:server_id])
     @users = @server.members
     render "api/users/index"
   end

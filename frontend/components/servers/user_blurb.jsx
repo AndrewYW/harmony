@@ -1,19 +1,20 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const UserBlurb = ({ user }) => {
+const UserBlurb = ({ users, currentUser }) => {
   return (
     <div className="user-blurb">
       <div className="user-info">
-        <h1>{user.username}</h1>
-        <h2>{user.discriminator}</h2>
+        <h1>{currentUser.username}</h1>
+        <h2>{currentUser.discriminator}</h2>
       </div>
     </div>
   )
 };
 
 const mstp = state => ({
-  user: state.entities.users[state.session.id],
+  users: state.ui.users,
+  currentUser: state.entities.users[state.session.id],
 })
 
 export default connect(mstp)(UserBlurb);
