@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createServer } from '../../actions/server_actions';
+import { withRouter } from 'react-router';
 
 class CreateModal extends React.Component {
   constructor(props) {
@@ -21,7 +22,14 @@ class CreateModal extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createServer(this.state).then(this.props.closeModal())
+    this.props.createServer(this.state)
+      .then( ({ server, errors }) => {
+        if (!errors ) {
+          this.props.closeModal();
+          this.props.history.push(`/channels/${server.discord_id}/${server.default_channel_id}`);
+          return server;
+        }
+      });
   }
 
   render() {
@@ -53,4 +61,4 @@ const mdtp = dispatch => ({
   createServer: server => dispatch(createServer(server)),
 });
 
-export default connect(null, mdtp)(CreateModal);
+export default withRouter(connect(null, mdtp)(CreateModal));

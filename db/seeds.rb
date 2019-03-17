@@ -11,7 +11,6 @@ ServerMember.destroy_all
 Channel.destroy_all
 ChannelMember.destroy_all
 Message.destroy_all
-ChannelMessage.destroy_all
 
 ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)

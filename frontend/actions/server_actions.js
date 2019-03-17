@@ -10,10 +10,12 @@ const receiveAllServers = servers => {
   }
 };
 
-const receiveServer = server => ({
-  type: RECEIVE_SERVER,
-  server
-});
+const receiveServer = server => {
+  return {
+    type: RECEIVE_SERVER,
+    server
+  };
+};
 
 
 export const fetchServers = () => dispatch => (
@@ -22,13 +24,13 @@ export const fetchServers = () => dispatch => (
   ))
 );
 
-export const fetchServer = id => dispatch (
+export const fetchServer = id => dispatch => (
   ServerAPIUtil.fetchServer(id).then(server => (
     dispatch(receiveServer(server))
   ))
 );
 
-export const createServer = server => dispatch (
+export const createServer = server => dispatch => (
   ServerAPIUtil.createServer(server).then(server => (
     dispatch(receiveServer(server))
   ))

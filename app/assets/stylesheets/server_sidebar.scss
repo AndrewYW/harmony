@@ -64,10 +64,11 @@
   border-radius: 15px;
 }
 
-a:hover .server-name,
-button:hover .server-name {
+.server-ul a:hover .server-name,
+.server-ul button:hover .server-name {
   visibility: visible;
   width: 100%;
+  z-index: 5000;
 }
 
 .minilogo {
