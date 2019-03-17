@@ -1,6 +1,8 @@
 import React from 'react';
 
-const MessageItem = ({ message }) => {
+const MessageItem = ({ messages, users }) => {
+  debugger;
+
   return null;
 }
 

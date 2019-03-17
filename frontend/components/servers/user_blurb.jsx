@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const UserBlurb = ({ users, currentUser }) => {
+const UserBlurb = ({ currentUser }) => {
   return (
     <div className="user-blurb">
       <div className="user-info">
@@ -13,7 +13,6 @@ const UserBlurb = ({ users, currentUser }) => {
 };
 
 const mstp = state => ({
-  users: state.ui.users,
   currentUser: state.entities.users[state.session.id],
 })
 

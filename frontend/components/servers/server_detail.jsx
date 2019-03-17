@@ -63,9 +63,7 @@ class ServerDetail extends React.Component {
             <h1># {this.props.currentChannel.name}</h1>
           </div>
           <div className="content">
-            <div className="message-block">
-              <MessageIndex />
-            </div>
+            <MessageIndex />
             {this.serverMembers()}
           </div>
         </div>

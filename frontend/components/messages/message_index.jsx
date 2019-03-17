@@ -81,6 +81,7 @@ class MessageIndex extends React.Component {
       <MessageItem 
         key={i}
         messages={block}
+        users={this.props.users}
       />
     ));
   }

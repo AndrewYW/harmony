@@ -26,8 +26,7 @@ const usersReducer = (state = {}, action) => {
       action.users.forEach(user => {
         newState[user.id] = user;
       });
-      debugger
-      return merge({}, state, newState);
+      return newState;
     case LOGOUT_CURRENT_USER:
       return [];
     default:
