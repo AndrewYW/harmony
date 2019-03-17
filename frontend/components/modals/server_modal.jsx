@@ -16,8 +16,8 @@ class ServerModal extends React.Component{
     this.handleClose = this.handleClose.bind(this);
   }
 
-  handleClose(e){
-    e.preventDefault();
+  handleClose(){
+    // e.preventDefault();
     this.setState({type: ""});
     this.props.closeServerModal();
   }

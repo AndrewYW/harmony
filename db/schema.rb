@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_01_120927) do
+ActiveRecord::Schema.define(version: 2019_02_21_182126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 2019_02_01_120927) do
     t.index ["channel_id", "member_id"], name: "index_channel_members_on_channel_id_and_member_id", unique: true
   end
 
+  create_table "channel_messages", force: :cascade do |t|
+    t.integer "channel_id", null: false
+    t.integer "message_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["channel_id", "message_id"], name: "index_channel_messages_on_channel_id_and_message_id"
+  end
+
   create_table "channels", force: :cascade do |t|
     t.string "name", null: false
     t.string "discord_id", null: false
@@ -30,6 +38,15 @@ ActiveRecord::Schema.define(version: 2019_02_01_120927) do
     t.datetime "updated_at", null: false
     t.integer "server_id", null: false
     t.index ["discord_id"], name: "index_channels_on_discord_id", unique: true
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "body", null: false
+    t.string "discord_id", null: false
+    t.integer "author_id", null: false
+    t.integer "channel_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "server_members", force: :cascade do |t|

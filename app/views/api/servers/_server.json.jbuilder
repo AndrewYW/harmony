@@ -1,5 +1,5 @@
 
-  json.extract! server, :id, :name, :admin_id, :discord_id, :default_channel_id, :instant_invite, :members
+  json.extract! server, :id, :name, :admin_id, :discord_id, :default_channel_id
   # json.image_url asset_path(server.image_url)
 
 

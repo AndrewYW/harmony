@@ -3,8 +3,14 @@
   flex-direction: row;
   height: 100%;
   background-color: rgb(54,57,63);
-
+  // overflow-y: scroll;
+  // overflow-x: visible;
 }
+
+.server-index::-webkit-scrollbar {
+  display: none;
+}
+
 .server-sidebar {
   box-sizing: border-box;
   height: 100%;
@@ -12,10 +18,6 @@
   width: 70px;
   padding: 10px;
 }
-
-
-
-
 
 .server-add-button:hover, .logout-button:hover {
   opacity: .7;
@@ -32,6 +34,11 @@
   margin-bottom: 10px;
 }
 
+.server-ul {
+  background-color: #202225;
+}
 .server-ul a {
+  height: 100%;
+  width: 100%;
   display: block;
 }

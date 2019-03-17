@@ -1,0 +1,122 @@
+.message-block {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(54, 57, 63);
+}
+
+.message-feed {
+  width: 100%;
+  height: 100%;
+  background-color: #36393f;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: -1px;
+  list-style: none;
+  overflow-y: scroll;
+}
+
+.message-feed::-webkit-scrollbar {
+  width: 14px;
+  background-color: #2f3136;
+  border-radius: 7px;
+  border: 3px solid #36393f;
+}
+
+.message-feed::-webkit-scrollbar-thumb {
+  background-clip: padding-box;
+  border: 3px solid #36393f;
+  border-radius: 7px;
+  background-color: #1f2224;
+}
+
+.message-form-wrapper {
+  padding: 0 20px;
+  
+  .message-form {
+    display: flex;
+    border-top: 1px solid #42454a;
+    padding: 20px 0 30px;
+    z-index: 5;
+
+    .message-input {
+      background-color: rgb(72, 76, 82);
+      border-radius: 3px;
+      color: white;
+      opacity: .7;
+      // height: 20px;
+      padding: 10px;
+      border: none;
+      width: 100%;
+      font-size: 14px;
+      outline: 0;
+    }
+
+    .message-input::placeholder {
+      font-weight: 500;
+    }
+  }
+}
+
+.message-item {
+  width: max-content;
+  padding: 20px 0;
+  width: calc(100% - 10px);
+  position: relative;
+
+  img {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-color: purple;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    background-position: 50%;
+  }
+
+  header {
+    display: flex;
+    align-items: flex-end;
+    margin-left: 80px;
+
+    h1 {
+      color: white;
+      font-weight: 500;
+    }
+
+    span {
+      font-size: 12px;
+      margin-left: 5px;
+      color: white;
+      opacity: .2;
+    }
+  }
+
+  ul {
+    margin-top: 8px;
+    margin-left: 80px;
+    font-size: 14px;
+    line-height: 19px;
+    list-style: none;
+    color: #dcddde;
+    flex-direction: column;
+
+    li {
+      margin-bottom: 5px;
+      word-wrap: break-word;
+      display: block;
+      float: left;
+    }
+  }
+
+  .message-split {
+    margin: 20px 20px -20px;
+    border: none;
+    border-bottom: 1px solid #3e4147;
+  }
+}
+

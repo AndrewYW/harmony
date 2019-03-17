@@ -19,7 +19,7 @@ const serversReducer = (state = {}, action) => {
       let newState = {};
       action.servers.forEach(server => {
         newState[server.id] = server;
-      })
+      });
       return merge({}, state, newState);
     case RECEIVE_SERVER:
       return merge({}, state, {

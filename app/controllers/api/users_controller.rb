@@ -1,5 +1,12 @@
 class Api::UsersController < ApplicationController
   
+  def index
+    # debugger
+    @server = Server.includes(:members).find_by(discord_id: params[:server_id])
+    @users = @server.members
+    render "api/users/index"
+  end
+  
   def create
     @user = User.new(user_params)
 

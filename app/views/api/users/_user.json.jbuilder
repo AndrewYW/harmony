@@ -1,7 +1,5 @@
-json.user do 
   json.extract! user, :id, :username, :discriminator, :discord_id
   # json.image_url asset_path(user.image_url)
-end
 
 
 # json.servers do 
