@@ -1,7 +1,7 @@
 class Api::ChannelsController < ApplicationController
 
   def index
-    @server = current_user.servers.find_by(discord_id: params[:server_id])
+    @server = current_user.servers.includes(:channels).find_by(discord_id: params[:server_id])
     @channels = @server.channels
   end
 

@@ -49,6 +49,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'annotate'
   gem 'jquery-rails'
+  gem 'bullet'
 end
 
 group :development do
