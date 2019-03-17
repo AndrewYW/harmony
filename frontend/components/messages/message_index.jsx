@@ -21,18 +21,22 @@ class MessageIndex extends React.Component {
 
   componentDidMount() {
     const receiveMessage = this.props.receiveMessage.bind(this);
+    const users = this.props.users;
+    const requestUser = this.props.requestUser.bind(this);
+
     App.chatChannel = App.cable.subscriptions.create(
       { channel: "ChatChannel" },
       {
         received: data => {
           if (!users[data.author_id]) {
-            this.props.fetchUser(data.author_id);
+            requestUser(data.author_id);
           }
 
           receiveMessage({
             id: data.id,
             body: data.body,
             author_id: data.author_id,
+            channel_id: data.channel_id,
             discord_id: data.discord_id,
             created_at: data.created_at,
           })
@@ -55,10 +59,10 @@ class MessageIndex extends React.Component {
 
     if (this.props.history.location.state && this.props.history.location.state.message) {
 
-      App.chat.speak({
+      App.chatChannel.speak({
         author_id: this.props.currentUserId,
         body: this.props.history.location.state.message,
-        channel_id: this.props.channel.id,
+        channel_id: this.props.channel.discord_id,
       });
       this.props.history.location.state = undefined;
     }
@@ -70,17 +74,17 @@ class MessageIndex extends React.Component {
     let idx = 0;
 
     for(let i = 0; i < messages.length; i++) {
+
+      blocks[idx] ? blocks[idx].push(messages[i]) : blocks.push([messages[i]]);
+
       if (!(messages[i+1] && messages[i].author_id === messages[i+1].author_id)) {
         idx++;
       }
-
-      blocks[idx] ? blocks[idx].push(messages[i]) : blocks.push([messages[i]]);
     }
-
     return blocks.map((block, i) => (
       <MessageItem 
         key={i}
-        messages={block}
+        message={block}
         users={this.props.users}
       />
     ));

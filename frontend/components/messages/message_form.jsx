@@ -20,10 +20,10 @@ class MessageForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    App.chat.speak({
+    App.chatChannel.speak({
       body: this.state.body,
       author_id: this.props.userId,
-      channel_id: this.props.channel.id
+      channel_id: this.props.channel.id,
     });
     this.setState({
       body: ""
