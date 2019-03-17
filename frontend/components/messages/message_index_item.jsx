@@ -2,8 +2,6 @@ import React from 'react';
 import * as moment from 'moment';
 
 const MessageItem = ({ message, users }) => {
-  // message: [{},{}]
-
   const mapMessage = (line, i) => {
     return (
       <li key={i}>
@@ -17,7 +15,7 @@ const MessageItem = ({ message, users }) => {
   if(users[message[0].author_id]) {
     return (
       <li className="message-item">
-        <img src={window.minilogo} className="message-user-image" />
+        <img src={window.minilogo}/>
         <header>
           <h1>{ users[message[0].author_id].username }</h1>
           <span>{ moment(message[0].created_at).calendar() }</span>

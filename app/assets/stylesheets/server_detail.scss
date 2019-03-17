@@ -81,37 +81,9 @@
   flex-direction: row;
 }
 
-.message-block {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: rgb(54, 57, 63);
-}
-
-.message-feed {
-  width: 100%;
-  height: 100%;
-  background-color: #36393f;
-}
-
-.message-input {
-  background-color: rgb(72,76,82);
-  padding: 0 20px;
-  border: none;
-  width: 100%;
-}
-
 .server-members {
   width: 200px;
   background-color: rgb(46, 49, 54);
   height: 100%;
-}
-
-.message-form {
-  display: flex;
-  border-top: 1px solid #42454a;
-  padding: 20px 0 30px;
-
 }
 
