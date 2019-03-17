@@ -2,7 +2,7 @@
 
  Harmony is a full stack clone of Discord, a popular free voice and text chat multiplatform service. First released in 2015, Discord improved on elements of older VoIP applications such as TeamSpeak and Mumble, implementing a more modern UI, as well as simpler setup for users, reminiscent of Skype.
 
- ## [Visit Harmony](harmony-rb.herokuapp.com)
+ ## [Visit Harmony](https://harmony-rb.herokuapp.com/#/)
 
 ## It's time to ditch Discord
 <!-- Discussion of tech used -->
