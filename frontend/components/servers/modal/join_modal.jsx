@@ -29,14 +29,17 @@ class JoinModal extends React.Component {
 
     return (
       <form onSubmit={this.handleSubmit} className="join-form">
-        <div className="join-div">
+        <div className="join-content">
           <h5>JOIN A SERVER</h5>
           <p>Enter an Instant Invite below to join an existing server. The invite will look something like this:</p>
-          <div>Ds5Rjk</div>
-        </div>
-        <div className="join-inputs">
-          <input type="text" value={this.state.invite} onChange={this.update}/>
-          <p>Enter an instant invite</p>
+          <ul>
+            <li>http://harmony-rb.herokuapp.com/Ds5Rjk</li>
+            <li>Ds5Rjk</li>
+          </ul>
+          <div className="join-inputs">
+            <input type="text" value={this.state.invite} onChange={this.update} />
+            <span>Enter an instant invite</span>
+          </div>
         </div>
         <div className="join-buttons">
           <button onClick={toDefault}>Back</button>
