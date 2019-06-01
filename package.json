@@ -27,6 +27,7 @@
     "webpack-cli": "^3.2.1"
   },
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
     "redux-logger": "^3.0.6"
   },
   "description": "This README would normally document whatever steps are necessary to get the application up and running.",

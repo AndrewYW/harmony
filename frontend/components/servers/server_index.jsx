@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link, Switch, withRouter } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import ServerIndexItem from './server_index_item';
-import ServerModal from '../modals/server_modal';
+import ServerModal from './modal/server_modal';
 class ServerIndex extends React.Component {
 
   constructor(props) {
