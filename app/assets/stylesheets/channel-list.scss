@@ -1,12 +1,57 @@
 .channel-category {
-  height: 40px;
-  box-sizing: border-box;
-  color: rgb(130, 131, 134);
-  padding: 20px 8px 0 16px;
-  font-size: 12px;
-  font-weight: 500;
-  line-height: 20px;
-  letter-spacing: .08em;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding-left: 18px;
+  padding-right: 8px;
+  text-align: justify;
+
+  p {
+    line-height: 20px;
+    font-weight: 600;
+  }
+  .create-channel-section {
+
+    p {
+      font-size: 14px;
+    }
+    .create-channel-blurb {
+      visibility: hidden;
+      position: absolute;
+      white-space: nowrap;
+      width: fit-content;
+      top: -30px;
+      left: 95%;
+      transform: translateX(-50%);
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 14px;
+      padding: 8px 11px;
+      background-color: #000;
+      color: hsla(0, 0%, 100%, .9);
+      text-transform: none;
+      pointer-events: none;
+      z-index: 2;
+    }
+  }
+  
+}
+
+.channel-category:hover {
+  .create-channel-section {
+    p {
+      cursor: pointer;
+    }
+    p:hover {
+      color: #b9bbbe;
+    }
+    .create-channel-blurb {
+      visibility: visible;
+    }
+  }
 }
 
 .server-channel {

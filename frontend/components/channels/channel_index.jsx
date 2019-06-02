@@ -49,7 +49,13 @@ class ChannelIndex extends React.Component {
     return (
       <>
         <div className="server-channels">
-          <div className="channel-category">CHANNELS <span onClick={this.openModal}>+</span></div>
+          <div className="channel-category">
+            <p>Channels</p> 
+            <div className="create-channel-section">
+              <p onClick={this.openModal}>+</p>
+              <div className="create-channel-blurb">Create Channel</div>
+            </div>
+          </div>
           <ul className="channel-ul">
             { channels } 
           </ul>

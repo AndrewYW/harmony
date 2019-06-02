@@ -73,32 +73,28 @@
     border-radius: 0 0 5px 5px;
     padding: 20px;
 
-    button {
+    button, input {
+      cursor: pointer;
       color: #fff;
       font-size: 14px;
       font-weight: 500;
       line-height: 16px;
-      padding: 2px 16px;
       border: none;
+    }
+    button {
+      padding: 2px 16px;
       background: none;
-      // font-family: inherit;
     }
     button:hover{
       border-bottom: 1px solid white;
     }
     input {
       background-color: #7289da;
-      color: #fff;
       height: 38px;
       width: 150px;
       padding: 2px 16px;
       border-radius: 3px;
-      font-size: 14px;
-      font-weight: 500;
-      line-height: 16px;
-      border: none;
       transition: background-color .15s ease;
-      // font-family: inherit;
     }
     input:hover {
       background-color: #677bc4;
