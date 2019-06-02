@@ -5,6 +5,10 @@
 
 .session-page {
   background-image: image_url('session/background.jpg');
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;

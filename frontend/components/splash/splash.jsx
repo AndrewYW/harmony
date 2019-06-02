@@ -11,10 +11,6 @@ class Splash extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-
-  }
-
   navbar() {
     return (
       <nav className="Navbar">
@@ -34,7 +30,7 @@ class Splash extends React.Component {
             <li><a href="https://github.com/AndrewYW/" className="fafaIcon">
               <FontAwesomeIcon icon={['fab', 'github']} />
           </a></li>
-            <li><a href="#" className="fafaIcon">
+            <li><a href="https://linkedin.com/in/andrewyw" className="fafaIcon">
               <FontAwesomeIcon icon={['fab', 'linkedin']} />
           </a></li>
           <li> 
