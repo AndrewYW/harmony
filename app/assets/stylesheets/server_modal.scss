@@ -2,20 +2,8 @@
 .slide-left {
   transform: translateX(-100%);
 }
+
 .server-modal{
-  // width: 540px;
-  // height: 420px;
-  // display: flex;
-  // flex-direction: row;
-  // justify-content: center;
-  // align-items: flex-start;
-  // margin: 100px auto;
-  // text-align: center;
-  // vertical-align: baseline;
-  // border-radius: 5px;
-  // background-color: white;
-  // color: #99aab5;
-  // line-height: 16px;
   position: absolute;
   right: 50%;
   top: 50%;
@@ -37,16 +25,6 @@
 }
 
 .default-modal {
-  // height: 536px;
-  // width: 420px;
-  // display: flex;
-  // flex-direction: column;
-  // font-size: 16px;
-  // font-weight: 400;
-  // line-height: 16px;
-  // padding: 28px 40px 0 40px;
-  // vertical-align: baseline;
-  // transition: transform .25s ease;
   direction: ltr;
   position: absolute;
   left: 0px;
@@ -68,7 +46,6 @@
     font-size: 18px;
     font-weight: 700;
     margin-bottom: 40px;
-    // margin-top: 6px;
     text-align: center;
     text-transform: uppercase;
   }
@@ -94,7 +71,6 @@
         text-transform: uppercase;
         text-align: center;
       }
-
       p {
         color: #99aab5;
         font-size: 13.5px;
@@ -103,7 +79,6 @@
         padding: 0 15px;
         text-align: center;
       }
-
       button {
         color: #fff;
         border-radius: 3px;
@@ -117,7 +92,6 @@
         transition: background-color .2s ease;
         cursor: pointer;
       }
-
       // icons
       div {
         height: 78px;
@@ -131,23 +105,19 @@
       h2 {
         color: #7289da;
       }
-
       button {
         background-color: #7289da;
       }
-
       .create-server-icon {
         background-image: image_url("modal/create_icon.png");
         background-size: 112px 78px;
       }
     }
-
     .create-server-button:hover {
       button {
         background-color: #677bc4;
       }
     }
-
     .join-server-button {
       h2 {
         color: #3ca374;
@@ -156,20 +126,16 @@
       button {
         background-color: #3ca374;
       }
-
       .join-server-icon {
         background-image: image_url("modal/join_icon.png");
         background-size: 178.5px 78px;
       }
     }
-
     .join-server-button:hover {
       button {
         background-color: #369268;
       }
     }
-
-
     .or {
       background-image: image_url("modal/or.svg");
       background-repeat: no-repeat;
@@ -194,72 +160,6 @@
 }
 
 
-
-.server-buttons button {
-  // border-radius: 3px;
-  // width: 220px;
-  // height: 290px;
-  // cursor: pointer;
-  // box-sizing: border-box;
-  // padding: 10px;
-}
-
-.server-buttons .or {
-  // width: 50px;
-  // height: 50px;
-  // display: float;
-  // z-index: 200;
-}
-
-
-.create-server-button:hover .fake-button,
-.join-server-button:hover .fake-button {
-  // opacity: 1;
-}
-
-.server-buttons button h2 {
-  // font-size: 18px;
-  // font-weight: 500;
-  // margin-top: 20px;
-  // text-align: center;
-}
-
-.create-server-button h2 {
-  // color: #7289da;
-}
-
-.join-server-button h2 {
-  // color: #3ca374;
-}
-.fake-button {
-  // border-radius: 2px;
-  // padding: 14px 20px;
-  // color: white;
-  // opacity: .7;
-  // outline: 0;
-  // font-weight: 400;
-  // border: none;
-  
-}
-
-.server-buttons button p {
-  // text-align: center;
-  // color: 99aab5;
-  // font-size: 14px;
-  // line-height: 20px;
-  // margin-top: 16px;
-  // padding: 0 15px;
-
-}
-
-.create-server-button .fake-button {
-  // background-color: rgb(114, 137, 218);
-}
-
-.join-server-button .fake-button {
-  // background-color: rgb(54,147,104);
-}
-
 .create-form, .join-form {
   position: absolute;
   direction: ltr;
@@ -276,125 +176,95 @@
   transition: transform .25s ease;
 }
 
-// Create Server modal form
+// Create Server modal
 .create-form {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
-  // box-sizing: border-box;
-  // background: white;
-  // width: 540px;
-  // height: 420px;
-  // border-radius: 5px;
-  
-}
 
-.create-div {
-  padding: 34px 40px 0;
-}
+  .create-div {
+    padding: 34px 40px 0;
 
-.create-div h5{
-  color: #7289da;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 1.3;
-  text-align: center;
-}
+    h5 {
+      color: #7289da;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: center;
+    }
 
-.create-div p {
-  color: #99aab5;
-  font-size: 18px;
-  font-weight: 500;
-  text-align: center;
-  line-height: 1.2;
-  margin-bottom: 18px;
-  padding: 10px 0;
-}
+    p {
+      color: #99aab5;
+      font-size: 18px;
+      font-weight: 500;
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 18px;
+      padding: 10px 0;
+    }
+    .create-inputs {
+      input {
+        font-size: 16px;
+        font-weight: 400;
+        outline: none;
+        border-bottom-color: #f0f0f0;
+        border-width: 0 0 2px 0;
+        background: transparent;
+        padding: 10px 4px;
+        width: 100%;
+        color: #2f3136;
+      }
+      input:hover {
+        border-color: #b9bbbe;
+      }
+      input:focus {
+        border-color: #7289da;
+      }
+      input::placeholder {
+        color: #c5c5c5;
+      }
+      label {
+        color: #87909c;
+        font-size: 11px;
+        font-weight: 700;
+      }
+    }
+  }
 
-.create-inputs {
-  // width: 240px;
+  .create-buttons {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 40px;
+    border-radius: 0 0 5px 5px;
+    background-color: #f6f6f6;
+    button {
+      display: flex;
+      align-items: center;
+      background: transparent;
+      color: #99aab5;
+      font-size: 14px;
+      font-weight: 400;
+      border: 2px solid transparent;
+    }
+    button:hover {
+      border-bottom: 2px solid #b9bbbe;
+    }
+    input {
+      height: 38px;
+      width: 96px;
+      background-color: #7289da;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: 2px;
+      border: none;
+    }
+    input:hover {
+      background-color: #677bc4;
+    }
+  }
 }
-
-.create-inputs input {
-  font-size: 16px;
-  font-weight: 400;
-  outline: none;
-  border-bottom-color: #f0f0f0;
-  border-width: 0 0 2px 0;
-  background: transparent;
-  padding: 10px 4px;
-  width: 100%;
-  color: #2f3136;
-}
-
-.create-inputs input:hover {
-  border-color: #b9bbbe;
-}
-.create-inputs input:focus {
-  border-color: #7289da;
-}
-
-.create-inputs input::placeholder {
-  color: #c5c5c5;
-}
-
-.create-inputs label {
-  color: #87909c;
-  font-size: 11px;
-  font-weight: 700;
-}
-
-.create-buttons {
-  display: flex;
-  justify-content: space-between;
-  padding: 18px 40px;
-  border-radius: 0 0 5px 5px;
-  background-color: #f6f6f6;
-}
-
-.create-buttons button {
-  display: flex;
-  align-items: center;
-  background: transparent;
-  color: #99aab5;
-  font-size: 14px;
-  font-weight: 400;
-  border: 2px solid transparent;
-}
-
-.create-buttons button:hover {
-  border-bottom: 2px solid #b9bbbe;
-}
-
-.create-buttons input {
-  height: 38px;
-  width: 96px;
-  background-color: #7289da;
-  font-size: 14px;
-  font-weight: 500;
-  border-radius: 2px;
-  border: none;
-}
-
-.create-buttons input:hover {
-  background-color: #677bc4;
-}
-
 
 // Join server Modal
-
 .join-form {
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: space-between;
-  // box-sizing: border-box;
-  // background: white;
-  // width: 540px;
-  // height: 420px;
-  // border-radius: 5px;
   .join-content {
     padding: 28px 40px 0;
-
     h5 {
       color: #43b581;
       font-size: 18px;
@@ -402,7 +272,6 @@
       font-weight: 700;
       line-height: 1.3;
     }
-
     p {
       color: #99aab5;
       padding: 10px 0;
@@ -411,9 +280,10 @@
       text-align: center;
       line-height: 1.2;
     }
-
     ul {
       list-style: none;
+      display: flex;
+      flex-direction: column;
       li {
         color: #7289da;
         font-size: 14px;
@@ -422,14 +292,6 @@
         text-align: center;
         margin-bottom: 4px;
       }
-    }
-
-    div {
-      // color: #7289da;
-      // font-weight: 500;
-      // font-size: 14px;
-      // line-height: 1.2;
-      // margin-bottom: 4px;
     }
 
     .join-inputs {
@@ -446,15 +308,12 @@
         width: 100%;
         transition: border .15s ease;
       }
-
       input:hover {
         border-color: #b9bbbe;
       }
-
       input:focus {
         border-color: #7289da;
       }
-
       span {
         color: #99aab5;
         font-size: 11px;
