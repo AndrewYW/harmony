@@ -57,6 +57,7 @@ class ChannelIndex extends React.Component {
         <Modal
           isOpen={this.state.channelModalOpen}
           onRequestClose={this.closeModal}
+          overlayClassName="modal-overlay"
           className="channel-modal"
           shouldCloseOnOverlayClick={true}
           ariaHideApp={false}

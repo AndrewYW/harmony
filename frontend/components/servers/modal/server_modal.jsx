@@ -33,7 +33,7 @@ class ServerModal extends React.Component {
         onRequestClose={this.props.closeServerModal}
         shouldCloseOnOverlayClick={true}
         className="server-modal"
-        overlayClassName="server-modal-overlay"
+        overlayClassName="modal-overlay"
       >
         <DefaultModal createServer={this.createServer} joinServer={this.joinServer} />
         <CreateModal toDefault={this.defaultModal} closeModal={this.props.closeServerModal} />
