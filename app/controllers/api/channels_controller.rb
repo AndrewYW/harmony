@@ -17,7 +17,9 @@ class Api::ChannelsController < ApplicationController
     @channel = Channel.new(channel_params)
     if @channel.save
       @server = Server.find(params[:channel][:server_id])
-
+      @server.channels << @channel
+      @server.save!
+      render 'api/channels/show'
     else
       render json: @channel.errors, status: 422
     end

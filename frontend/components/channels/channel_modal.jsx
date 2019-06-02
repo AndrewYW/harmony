@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
-import { createChatChannel } from '../../actions/channel_actions';
+import { createChannel } from '../../actions/channel_actions';
 
 class ChannelModal extends React.Component {
   constructor(props) {
@@ -21,10 +21,11 @@ class ChannelModal extends React.Component {
   handleSubmit = e => {
     e.preventDefault();
     const currentServer = this.state.server;
-    const newChannel = { name: this.state.name, server_id: currentServer.discord_id};
+    const newChannel = { name: this.state.name, server_id: currentServer.id};
 
-    this.props.createChatChannel(newChannel)
+    this.props.createChannel(newChannel)
       .then(({channel}) => {
+        this.props.closeModal();
         this.props.history.push(`/channels/${currentServer.discord_id}/${channel.discord_id}`);
       })
   }
@@ -42,7 +43,7 @@ class ChannelModal extends React.Component {
           <input type="text" onChange={this.update} value={this.state.name} />
         </div>
         <div className="channel-form-buttons">
-          <button type="button" onClick={this.props.closeChannelModal}>Cancel</button>
+          <button type="button" onClick={this.props.closeModal}>Cancel</button>
           <input type="submit" value="Create Channel" />
         </div>
       </form>
@@ -55,7 +56,7 @@ const mstp = state => ({
 });
 
 const mdtp = dispatch => ({
-  createChatChannel: channel => dispatch(createChatChannel(channel)),
+  createChannel: channel => dispatch(createChannel(channel)),
 });
 
 export default withRouter(connect(mstp, mdtp)(ChannelModal));

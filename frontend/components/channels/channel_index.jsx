@@ -3,12 +3,24 @@ import { withRouter } from 'react-router';
 import { Link, NavLink} from 'react-router-dom';
 
 import ChannelIndexItem from './channel_index_item';
+import Modal from 'react-modal';
+import ChannelModal from './channel_modal';
 
 
 class ChannelIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      channelModalOpen: false,
+    };
+  }
+
+  openModal = () => {
+    this.setState({ channelModalOpen: true });
+  }
+
+  closeModal = () => {
+    this.setState({ channelModalOpen: false });
   }
 
   componentDidMount() {
@@ -35,12 +47,23 @@ class ChannelIndex extends React.Component {
     // console.log(this.props.match.params);
 
     return (
-      <div className="server-channels">
-        <div className="channel-category">CHANNELS</div>
-        <ul className="channel-ul">
-          { channels } 
-        </ul>
-      </div>
+      <>
+        <div className="server-channels">
+          <div className="channel-category">CHANNELS <span onClick={this.openModal}>+</span></div>
+          <ul className="channel-ul">
+            { channels } 
+          </ul>
+        </div>
+        <Modal
+          isOpen={this.state.channelModalOpen}
+          onRequestClose={this.closeModal}
+          className="channel-modal"
+          shouldCloseOnOverlayClick={true}
+          ariaHideApp={false}
+          >
+            <ChannelModal closeModal={this.closeModal} />
+        </Modal>
+      </>
     )
   }
 }
