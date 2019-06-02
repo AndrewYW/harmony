@@ -12,7 +12,8 @@ class ServerDetail extends React.Component {
 
   componentDidMount() {
     this.props.requestChannel(this.props.match.params.channelId);
-    this.props.requestUsers(this.props.match.params.serverId)
+    this.props.requestUsers(this.props.match.params.serverId);
+    this.props.fetchServer(this.props.match.params.serverId);
   }
 
   componentDidUpdate(oldProps) {

@@ -47,7 +47,7 @@ class CreateModal extends React.Component {
           </div>
         </div>
         <div className="create-buttons">
-          <button onClick={toDefault}>Back</button>
+          <button type="button" onClick={toDefault}>Back</button>
           <input type="submit" value="Create" />
         </div>
       </form>

@@ -46,7 +46,7 @@ class JoinModal extends React.Component {
           </div>
         </div>
         <div className="join-buttons">
-          <button onClick={toDefault}>Back</button>
+          <button type="button" onClick={toDefault}>Back</button>
           <input type="submit" value="Join"/>
         </div>
       </form>
