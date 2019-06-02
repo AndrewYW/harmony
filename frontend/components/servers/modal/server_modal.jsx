@@ -22,8 +22,8 @@ class ServerModal extends React.Component {
 
   defaultModal = () => {
     $("#default-modal").removeClass("slide-left");
-    $("#join-modal").removeClass("slide-left");
     $("#create-modal").removeClass("slide-left");
+    $("#join-modal").removeClass("slide-left");
   }
 
   render() {

@@ -10,7 +10,7 @@ const DefaultModal = ({ createServer, joinServer }) => {
         <div className="create-server-icon"/>
         <button>Create a server</button>
       </div>
-      <div className="server-button join-server-button" onClick={createServer}>
+      <div className="server-button join-server-button" onClick={joinServer}>
         <h2>JOIN</h2>
         <p>Enter an Instant Invite and join your friend's server</p>
         <div className="join-server-icon"/>

@@ -12,15 +12,19 @@ class JoinModal extends React.Component {
   }
 
   update = e => {
+    e.preventDefault();
     this.setState({ invite: e.target.value });
   }
 
   handleSubmit = e => {
     e.preventDefault();
+
     this.props.joinServer(this.state.invite)
-      .then(this.props.closeModal())
-      .then(({ server }) => {
-        this.props.history.push(`/channels/${server.discord_id}/${server.default_channel_id}`);
+    .then(({ server, errors }) => {
+        if (!errors) {
+          this.props.closeModal();
+          this.props.history.push(`/channels/${server.discord_id}/${server.default_channel_id}`);
+        }
       });
   }
 
@@ -28,7 +32,7 @@ class JoinModal extends React.Component {
     const { toDefault } = this.props;
 
     return (
-      <form onSubmit={this.handleSubmit} className="join-form">
+      <form onSubmit={this.handleSubmit} id="join-modal" className="join-form">
         <div className="join-content">
           <h5>JOIN A SERVER</h5>
           <p>Enter an Instant Invite below to join an existing server. The invite will look something like this:</p>

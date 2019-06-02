@@ -33,9 +33,9 @@ class CreateModal extends React.Component {
     const { toDefault } = this.props;
 
     return (
-      <form onSubmit={this.handleSubmit} className="create-form">
+      <form onSubmit={this.handleSubmit} id="create-modal" className="create-form">
         <div className="create-div">
-          <h5>CREATE YOUR SERVER</h5>
+          <h5>Create your server</h5>
           <p>By creating a server, you will have access to free voice and text chat to use amongst your friends.</p>
           <div className="create-inputs">
             <label>SERVER NAME

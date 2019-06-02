@@ -72,127 +72,128 @@
     text-align: center;
     text-transform: uppercase;
   }
-}
+  .server-buttons {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
 
-.server-buttons {
-  display: flex;
-  position: relative;
-  justify-content: space-between;
-
-  .server-button {
-    box-sizing: border-box;
-    border-radius: 3px;
-    background: rgba(255,255,255, .75);
-    border: 1px solid rgba(0, 0, 0, .1);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
-    width: 220px;
-    padding: 10px;
-    cursor: pointer;
-
-    h2 {
-      font-size: 18px;
-      font-weight: 500;
-      margin-top: 20px;
-      text-transform: uppercase;
-      text-align: center;
-    }
-
-    p {
-      color: #99aab5;
-      font-size: 13.5px;
-      line-height: 20px;
-      margin-top: 16px;
-      padding: 0 15px;
-      text-align: center;
-    }
-
-    button {
-      color: #fff;
+    .server-button {
+      box-sizing: border-box;
       border-radius: 3px;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 16px;
-      padding: 14px 20px;
-      width: 100%;
-      outline: 0;
-      border: none;
-      transition: background-color .2s ease;
+      background: rgba(255, 255, 255, .75);
+      border: 1px solid rgba(0, 0, 0, .1);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, .08);
+      width: 220px;
+      padding: 10px;
       cursor: pointer;
+
+      h2 {
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 20px;
+        text-transform: uppercase;
+        text-align: center;
+      }
+
+      p {
+        color: #99aab5;
+        font-size: 13.5px;
+        line-height: 20px;
+        margin-top: 16px;
+        padding: 0 15px;
+        text-align: center;
+      }
+
+      button {
+        color: #fff;
+        border-radius: 3px;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 16px;
+        padding: 14px 20px;
+        width: 100%;
+        outline: 0;
+        border: none;
+        transition: background-color .2s ease;
+        cursor: pointer;
+      }
+
+      // icons
+      div {
+        height: 78px;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        margin: 26px auto;
+      }
     }
 
-    // icons
-    div {
-      height: 78px;
-      background-position: 50%;
+    .create-server-button {
+      h2 {
+        color: #7289da;
+      }
+
+      button {
+        background-color: #7289da;
+      }
+
+      .create-server-icon {
+        background-image: image_url("modal/create_icon.png");
+        background-size: 112px 78px;
+      }
+    }
+
+    .create-server-button:hover {
+      button {
+        background-color: #677bc4;
+      }
+    }
+
+    .join-server-button {
+      h2 {
+        color: #3ca374;
+      }
+
+      button {
+        background-color: #3ca374;
+      }
+
+      .join-server-icon {
+        background-image: image_url("modal/join_icon.png");
+        background-size: 178.5px 78px;
+      }
+    }
+
+    .join-server-button:hover {
+      button {
+        background-color: #369268;
+      }
+    }
+
+
+    .or {
+      background-image: image_url("modal/or.svg");
       background-repeat: no-repeat;
-      margin: 26px auto;
+      background-size: 52px,
+        52px;
+      background-position: 50%,
+        50%;
+      position: absolute;
+      width: 52px;
+      height: 52px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 48px;
+      text-align: center;
+      color: #99aab5;
     }
-  }
-
-  .create-server-button {
-    h2 {
-      color: #7289da;
-    }
-
-    button {
-      background-color: #7289da;
-    }
-
-    .create-server-icon {
-      background-image: image_url("modal/create_icon.png");
-      background-size: 112px 78px;
-    }
-  }
-
-  .create-server-button:hover {
-    button {
-      background-color: #677bc4;
-    }
-  }
-
-  .join-server-button {
-    h2 {
-      color: #3ca374;
-    }
-
-    button {
-      background-color: #3ca374;
-    }
-
-    .join-server-icon {
-      background-image: image_url("modal/join_icon.png");
-      background-size: 178.5px 78px;
-    }
-  }
-
-  .join-server-button:hover {
-    button {
-      background-color: #369268;
-    }
-  }
-
-
-  .or {
-    background-image: image_url("modal/or.svg");
-    background-repeat: no-repeat;
-    background-size: 52px,
-      52px;
-    background-position: 50%,
-      50%;
-    position: absolute;
-    width: 52px;
-    height: 52px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    font-size: 22px;
-    font-weight: 500;
-    line-height: 48px;
-    text-align: center;
-    color: #99aab5;
   }
 }
+
+
 
 .server-buttons button {
   // border-radius: 3px;
