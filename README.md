@@ -2,7 +2,10 @@
 
  Harmony is a full stack clone of Discord, a popular free voice and text chat multiplatform service. First released in 2015, Discord improved on elements of older VoIP applications such as TeamSpeak and Mumble, implementing a more modern UI, as well as simpler setup for users, reminiscent of Skype.
 
- ## [Visit Harmony](https://harmony-rb.herokuapp.com/#/)
+ [View live demo](https://harmony-rb.herokuapp.com/#/)
+
+ The bulk of the code was written in a span of 10 days, although Harmony is under continuous development.
+ This involves exploring more advanced Rails features, integration of Typescript, GraphQL, etc.
 
 ## It's time to ditch Discord
 <!-- Discussion of tech used -->
@@ -12,7 +15,6 @@ Harmony is implemented with a Ruby on Rails backend, and React/Redux frontend. A
 
 Chat messages are managed through Action Cable, the RTC websocket framework packaged with Rails.
 
-Voice channels are managed through WebRTC.
 
 <!-- 2 feature focus -->
 #### Discord IDs
