@@ -1,6 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { Link, NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import ChannelIndexItem from './channel_index_item';
 import Modal from 'react-modal';
@@ -25,15 +25,11 @@ class ChannelIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestChannels(this.props.match.params.serverId);
-    // this.props.requestChannel(this.props.match.params.channelId);
   }
 
   componentDidUpdate(oldProps) {
     if (this.props.match.params.serverId !== oldProps.match.params.serverId) {
       this.props.requestChannels(this.props.match.params.serverId);
-    }
-    if (this.props.match.params.channelId !== oldProps.match.params.channelId) {
-      // this.props.requestChannel(this.props.match.params.channelId);
     }
   }
   render() {
@@ -44,7 +40,6 @@ class ChannelIndex extends React.Component {
       </NavLink>
       )
     });
-    // console.log(this.props.match.params);
 
     return (
       <>
