@@ -1,27 +1,27 @@
 class Api::DmsController < ApplicationController
 
   def index
-    @server = Server.includes(:channels).first
-    @dms = @server.channels.order("updated_at DESC")
+    # @server = Server.includes(:channels).first
+    # @dms = @server.channels.order("updated_at DESC")
   end
 
   def create
-    if params[:channel_exists]
-      @message = Message.new()
-    else
-      @channel = Channel.create_dm_channel(current_user, User.find_by(discord_id: dm_params[:recipient_id]))
+    # if params[:channel_exists]
+    #   @message = Message.new()
+    # else
+    #   @channel = Channel.create_dm_channel(current_user, User.find_by(discord_id: dm_params[:recipient_id]))
 
-      if @channel.save
-        render :show
-      else
-        render json: @channel.errors.full_messages, status: 422
-      end
-    end
+    #   if @channel.save
+    #     render :show
+    #   else
+    #     render json: @channel.errors.full_messages, status: 422
+    #   end
+    # end
     
   end
 
   def show
-    @channel = Channel.find_by(discord_id: )
+    # @channel = Channel.find_by(discord_id: )
   end
 
   def destroy
