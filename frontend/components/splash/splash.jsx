@@ -51,7 +51,7 @@ class Splash extends React.Component {
             Stop paying for TeamSpeak servers and hassling with Skype. Simplify your life.
         </p>
         <div className="heroButtons">
-          <a className="repo-link" href="https://github.com/AndrewYW/harmony" >View the code</a>
+          <a className="repo-link" href="https://github.com/AndrewYW/harmony" >View repository</a>
           <Link className="discordLink" to="/register" >Register an account</Link>
         </div>
       </div>

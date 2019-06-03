@@ -33,6 +33,12 @@ class Channel < ApplicationRecord
     class_name: :Message,
     dependent: :destroy
 
+  def self.create_dm_channel(current_user, recipient)
+    channel = Channel.new(name: "dm_channel", server_id: 1)
+    channel.members = [current_user, recipient]
+    channel
+  end
+
   private
   def generate_discord_id
     begin

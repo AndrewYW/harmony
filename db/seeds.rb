@@ -16,73 +16,70 @@ ActiveRecord::Base.connection.tables.each do |t|
   ActiveRecord::Base.connection.reset_pk_sequence!(t)
 end
 
-admin = User.new({ username: "admin", password: "admin1", email: "admin", discriminator: "1234"})
-tester = User.new({username: "123456", password: "123456", email: "123456", discriminator: "1234"})
-demouser = User.new({username: "demouser", password: "demopassword", email: "demoemail", discriminator: "1111"})
+Faker::Config.random = Random.new(0)
 
-admin.save!
-tester.save!
-demouser.save!
+admin = User.create({ username: "admin", password: "admin1", email: "admin@gmail.com", discriminator: "0000"})
+demouser = User.create({username: "DemoUser", password: "demopassword", email: "demo@gmail.com", discriminator: "4321"})
 
-home = Server.new({
+home = Server.create({
   name: "Home",
   admin_id: admin.id,
   owner: admin,
-  instant_invite: "9NMvjd"
+  instant_invite: "abcdef"
 })
 
-server1 = Server.new({
-  name: "server 1",
-  admin_id: demouser.id,
-  owner: demouser,
-  instant_invite: "vfRy5u"
-})
+admin.join_dm_server
+demouser.join_dm_server
 
-server2 = Server.new({
-  name: "server 2",
-  admin_id: demouser.id,
-  owner: demouser,
-  instant_invite: "FNW2wn"
-})
+#Create Servers
+4.times do
+  server = Server.create({
+    name: Faker::Games::Overwatch.unique.location,
+    admin_id: demouser.id,
+    owner: demouser,
+  })
 
-home.save!
-server1.save!
-server2.save!
-
-Server.all.each do |server|
-  if server.id != 1
-    channel = Channel.create!(name: "General", server_id: server.id)
-    server.default_channel_id = channel.discord_id
-    server.save
-  end
-end
-User.all.each do |user|
-  user.servers << home
-  user.save!
+  ServerMember.create({
+    member_id: demouser.id,
+    server_id: server.id
+  })
 end
 
-Channel.create!(name: "asdfljkwefjkl", server_id: (rand(2..3)))
-c1 = Channel.create!(name: "dinkleberg", server_id: (rand(2..3)))
-c2 = Channel.create!(name: "donkleberg", server_id: (rand(2..3)))
-Channel.create!(name: "testing test channel test", server_id: (rand(2..3)))
-Channel.create!(name: "terry crews", server_id: (rand(2..3)))
-Channel.create!(name: "lorem ipsum", server_id: (rand(2..3)))
-Channel.create!(name: "thrhgfchfh", server_id: (rand(2..3)))
+#OW Users
+20.times do
+  name = Faker::Games::Overwatch.unique.hero
+  user = User.create({
+    username: name,
+    password: Faker::Internet.password,
+    email: Faker::Internet.email(name),
+  })
+  user.join_dm_server
 
-admin.servers += [server1]
-demouser.servers += [server1, server2]
+  # Every user joins the first server
+  ServerMember.create({
+    member_id: user.id,
+    server_id: 2
+  })
 
-admin.save!
-tester.save!
-demouser.save!
-home.save!
-server1.save!
-server2.save!
+  # Join one of the other servers randomly
+  ServerMember.create({
+    member_id: user.id,
+    server_id: rand(3..5)
+  })
+end
 
-m1 = Message.create!(body: "test 1", channel_id: c1.id, author_id: demouser.id)
-m3 = Message.create!(body: "test 3", channel_id: c1.id, author_id: demouser.id)
-m2 = Message.create!(body: "test 2", channel_id: c2.id, author_id: demouser.id)
+20.times do
+  Channel.create({
+    name: Faker::Games::Overwatch.unique.location,
+    server_id: rand(2..5)
+  })
+end
 
-# ChannelMessage.create!(channel_id: c1.id, message_id: m1.id)
-# ChannelMessage.create!(channel_id: c1.id, message_id: m3.id)
-# ChannelMessage.create!(channel_id: c2.id, message_id: m2.id)
+300.times do
+  msg = Message.create!({
+    body: Faker::Games::Overwatch.quote,
+    channel_id: rand(1..24),
+    author_id: rand(3..22),
+    # created_at: rand(2.years).seconds.ago,
+  })
+end

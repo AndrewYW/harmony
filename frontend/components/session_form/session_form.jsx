@@ -26,7 +26,7 @@ class SessionForm extends React.Component {
   handleDemoLogin(e) {
     e.preventDefault();
     const email = {
-      strings: ["demouser"],
+      strings: ["demo@gmail.com"],
       typeSpeed: 50
     };
 
@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
     }, 1200);
 
     setTimeout(() => {
-      this.props.processForm({ email: "demoemail", password: "demopassword" }).then(() => this.props.history.push('/channels/@me'));
+      this.props.processForm({ email: "demo@gmail.com", password: "demopassword" }).then(() => this.props.history.push('/channels/@me'));
     }, 2500);
 
     ;

@@ -19,6 +19,7 @@ class Server < ApplicationRecord
 
 
   after_initialize :generate_discord_id, :generate_instant_invite
+  after_create :generate_default_channel
 
   belongs_to :owner, 
     foreign_key: :admin_id,
@@ -55,11 +56,12 @@ class Server < ApplicationRecord
     self.instant_invite ||= instant_invite
   end
 
-  # def generate_default_channel
-  #   if self.id != 1
-  #     channel = Channel.create!(name: "General", server_id: self.id)
-  #     self.default_channel_id = channel.id
-  #   end
-  # end
+  def generate_default_channel
+    if self.id != 1
+      channel = Channel.create!(name: "General", server_id: self.id)
+      self.default_channel_id = channel.discord_id
+      self.save
+    end
+  end
 
 end
