@@ -11,7 +11,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "babel-loader": "^8.0.5",
     "font-awesome": "^4.7.0",
-    "i": "^0.3.6",
+    "i": "^0.3.7",
     "lodash": "^4.17.11",
     "moment": "^2.24.0",
     "npm": "^6.6.0",
